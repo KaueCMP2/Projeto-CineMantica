@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemantica - Seguindo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- O Header é exatamente o mesmo do index.html -->
+    <header class="main-header">
+        <button class="hamburger"></button>
+        <a href="index.html" class="barra-topo">
+            <img src="assets/logo.svg" alt="Logotipo Cinemantica" class="logo">
+        </a>
+        <nav class="main-nav">
+            <div class="acoes-header">
+                <div class="barra-pesquisa">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Busque aqui...">
+                </div>
+                <div class="acoes-usuario">
+                    <div class="notificacao-usuario">
+                        <i class="fas fa-bell action-icon"></i>
+                        <div class="notification-dot"></div>
+                    </div>
+                    <!-- Container para o ícone de usuário e o dropdown -->
+                    <div class="user-profile-container">
+                        <div class="icone-usuario" id="user-icon">
+                            <i class="fas fa-user profile-icon"></i>
+                        </div>
+                        <!-- Dropdown que aparece ao clicar -->
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="login.html">Fazer login</a>
+                            <a href="cadastro.html">Criar conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <!-- A Sidebar é a mesma, apenas o link ativo foi alterado -->
+        <aside class="sidebar active-side">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="seguindo.html" class="active"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+                </ul>
+            </nav>
+                        <div class="following-section">
+                <div class="following-header">
+                    <h3>Seguindo</h3>
+                    <span>Assistidos</span>
+                </div>
+                <ul class="following-list">
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U1" alt="Avatar do usuário">
+                        <span>User 1</span>
+                        <span class="watched-count">125</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U2" alt="Avatar do usuário">
+                        <span>User 2</span>
+                        <span class="watched-count">12</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U3" alt="Avatar do usuário">
+                        <span>User 3</span>
+                        <span class="watched-count">22</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U4" alt="Avatar do usuário">
+                        <span>User 4</span>
+                        <span class="watched-count">37</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U5" alt="Avatar do usuário">
+                        <span>User 5</span>
+                        <span class="watched-count">52</span>
+                    </li>
+                </ul>
+                <button class="see-more-btn">
+                    <i class="fas fa-chevron-down"></i> Ver mais
+                </button>
+            </div>
+        </aside>
+
+        <!-- O Conteúdo principal foi modificado para a página "Seguindo" -->
+        <main class="main-content">
+            <div class="following-page-content">
+                <div class="followed-users-carousel">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                    <img src="https://placehold.co/80x80/e0e0e0/000?text=U" alt="Avatar do usuário">
+                </div>
+
+                <div class="reviews-feed">
+                    <!-- Card de Resenha 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-user-info">
+                                <img src="https://placehold.co/50x50/e0e0e0/000?text=U" alt="Avatar do usuário" class="review-user-avatar">
+                                <div>
+                                    <span class="review-user-name">User</span>
+                                    <span class="review-user-profile-link">Ver perfil</span>
+                                </div>
+                            </div>
+                            <button class="review-btn">Resenha</button>
+                        </div>
+                        <div class="review-body">
+                            <img src="Styles.css/HTYD.jpg" alt="Poster do filme" class="review-movie-poster">
+                            <div class="review-content">
+                                <h3 class="review-movie-title">Como Treinar o Seu Dragão</h3>
+                                <div class="review-movie-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card de Resenha 2 -->
+                     <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-user-info">
+                                <img src="https://placehold.co/50x50/e0e0e0/000?text=U" alt="Avatar do usuário" class="review-user-avatar">
+                                <div>
+                                    <span class="review-user-name">User</span>
+                                    <span class="review-user-profile-link">Ver perfil</span>
+                                </div>
+                            </div>
+                            <button class="review-btn">Resenha</button>
+                        </div>
+                        <div class="review-body">
+                            <img src="Styles.css/HTYD.jpg" alt="Poster do filme" class="review-movie-poster">
+                            <div class="review-content">
+                                <h3 class="review-movie-title">Como Treinar o Seu Dragão</h3>
+                                <div class="review-movie-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card de Resenha 3 -->
+                     <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-user-info">
+                                <img src="https://placehold.co/50x50/e0e0e0/000?text=U" alt="Avatar do usuário" class="review-user-avatar">
+                                <div>
+                                    <span class="review-user-name">User</span>
+                                    <span class="review-user-profile-link">Ver perfil</span>
+                                </div>
+                            </div>
+                            <button class="review-btn">Resenha</button>
+                        </div>
+                        <div class="review-body">
+                            <img src="Styles.css/HTYD.jpg" alt="Poster do filme" class="review-movie-poster">
+                            <div class="review-content">
+                                <h3 class="review-movie-title">Como Treinar o Seu Dragão</h3>
+                                <div class="review-movie-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- Card de Resenha 4 -->
+                     <div class="review-card">
+                        <div class="review-header">
+                            <div class="review-user-info">
+                                <img src="https://placehold.co/50x50/e0e0e0/000?text=U" alt="Avatar do usuário" class="review-user-avatar">
+                                <div>
+                                    <span class="review-user-name">User</span>
+                                    <span class="review-user-profile-link">Ver perfil</span>
+                                </div>
+                            </div>
+                            <button class="review-btn">Resenha</button>
+                        </div>
+                        <div class="review-body">
+                            <img src="Styles.css/HTYD.jpg" alt="Poster do filme" class="review-movie-poster">
+                            <div class="review-content">
+                                <h3 class="review-movie-title">Como Treinar o Seu Dragão</h3>
+                                <div class="review-movie-rating">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                                </div>
+                                <p class="review-text">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer adicionado -->
+            <footer class="main-footer">
+                <div class="footer-content">
+                    <div class="footer-column social-media">
+                        <h4>Siga-Nos</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column footer-links">
+                        <ul>
+                            <li><a href="#">Sobre o cinemantica</a></li>
+                            <li><a href="#">Contato</a></li>
+                            <li><a href="#">Termos e condições</a></li>
+                            <li><a href="#">Política de privacidade</a></li>
+                            <li><a href="#">&copy;Cinemantica</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column footer-logo">
+                        <img src="Styles.css/LogoCinemantica.png" alt="Logotipo Cinemantica" class="logo-footer">
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Cinemantica – Todos os direitos reservados.</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Script para o dropdown -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userIcon = document.getElementById('user-icon');
+            const userDropdown = document.getElementById('user-dropdown');
+
+            // Mostra/esconde o dropdown ao clicar no ícone
+            userIcon.addEventListener('click', function(event) {
+                event.stopPropagation(); // Impede que o evento de clique se propague para o window
+                userDropdown.classList.toggle('show');
+            });
+
+            // Fecha o dropdown se o usuário clicar fora dele
+            window.addEventListener('click', function(event) {
+                // Verifica se o dropdown está visível e se o clique não foi dentro do ícone
+                if (userDropdown.classList.contains('show')) {
+                    userDropdown.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
