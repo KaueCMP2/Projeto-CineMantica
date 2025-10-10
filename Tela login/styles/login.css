@@ -1,0 +1,226 @@
+.container-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.esquerdo {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url(/imagens/cinema.png) no-repeat ;
+    background-size: cover;
+    
+}
+
+.blur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.186);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+}
+
+.logo{
+    width: 90%;
+}
+
+.retangulo-esquerdo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--retangulo);
+    padding: 5%;
+    height: 80%;
+    border-radius: 30px;
+    width: 80%;
+}
+
+.direito {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+
+.cabecalho-login {
+    font-weight: 1000;
+    font-size: 1.6rem;
+}
+
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+label {
+    font-weight: 400;
+    align-self: flex-start;
+    margin-top: 25px;
+    font-size: 1.1rem;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.campo-senha {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 10px;
+    transition: transform 0.15s ease-out;
+}
+
+.iconeOlho {
+    display: block;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%); 
+    cursor: pointer;
+    width: 22px;
+}
+
+.iconeOlhoSlash{
+    display: none;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%); 
+    cursor: pointer;
+    width: 25px;
+}
+
+.embaixo-input{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    accent-color: black;
+}
+
+.lembrar {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.lembrar input {
+    width: 20px;
+    margin-top: 0;
+    height: 18px;
+    
+}
+
+.lembrar input:hover {
+    cursor: pointer;
+}
+
+.lembrar label {
+    width: 150px;
+    margin-top: 0;
+    margin-left: 3px;
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+.embaixo-input a {
+    color: black;
+    font-weight: 300;
+}
+
+.botao-login {
+    background-color: var(--vermelho);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.botao-login:hover {
+    background-color: #781010;
+    cursor: pointer;
+}
+
+.registrar {
+    font-weight: 300;
+    margin-top: 7px;
+}
+
+.registrar a {
+    color: var(--vermelho);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.registrar a:hover {
+    text-decoration: underline;
+}
+
+.google {
+    transition: transform 0.15s ease;
+}
+
+.google:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width:770px) {
+    .container-login {
+        grid-template-columns: 1fr;
+    }
+
+    .esquerdo {
+        margin: 0;
+        border-radius: 0;
+        height: 95vh;
+    }
+
+    .direito {
+        margin-top: 10px;
+        height: 100vh;
+    }
+
+    .redes-sociais {
+        display: flex;
+    }
+}
+
+@media (max-width:426px) {
+    .cabecalho-login {
+        font-size: 1.3rem;
+    }
+
+    .embaixo-input {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .embaixo-input label {
+        font-size: 14px;
+    }
+}
