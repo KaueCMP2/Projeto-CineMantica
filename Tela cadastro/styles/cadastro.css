@@ -1,0 +1,237 @@
+body {
+    background-color: var(--branco);
+    color: var(--preto);
+}
+
+.container-cadastro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+/* ESTILIZAÇÃO LADO ESQUERDO */
+.titulo {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.forms-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+label {
+    font-weight: 400;
+    align-self: flex-start;
+    margin-top: 25px;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid var(--preto);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 200;
+    width: 100%;
+    margin-top: 5px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--preto);
+}
+
+.campo-senha {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.iconeOlho {
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 22px;
+}
+
+.iconeOlhoSlash {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 25px;
+}
+
+.lembrar-usuario {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 2%;
+}
+
+.check-lembrar {
+    width: 20px;
+    height: 20px;
+
+}
+
+.texto-lembrar {
+    font-size: 1rem;
+    font-weight: 200;
+    padding: 1.5%;
+}
+
+.botao-registrar {
+    background-color: var(--vermelho-escuro);
+    border: none;
+    color: var(--branco);
+    width: 90%;
+    padding: 3%;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-top: 6%;
+    font-size: 1rem;
+
+}
+
+.botao-registrar:hover {
+    background-color: #781010;
+    cursor: pointer;
+}
+
+.possui-conta {
+    font-size: 0.85rem;
+    font-weight: 350;
+    margin-top: 2.5%;
+}
+
+.possui-conta a {
+    color: var(--vermelho-escuro);
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.possui-conta a:hover {
+    text-decoration: underline;
+}
+
+.botoes-sociais {
+    margin-top: 6%;
+    display: flex;
+    flex-direction: row; /* Organizar em linha horizontal */
+    gap: 12%;
+    width: 30%;
+}
+
+
+/* ESTILIZAÇÃO LADO DIREITO */
+
+.lado-direito {
+    background-image: url(../assets/cinema.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.efeito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.186);
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 100%;
+}
+
+
+.container-logo {
+    background-color: var(--cinza-escuro);
+    display: flex;
+    width: 80%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 5%;
+}
+
+.logo {
+    width: 90%;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 935px) {
+    header {
+        width: 80%;
+    }
+    .titulo {
+        text-align: center;
+    }   
+}
+
+@media (max-width: 770px) {
+
+    .container-cadastro {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+    }
+
+    .lado-direito {
+        margin: 0;
+        border-radius: 0;
+        height: 80vh;
+    }
+
+    .lado-esquerdo{
+        margin-top: 10px;
+        height: 100vh;
+    }
+    
+}
+
+@media (max-width: 450px){
+    .check-lembrar {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .texto-lembrar {
+        font-size: 0.85rem;
+    }
+    .possui-conta {
+        font-size: 0.70rem;
+    }
+
+    header {
+        width: 80%;
+    }
+
+    .titulo {
+        text-align: center;
+    }
+}
+
+
+
+
+
