@@ -77,6 +77,26 @@ input[type="checkbox"] {
     width: 25px;
 }
 
+.iconeOlhoConfirm {
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 22px;
+}
+
+.iconeOlhoSlashConfirm {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 25px;
+}
+
 .lembrar-usuario {
     display: flex;
     flex-direction: row;
