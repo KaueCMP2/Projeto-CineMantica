@@ -50,7 +50,7 @@ body {
     border-radius: 20px;
     padding: 8px 15px 8px 40px;
     /* Aumentado padding esquerdo para o ícone */
-    width: 250px;
+    width: 30vw;
     outline: none;
     transition: all 0.3s ease;
     color: #fff;
@@ -121,7 +121,7 @@ body {
 .sidebar {
     width: 280px;
     background-color: #1d1d1d;
-    height: calc(100vh - 80px);
+    height: 90vh;
     /* Altura alinhada com o header */
     padding: 20px;
     box-sizing: border-box;
@@ -129,6 +129,8 @@ body {
     flex-direction: column;
     flex-shrink: 0;
     border-right: 1px solid #333;
+    overflow-y: scroll;
+
     /* display: none; */
     transition: margin-left 0.3s ease;
 }
@@ -594,4 +596,28 @@ body {
         height: 90vh;
     overflow-y: scroll;
     width: 100%;
+}
+
+@media screen and (max-width: 700px){
+    .logo{
+        height: 80px;
+    }
+
+    .barra-pesquisa input{
+        display: none;
+    }
+
+    .search-icon {
+        display: none;
+    }
+
+    /* Card comentario */
+    .review-body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar{
+        position: absolute;
+    }
 }
