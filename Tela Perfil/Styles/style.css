@@ -224,6 +224,17 @@ body {
     justify-content: space-between;
 }
 
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.numero {
+    display: flex;
+    margin-top: 5px;
+}
+
 .editar-perfil {
     width: 8%;
     height: 40%;
@@ -234,7 +245,8 @@ body {
     position: relative;
 }
 
-foto-perfil
+.editar-perfil ::
+
 
 
 .following-section {
