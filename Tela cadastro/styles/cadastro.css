@@ -15,19 +15,26 @@ body {
     font-weight: 700;
 }
 
+.lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .fazerCadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .forms-cadastro {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
 }
 
 label {
@@ -76,8 +83,6 @@ input[type="checkbox"] {
     cursor: pointer;
     width: 25px;
 }
-<<<<<<< HEAD
-=======
 
 .iconeOlhoConfirm {
     display: block;
@@ -99,7 +104,6 @@ input[type="checkbox"] {
     width: 25px;
 }
 
->>>>>>> ca9b02f097b406e4b437af87d2e6d05b4080d444
 .lembrar-usuario {
     display: flex;
     flex-direction: row;
@@ -156,7 +160,8 @@ input[type="checkbox"] {
 .botoes-sociais {
     margin-top: 6%;
     display: flex;
-    flex-direction: row; /* Organizar em linha horizontal */
+    flex-direction: row;
+    /* Organizar em linha horizontal */
     gap: 12%;
     width: 30%;
 }
@@ -205,60 +210,19 @@ input[type="checkbox"] {
     header {
         width: 80%;
     }
-    .titulo {
-        text-align: center;
-    }   
-}
-
-@media (max-width: 770px) {
-
-    .container-cadastro {
-        grid-template-columns: 1fr;
-        display: flex;
-        flex-direction: column-reverse;
-        height: 100%;
-    }
-
-    .lado-direito {
-        margin: 0;
-        border-radius: 0;
-        height: 80vh;
-    }
-
-    .lado-esquerdo{
-        margin-top: 10px;
-        height: 100vh;
-    }
-    
-}
-
-@media (max-width: 450px){
-    .check-lembrar {
-        width: 15px;
-        height: 15px;
-    }
-    
-    .texto-lembrar {
-        font-size: 0.85rem;
-    }
-    .possui-conta {
-        font-size: 0.70rem;
-    }
-
-    header {
-        width: 80%;
-    }
 
     .titulo {
         text-align: center;
     }
 }
 
-/* MELHORIAS POSSÍVEIS MOBILE */
-/* @media(max-width: 770px) {
+@media(max-width: 770px) {
+    .titulo {
+        text-align: center;
+    }
+
     .container-cadastro {
         grid-template-columns: 1fr;
-
         height: 100%;
     }
 
@@ -268,7 +232,17 @@ input[type="checkbox"] {
 
     .lado-esquerdo {
         height: 100vh;
-        background-image: url(../assets/cinema.webp);
+        background-image: url(/assets/cinema.webp);
+    }
+
+    .efeitoMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.186);
+        backdrop-filter: blur(10px);
+        height: 100%;
+        width: 100%;
     }
 
     .fazerCadastro {
@@ -276,10 +250,19 @@ input[type="checkbox"] {
         margin: 10%;
         padding: 5%;
         border-radius: 20px;
+        width: 70%;
     }
-} */
 
+    .check-lembrar {
+        width: 18px;
+        height: 18px;
+    }
 
+    .texto-lembrar {
+        font-size: 0.98rem;
+    }
 
-
-
+    .possui-conta {
+        font-size: 0.98rem;
+    }
+}
