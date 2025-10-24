@@ -18,16 +18,23 @@ body {
 .lado-esquerdo {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fazerCadastro {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .forms-cadastro {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 100%;
 }
 
 label {
@@ -153,7 +160,8 @@ input[type="checkbox"] {
 .botoes-sociais {
     margin-top: 6%;
     display: flex;
-    flex-direction: row; /* Organizar em linha horizontal */
+    flex-direction: row;
+    /* Organizar em linha horizontal */
     gap: 12%;
     width: 30%;
 }
@@ -202,56 +210,59 @@ input[type="checkbox"] {
     header {
         width: 80%;
     }
+
     .titulo {
         text-align: center;
-    }   
+    }
 }
 
-@media (max-width: 770px) {
+@media(max-width: 770px) {
+    .titulo {
+        text-align: center;
+    }
 
     .container-cadastro {
         grid-template-columns: 1fr;
-        display: flex;
-        flex-direction: column-reverse;
         height: 100%;
     }
 
     .lado-direito {
-        margin: 0;
-        border-radius: 0;
-        height: 80vh;
+        display: none;
     }
 
-    .lado-esquerdo{
-        margin-top: 10px;
+    .lado-esquerdo {
         height: 100vh;
+        background-image: url(/assets/cinema.webp);
     }
-    
-}
 
-@media (max-width: 450px){
+    .efeitoMobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.186);
+        backdrop-filter: blur(10px);
+        height: 100%;
+        width: 100%;
+    }
+
+    .fazerCadastro {
+        background-color: var(--branco);
+        margin: 10%;
+        padding: 5%;
+        border-radius: 20px;
+        width: 70%;
+    }
+
     .check-lembrar {
-        width: 15px;
-        height: 15px;
+        width: 18px;
+        height: 18px;
     }
-    
+
     .texto-lembrar {
-        font-size: 0.85rem;
+        font-size: 0.98rem;
     }
+
     .possui-conta {
-        font-size: 0.70rem;
-    }
-
-    header {
-        width: 80%;
-    }
-
-    .titulo {
-        text-align: center;
+        font-size: 0.98rem;
     }
 }
-
-
-
-
-
