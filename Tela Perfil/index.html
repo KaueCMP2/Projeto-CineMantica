@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="Styles/styles.css">
-    <link rel="stylesheet" href="Styles/style.css">
     <title>Perfil | Taskool</title>
     <script defer src="script.js"></script>
 </head>
 
 <body>
     <header class="main-header">
-        <button class="hamburger"></button>
-        <a href="index.html" class="barra-topo">
-            <img src="assets/logo.svg" alt="Logotipo Cinemantica" class="logo">
-        </a>
-        <nav class="main-nav">
-            <div class="acoes-header">
-                <div class="barra-pesquisa">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" placeholder="Busque aqui...">
-                </div>
-                <div class="acoes-usuario">
-                    <div class="notificacao-usuario">
-                        <i class="fas fa-bell action-icon"></i>
-                        <div class="notification-dot"></div>
+        <div class="conteiner-header">
+            <button class="hamburger"></button>
+            <a href="index.html" class="barra-topo">
+                <img src="assets/iconsSite/logo.png" alt="Logotipo Cinemantica" class="logo">
+            </a>
+            <nav class="main-nav">
+                <div class="acoes-header">
+                    <div class="barra-pesquisa">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Busque aqui...">
                     </div>
-                    <!-- Container para o ícone de usuário e o dropdown -->
-                    <div class="user-profile-container">
-                        <div class="icone-usuario" id="user-icon">
-                            <i class="fas fa-user profile-icon"></i>
+                    <div class="acoes-usuario">
+                        <div class="notificacao-usuario">
+                            <i class="fas fa-bell action-icon"></i>
+                            <div class="notification-dot"></div>
                         </div>
-                        <!-- Dropdown que aparece ao clicar -->
-                        <div class="user-dropdown" id="user-dropdown">
-                            <a href="login.html">Fazer login</a>
-                            <a href="cadastro.html">Criar conta</a>
-                        </div>
+                        <!-- Container para o ícone de usuário e o dropdown -->
+                        <div class="user-profile-container"></div>
                     </div>
                 </div>
-            </div>
+        </div>
         </nav>
+        </div>
     </header>
 
     <div class="content-wrapper">
@@ -49,8 +43,8 @@
             <nav class="sidebar-nav">
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="seguindo.html" class="active"><i class="fas fa-users"></i> Seguindo</a></li>
-                    <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="seguindo.html"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="perfil.html" class="active"><i></i> Perfil</a></li>
                 </ul>
             </nav>
             <div class="following-section">
@@ -98,9 +92,9 @@
                 </div>
 
                 <div class="parte-baixo">
-                    <div class="image-nome-perfil">
-                        <img src="Assets/" alt="" class="foto-perfil">
-                        <p class="nome">User</p>
+                    <div class="img-nome-perfil" id="foto">
+                        <img src="Assets/img/img-perfil.png" alt="" class="foto-perfil">
+                        <p class="nome" id="nome">User</p>
                     </div>
                     <div class="itens-perfil">
                         <div class="info">
@@ -111,13 +105,13 @@
                             <p class="infoUser">Seguindo</p>
                             <p class="numero">25</p>
                         </div>
-                        
+
                         <div class="info">
                             <p class="infoUser">Avaliações</p>
                             <p class="numero">33</p>
                         </div>
                     </div>
-                    <button class="editar-perfil">
+                    <button class="bt-editar-perfil" id="editarPerfil">
                         editar perfil
                     </button>
                 </div>
