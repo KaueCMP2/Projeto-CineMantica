@@ -1,0 +1,77 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7%;
+    gap: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo {
+    font-size: 2.3rem;
+}
+
+.subtitulo {
+    font-weight: 400;
+    color: grey;
+}
+
+.campo-input {
+    margin-top: 20px;
+}
+
+label {
+    font-weight: 400;
+    align-self: flex-start;
+    margin-top: 25px;
+    font-size: 1.1rem;
+}
+
+input {
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.botao {
+    background-color: var(--vermelho);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 300px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #781010;
+    cursor: pointer;
+}
+
+.voltar {
+    color: black;
+    margin-top: 10px;
+}
