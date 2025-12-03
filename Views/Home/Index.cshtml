@@ -1,0 +1,280 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemantica - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/home.css">
+    <script src="~/js/home/scriptcarrossel.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <button class="hamburger active-button"></button>
+        <a href="#" class="barra-topo">
+            <img src="~/assets/home-images/LogoCinemantica.png" alt="Logotipo Cinemantica" class="logo">
+        </a>
+        <nav class="main-nav">
+            <div class="acoes-header">
+                <div class="barra-pesquisa">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Busque aqui...">
+                </div>
+                <div class="acoes-usuario">
+                    <div class="notificacao-usuario">
+                        <i class="fas fa-bell action-icon"></i>
+                        <div class="notification-dot"></div>
+                    </div>
+                    <div class="user-profile-container">
+                        <div class="icone-usuario" id="user-icon">
+                            <i class="fas fa-user profile-icon"></i>
+                        </div>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="login.html">Fazer login</a>
+                            <a href="cadastro.html">Criar conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="seguindo.html"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href=""><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="destaques.html"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
+
+                </ul>
+            </nav>
+            <div class="following-section">
+                <div class="following-header">
+                    <h3>Seguindo</h3>
+                    <span>Assistidos</span>
+                </div>
+                <ul class="following-list">
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U1" alt="Avatar do usuário">
+                        <span>User 1</span>
+                        <span class="watched-count">125</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U2" alt="Avatar do usuário">
+                        <span>User 2</span>
+                        <span class="watched-count">12</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U3" alt="Avatar do usuário">
+                        <span>User 3</span>
+                        <span class="watched-count">22</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U4" alt="Avatar do usuário">
+                        <span>User 4</span>
+                        <span class="watched-count">37</span>
+                    </li>
+                    <li class="following-item">
+                        <img src="https://placehold.co/40x40/e0e0e0/000?text=U5" alt="Avatar do usuário">
+                        <span>User 5</span>
+                        <span class="watched-count">52</span>
+                    </li>
+                </ul>
+                <button class="see-more-btn">
+                    <i class="fas fa-chevron-down"></i> Ver mais
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="main-banner">
+                <div class="background-carousel">
+                </div>
+
+                <div class="conteudo-banner">
+                    <h1 class="titulo-banner">CINEMANTICA</h1>
+                    <p class="subtitulo-banner">Sua rede social para avaliar e comentar filmes. Siga pessoas, curta
+                        opiniões e compartilhe o que você achou!</p>
+                </div>
+            </section>
+
+            <section class="movie-carousel">
+                <h2 class="section-title">Em destaque</h2>
+                <div class="carousel-content-wrapper">
+                    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-container">
+                        <div class="movie-card">
+                            <img src="~/assets/home-images/Sinners.jpg" alt="Poster do filme Pecadores" class="movie-poster">
+                            <div class="movie-info">
+                                <h3 class="movie-title">Pecadores</h3>
+                                <div class="movie-rating-icons">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <p class="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+                        <div class="movie-card">
+                            <img src="~/assets/home-images/F1.jpg" alt="Poster do filme F1: O Filme" class="movie-poster">
+                            <div class="movie-info">
+                                <h3 class="movie-title">F1: O Filme</h3>
+                                <div class="movie-rating-icons">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <p class="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+                        <div class="movie-card">
+                            <img src="~/assets/home-images/Bailarina.png" alt="Poster do filme Bailarina" class="movie-poster">
+                            <div class="movie-info">
+                                <h3 class="movie-title">Bailarina</h3>
+                                <div class="movie-rating-icons">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <p class="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+                        <div class="movie-card">
+                            <img src="~/assets/home-images/Demonslayer.jpg" alt="Poster do filme Demonslayer"
+                                class="movie-poster">
+                            <div class="movie-info">
+                                <h3 class="movie-title">Demon Slayer : Infinity Castle</h3>
+                                <div class="movie-rating-icons">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <img src="~/assets/home-images/Demonslayer.jpg" alt="Poster do filme Demonslayer"
+                                class="movie-poster">
+                            <div class="movie-info">
+                                <h3 class="movie-title">Demon Slayer : Infinity Castle</h3>
+                                <div class="movie-rating-icons">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <img src="~/assets/home-images/Bailarina.png" alt="Poster do filme Bailarina" class="movie-poster">
+                            <div class="movie-info">
+                                <h3 class="movie-title">Bailarina</h3>
+                                <div class="movie-rating-icons">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <p class="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+
+                        <div class="movie-card">
+                            <img src="~/assets/home-images/Sinners.jpg" alt="Poster do filme Pecadores" class="movie-poster">
+                            <div class="movie-info">
+                                <h3 class="movie-title">Pecadores</h3>
+                                <div class="movie-rating-icons">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <p class="movie-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+<section class="movie-grid">
+                <h2 class="section-title">Filmes Bombando</h2>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <img src="~/assets/home-images/Demonslayer.jpg" alt="Poster do filme Demonslayer">
+                        <div class="grid-item-info">
+                            <h4 class="grid-movie-title">Demon Slayer</h4>
+                            <div class="grid-movie-rating">
+                                <i class="fas fa-star"></i>
+                                <span>8.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="~/assets/home-images/spider-man-across-the-spider-verse-1920x1080-v0-ki4gcq26iw4b1.png" alt="Poster do filme Spiderman">
+                        <div class="grid-item-info">
+                            <h4 class="grid-movie-title">Homem Aranha no aranhaverso</h4>
+                            <div class="grid-movie-rating">
+                                <i class="fas fa-star"></i>
+                                <span>7.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="~/assets/home-images/spider-man-across-the-spider-verse-1920x1080-v0-ki4gcq26iw4b1.png" alt="Poster do filme Spiderman">
+                        <div class="grid-item-info">
+                            <h4 class="grid-movie-title">Homem Aranha no aranhaverso</h4>
+                            <div class="grid-movie-rating">
+                                <i class="fas fa-star"></i>
+                                <span>7.8</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <img src="~/assets/home-images/Demonslayer.jpg" alt="Poster do filme Demonslayer">
+                        <div class="grid-item-info">
+                            <h4 class="grid-movie-title">Demon Slayer</h4>
+                            <div class="grid-movie-rating">
+                                <i class="fas fa-star"></i>
+                                <span>8.7</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </section>
+
+
+        </main>
+    </div>
+
+    <script src="~/js/home/script.js"></script>
+
+</body>
+
+</html>
+
