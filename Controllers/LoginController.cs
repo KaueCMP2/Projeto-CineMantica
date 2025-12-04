@@ -38,7 +38,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             byte[] senhaDIgitadaHash = HashService.GerarHashBytes(senha);
 
             // Percorre a lista de usuarios do banco e verifica se existe algum com aquele email
-            var usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.Email == email);
+            var usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.email == email);
 
             if(usuario == null)
             {
@@ -48,14 +48,14 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             // comparar byte a byte da senha
             // SequenceEqual ->retorna false se qualquer byte estiver diferente
-            if (!usuario.SenhaHash.SequenceEqual(senhaDIgitadaHash))
+            if (!usuario.senha.SequenceEqual(senhaDIgitadaHash))
             {
                 ViewBag.Erro = "E-mail ou senha incorretos.";
                 return View("Index");
             }
 
-            HttpContext.Session.SetString("UsuarioNome", usuario.Email);
-            HttpContext.Session.SetInt32("UsuarioId", usuario.IdUsuario);
+            HttpContext.Session.SetString("UsuarioNome", usuario.email);
+            HttpContext.Session.SetInt32("UsuarioId", usuario.id_usuario);
 
             return RedirectToAction("Index", "Home");
         }   

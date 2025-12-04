@@ -7,47 +7,40 @@ using Microsoft.EntityFrameworkCore;
 namespace ProjetoCinemanticaMVC.Models;
 
 [Table("Usuario")]
-[Index("Email", Name = "UQ__Usuario__AB6E6164080963CC", IsUnique = true)]
+[Index("email", Name = "UQ__Usuario__AB6E61646419725F", IsUnique = true)]
 public partial class Usuario
 {
     [Key]
-    [Column("id_usuario")]
-    public int IdUsuario { get; set; }
+    public int id_usuario { get; set; }
 
-    [Column("nome")]
     [StringLength(40)]
     [Unicode(false)]
-    public string Nome { get; set; } = null!;
+    public string nome { get; set; } = null!;
 
-    [Column("email")]
-    [StringLength(100)]
+    [StringLength(30)]
     [Unicode(false)]
-    public string Email { get; set; } = null!;
+    public string email { get; set; } = null!;
 
-    [Column("senha")]
-    [StringLength(20)]
-    [Unicode(false)]
-    public byte[] SenhaHash { get; set; } = null!;
-    // public byte[] Senha { get; set; } = null!;
+    [MaxLength(32)]
+    public byte[] senha { get; set; } = null!;
 
-    [Column("nick_name")]
     [StringLength(12)]
     [Unicode(false)]
-    public string NickName { get; set; } = null!;
+    public string nick_name { get; set; } = null!;
 
-    [Column("data_nascimento")]
-    public DateOnly DataNascimento { get; set; }
+    public DateOnly data_nascimento { get; set; }
 
-    [Column("desc_perfil")]
     [StringLength(100)]
-    public string? DescPerfil { get; set; }
+    public string? desc_perfil { get; set; }
 
-    [Column("foto_perfil")]
-    public byte[]? FotoPerfil { get; set; }
+    public byte[]? foto_perfil { get; set; }
 
-    // Isso aqui vai dar merda
-    // Inserido manualmente, nao veio junto com o banco de dados
+    public int RegraId { get; set; }
+
     [InverseProperty("id_usuarioNavigation")]
     public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
-   
+
+    [ForeignKey("RegraId")]
+    [InverseProperty("Usuarios")]
+    public virtual RegraPerfil Regra { get; set; } = null!;
 }

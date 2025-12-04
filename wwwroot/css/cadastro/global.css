@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root
+{
+    --branco: #ffffff;
+    --preto: #000000;
+    --cinza-escuro: #1D1D1B;
+    --vermelho-escuro: #AC1919;
+    --cinza-claro: #848484;
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+html
+{
+    scroll-behavior: smooth;/*rolar de forma mais suave a tela*/
+}

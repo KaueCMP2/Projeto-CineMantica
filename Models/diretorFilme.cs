@@ -16,9 +16,6 @@ public partial class diretorFilme
     [Unicode(false)]
     public string nome { get; set; } = null!;
 
-    public int? id_filme { get; set; }
-
-    [ForeignKey("id_filme")]
-    [InverseProperty("diretorFilmes")]
-    public virtual Filme? id_filmeNavigation { get; set; }
+    [InverseProperty("id_diretorNavigation")]
+    public virtual ICollection<Filme> Filmes { get; set; } = new List<Filme>();
 }

@@ -1,0 +1,94 @@
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/cadastro/cadastro.css">
+    <link rel="stylesheet" href="~/css/cadastro/global.css">
+    <script defer src="~/js/cadastro/cadastro.js"></script>
+
+</head>
+
+<body>
+    <main class="container-cadastro">
+
+        <!-- LADO ESQUERDO -->
+        <section class="lado-esquerdo">
+
+            <div class="efeitoMobile">
+                <section class="fazerCadastro">
+                    <header class="topo">
+                        <h1 class="titulo">Faça seu cadastro</h1>
+                    </header>
+
+                    @* FORMULÁRIOS *@
+                    <form class="forms-cadastro" asp-action="Criar" asp-controller="Cadastro" method="post">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail" name="email"required>
+
+                        <label for="senha">Senha</label>
+                        <div class="campo-senha">
+                            <input type="password" id="senha" placeholder="Digite sua senha" name="senha" required>
+                            <img class="iconeOlho" src="~/assets/cadastro-images/eye.png" alt="" id="iconeOlho" onclick="OcultarSenha()">
+                            <img class="iconeOlhoSlash" src="~/assets/cadastro-images/eye-slash.png" alt="" id="iconeOlhoSlash"
+                                onclick="OcultarSenha(); return false">
+                        </div>
+
+
+                        <label for="senhaConfirm">Confirmar senha</label>
+                        <div class="campo-senha">
+                            <input type="password" id="confirmarSenha" placeholder="Digite sua senha" name="confirmarSenha" required>
+                            <img class="iconeOlhoConfirm" src="~/assets/cadastro-images/eye.png" alt="" id="iconeOlhoConfirm"
+                                onclick="OcultarSenhaConfirm()">
+                            <img class="iconeOlhoSlashConfirm" src="~/assets/cadastro-images/eye-slash.png" alt=""
+                                id="iconeOlhoSlashConfirm" onclick="OcultarSenhaConfirm(); return false">
+                        </div>
+
+                        @if (ViewBag.Erro != null)
+                        {
+                            <p class="erro-login mostrar">@ViewBag.Erro</p>
+                        }
+
+                        <div class="lembrar-usuario">
+                            <input type="checkbox" class="check-lembrar">
+                            <p class="texto-lembrar">Lembrar de mim</p>
+                        </div>
+
+                        <button type="submit" class="botao-registrar">Registrar</button>
+
+                        <p class="possui-conta">Já tem uma conta? <span class="fazer-login"><a href="/Login/Index">Faça
+                                    login</a></span>
+                        </p>
+
+                        <div class="botoes-sociais">
+                            <img src="~/assets/cadastro-images/google.png" alt="Botão de link do google" width="35%">
+                            <img src="~/assets/cadastro-images/facebook.png" alt="Botão de link do facebook" width="35%">
+                        </div>
+
+
+                    </form>
+                </section>
+            </div>
+        </section>
+
+        <!-- LADO DIREITO -->
+        <aside class="lado-direito">
+            <div class="efeito">
+
+                <div class="container-logo">
+                    <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo" class="logo">
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+</body>
+
+</html>

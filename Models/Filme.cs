@@ -16,19 +16,22 @@ public partial class Filme
     [Unicode(false)]
     public string nome { get; set; } = null!;
 
-    public int? id_genero { get; set; }
-
     [StringLength(500)]
     [Unicode(false)]
     public string descricao_filme { get; set; } = null!;
 
     public DateOnly data_postagem { get; set; }
 
+    public int? id_diretor { get; set; }
+
+    public int? id_genero { get; set; }
+
     [InverseProperty("id_filmeNavigation")]
     public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
 
-    [InverseProperty("id_filmeNavigation")]
-    public virtual ICollection<diretorFilme> diretorFilmes { get; set; } = new List<diretorFilme>();
+    [ForeignKey("id_diretor")]
+    [InverseProperty("Filmes")]
+    public virtual diretorFilme? id_diretorNavigation { get; set; }
 
     [ForeignKey("id_genero")]
     [InverseProperty("Filmes")]
