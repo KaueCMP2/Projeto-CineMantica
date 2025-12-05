@@ -13,7 +13,7 @@ public partial class Usuario
     [Key]
     public int id_usuario { get; set; }
 
-    [StringLength(40)]
+    [StringLength(255)]
     [Unicode(false)]
     public string nome { get; set; } = null!;
 
