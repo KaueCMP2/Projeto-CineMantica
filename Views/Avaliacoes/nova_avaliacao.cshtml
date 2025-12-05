@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemantica - Nova Avaliação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/home.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <button class="hamburger active-button"></button>
+        <a href="../Tela home/index.html" class="barra-topo">
+            <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo Cinemantica" class="logo">
+        </a>
+        <nav class="main-nav">
+            <div class="acoes-header">
+                <div class="barra-pesquisa">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Busque aqui...">
+                </div>
+                <div class="acoes-usuario">
+                    <div class="notificacao-usuario">
+                        <i class="fas fa-bell action-icon"></i>
+                        <div class="notification-dot"></div>
+                    </div>
+                    <div class="user-profile-container">
+                        <div class="icone-usuario" id="user-icon">
+                            <i class="fas fa-user profile-icon"></i>
+                        </div>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="Views/Login/Index.cshtml">Fazer login</a>
+                            <a href="Views/Cadastro/Index.cshtml">Criar conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="Views/Home/Index.cshtml"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Views/Seguindo/index.cshtml"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="Views/Perfil/index.cshtml"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="Views/Destaques/destaques.cshtml"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
+                    <li><a href="Views/Avaliacoes/feed_avaliacoes.cshtml"class="active"><i class="fas fa-star"></i> Avaliações</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="new-review-container">
+                <h2 class="section-title">Escrever Avaliação</h2>
+
+                <div class="movie-preview">
+                    <img src="" alt="Poster" id="reviewMoviePoster" style="width: 100px; border-radius: 8px;">
+                    <h3 id="reviewMovieTitle" style="margin-left: 20px;">Filme</h3>
+                </div>
+
+                <form id="newReviewForm" class="review-form">
+                    <div class="rating-input">
+                        <label>Sua Nota:</label>
+                        <div class="star-rating">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" id="ratingValue" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewText">Sua Resenha:</label>
+                        <textarea id="reviewText" rows="6" placeholder="O que você achou do filme?" required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-cancel" onclick="history.back()">Cancelar</button>
+                        <button type="submit" class="btn-submit">Publicar Avaliação</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="~/js/home/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const title = urlParams.get('title');
+            const poster = urlParams.get('poster');
+
+            if (title) document.getElementById('reviewMovieTitle').textContent = title;
+            if (poster) document.getElementById('reviewMoviePoster').src = poster;
+
+            // Star Rating Logic
+            const stars = document.querySelectorAll('.star-rating i');
+            const ratingInput = document.getElementById('ratingValue');
+
+            stars.forEach(star => {
+                star.addEventListener('click', () => {
+                    const value = star.getAttribute('data-value');
+                    ratingInput.value = value;
+                    updateStars(value);
+                });
+            });
+
+            function updateStars(value) {
+                stars.forEach(s => {
+                    if (s.getAttribute('data-value') <= value) {
+                        s.classList.remove('far');
+                        s.classList.add('fas');
+                        s.style.color = 'red';
+                    } else {
+                        s.classList.remove('fas');
+                        s.classList.add('far');
+                        s.style.color = '';
+                    }
+                });
+            }
+
+            // Form Submission
+            const form = document.getElementById('newReviewForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const currentUser = localStorage.getItem('currentUser');
+                if (!currentUser) {
+                    alert('Você precisa estar logado para avaliar.');
+                    window.location.href = '../Tela login/login.html';
+                    return;
+                }
+
+                const rating = ratingInput.value;
+                if (!rating) {
+                    alert('Por favor, selecione uma nota.');
+                    return;
+                }
+
+                const reviewText = document.getElementById('reviewText').value;
+                const date = new Date().toLocaleDateString('pt-BR');
+
+                // Get User Profile
+                const userProfile = JSON.parse(localStorage.getItem(`userProfile_${currentUser}`)) || {};
+
+                const newReview = {
+                    id: Date.now(),
+                    movieTitle: title || 'Filme Desconhecido',
+                    moviePoster: poster || '',
+                    rating: rating,
+                    text: reviewText,
+                    date: date,
+                    userId: currentUser, // Important: Store User ID
+                    user: userProfile.name || currentUser, // Fallback name
+                    userAvatar: userProfile.avatar || 'https://placehold.co/150x150/e0e0e0/000?text=User'
+                };
+
+                // Save to LocalStorage
+                const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+                reviews.push(newReview);
+                localStorage.setItem('reviews', JSON.stringify(reviews));
+
+                alert('Avaliação publicada com sucesso!');
+                window.location.href = '../Tela Perfil/index.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemantica - Seguindo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/home.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <button class="hamburger active-button"></button>
+        <a href="../Tela home/index.html" class="barra-topo">
+            <img src="../Tela home/Styles.css/LogoCinemantica.png" alt="Logotipo Cinemantica" class="logo">
+        </a>
+        <nav class="main-nav">
+            <div class="acoes-header">
+                <div class="barra-pesquisa">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Busque aqui...">
+                </div>
+                <div class="acoes-usuario">
+                    <div class="notificacao-usuario">
+                        <i class="fas fa-bell action-icon"></i>
+                        <div class="notification-dot"></div>
+                    </div>
+                    <div class="user-profile-container">
+                        <div class="icone-usuario" id="user-icon">
+                            <i class="fas fa-user profile-icon"></i>
+                        </div>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="/Tela login/login.html">Fazer login</a>
+                            <a href="/Tela cadastro/cadastro.html">Criar conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../Tela home/index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="index.html" class="active"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="../Tela Perfil/index.html"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="../Tela destaques/destaques.html"><i class="fas fa-film"></i> Filmes em Destaque</a>
+                    </li>
+                    <li><a href="../Tela Avaliacoes/feed_avaliacoes.html"><i class="fas fa-star"></i> Avaliações</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="following-section">
+                <div class="following-header">
+                    <h3>Seguindo</h3>
+                    <span>Assistidos</span>
+                </div>
+                <ul class="following-list">
+                    <!-- Dynamic List -->
+                    <li style="padding: 10px; color: #aaa;">Carregando...</li>
+                </ul>
+                <button class="see-more-btn">
+                    <i class="fas fa-chevron-down"></i> Ver mais
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content following-page-content">
+
+            <section class="following-users-bar">
+                <!-- Dynamic Bubbles -->
+            </section>
+
+            <section class="feed-container">
+                <!-- Dynamic Feed -->
+                <div style="text-align: center; padding: 40px; color: #aaa;">
+                    <p>Carregando feed...</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="../Tela home/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentUser = localStorage.getItem('currentUser');
+            const followingListKey = `userFollowing_${currentUser}`;
+            const followingList = JSON.parse(localStorage.getItem(followingListKey)) || [];
+
+            const followingBubblesContainer = document.querySelector('.following-users-bar');
+            const feedContainer = document.querySelector('.feed-container');
+
+            // --- 1. Render Following List (Bubbles Only - Sidebar handled by global script) ---
+            if (followingList.length > 0) {
+                followingBubblesContainer.innerHTML = '';
+
+                followingList.forEach(userId => {
+                    const userProfile = JSON.parse(localStorage.getItem(`userProfile_${userId}`)) || {
+                        name: 'Usuário',
+                        avatar: 'https://placehold.co/40x40/e0e0e0/000?text=User'
+                    };
+
+                    // Calculate watched count
+                    const allReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+                    const userReviewsCount = allReviews.filter(r => r.userId === userId || r.user === userProfile.name).length;
+
+                    // Bubble Item
+                    const bubbleItem = document.createElement('div');
+                    bubbleItem.className = 'user-bubble';
+                    bubbleItem.innerHTML = `
+                        <a href="../Tela Perfil/index.html?user=${userId}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
+                            <img src="${userProfile.avatar}" alt="${userProfile.name}">
+                            <span>${userProfile.name.split(' ')[0]}</span>
+                            <span style="font-size: 0.8em; color: #aaa; margin-top: 4px;">${userReviewsCount} assistidos</span>
+                        </a>
+                    `;
+                    followingBubblesContainer.appendChild(bubbleItem);
+                });
+            } else {
+                followingBubblesContainer.innerHTML = '<p style="color: #aaa; padding: 20px;">Siga usuários para vê-los aqui!</p>';
+            }
+
+            // --- 2. Render Feed (Reviews from followed users) ---
+            const allReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            // Filter reviews: Must be from a user in the following list
+            const feedReviews = allReviews.filter(review => {
+                // Check if review's userId is in following list
+                // Fallback to name check for legacy reviews if needed, but userId is preferred
+                return followingList.includes(review.userId) || followingList.includes(review.user);
+            });
+
+            if (feedReviews.length > 0) {
+                feedContainer.innerHTML = '';
+                // Sort by date (newest first) - assuming date string is comparable or we parse it
+                // Simple reverse for now as they are pushed chronologically
+                feedReviews.reverse().forEach(review => {
+                    const reviewCard = document.createElement('article');
+                    reviewCard.className = 'review-card';
+                    reviewCard.innerHTML = `
+                        <div class="review-header">
+                            <div class="user-info">
+                                <img src="${review.userAvatar}" alt="User Avatar">
+                                <div class="user-details">
+                                    <span class="username">${review.user}</span>
+                                    <a href="../Tela Perfil/index.html?user=${review.userId || review.user}" class="view-profile-link">Ver perfil</a>
+                                </div>
+                            </div>
+                            <button class="review-tag">Resenha</button>
+                        </div>
+                        <div class="review-body">
+                            <img src="${review.moviePoster}" alt="${review.movieTitle}" class="review-movie-poster">
+                            <div class="review-content">
+                                <h3 class="review-movie-title">${review.movieTitle}</h3>
+                                <div class="review-rating">
+                                    ${getStarsHtml(review.rating)}
+                                </div>
+                                <p class="review-description">${review.text}</p>
+                            </div>
+                        </div>
+                    `;
+                    feedContainer.appendChild(reviewCard);
+                });
+            } else {
+                feedContainer.innerHTML = `
+                    <div style="text-align: center; padding: 40px; color: #aaa;">
+                        <i class="fas fa-film" style="font-size: 3em; margin-bottom: 20px;"></i>
+                        <p>Nenhuma atividade recente dos usuários que você segue.</p>
+                    </div>
+                `;
+            }
+        });
+
+        function getStarsHtml(rating) {
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    html += '<i class="fas fa-star" style="color: red;"></i>';
+                } else {
+                    html += '<i class="far fa-star"></i>';
+                }
+            }
+            return html;
+        }
+    </script>
+</body>
+
+</html>

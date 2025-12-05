@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = null;
 }
 
@@ -8,16 +8,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinemantica - Home</title>
+    <title>Cinemantica - Destaques</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="~/css/home.css">
-    <script src="~/js/home/scriptcarrossel.js"></script>
 </head>
 
 <body>
     <header class="main-header">
         <button class="hamburger active-button"></button>
-        <a href="#" class="barra-topo">
+        <a href="../Tela home/index.html" class="barra-topo">
             <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo Cinemantica" class="logo">
         </a>
         <nav class="main-nav">
@@ -49,33 +48,11 @@
         <aside class="sidebar">
             <nav class="sidebar-nav">
                 <ul>
-                    <li>
-                        <a asp-controller="Home" asp-action="Index" class="active">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Seguindo" asp-action="Index">
-                            <i class="fas fa-users"></i> Seguindo
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Perfil" asp-action="Index">
-                            <i class="fas fa-user"></i> Perfil
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Destaques" asp-action="Index">
-                            <i class="fas fa-film"></i> Filmes em Destaque
-                        </a>
-                    </li>
-
-                    <li>
-                        <a asp-controller="Avaliacoes" asp-action="Feed"> <i class="fas fa-star"></i> Avaliações
-                        </a>
+                    <li><a href="Views/Home/Index.cshtml"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Views/Seguindo/index.cshtml"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="Views/Perfil/index.cshtml"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="Views/Destaques/destaques.cshtml" class="active"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
+                    <li><a href="Views/Avaliacoes/feed_avaliacoes.cshtml"><i class="fas fa-star"></i> Avaliações</a>
                     </li>
                 </ul>
             </nav>
@@ -85,7 +62,7 @@
                     <span>Assistidos</span>
                 </div>
                 <ul class="following-list">
-
+                    <!-- Dynamic List -->
                     <li style="padding: 10px; color: #aaa;">Carregando...</li>
                 </ul>
                 <button class="see-more-btn">
@@ -95,40 +72,77 @@
         </aside>
 
         <main class="main-content">
-            <section class="main-banner">
-                <div class="background-carousel">
-                </div>
 
-                <div class="conteudo-banner">
-                    <h1 class="titulo-banner">CINEMANTICA</h1>
-                    <p class="subtitulo-banner">Sua rede social para avaliar e comentar filmes. Siga pessoas, curta
-                        opiniões e compartilhe o que você achou!</p>
-                </div>
-            </section>
-
-            <section class="movie-carousel">
-                <h2 class="section-title">Em destaque</h2>
+            <section class="movie-category">
+                <h2 class="section-title">Comédia</h2>
                 <div class="carousel-content-wrapper">
                     <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
-                    <div class="carousel-container" id="featured-carousel">
-
+                    <div class="carousel-container" id="comedy-carousel">
+                        <!-- Filmes de Comédia -->
                     </div>
                     <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </section>
 
-            <section class="movie-grid">
-                <h2 class="section-title">Filmes Bombando</h2>
-                <div class="grid-container" id="trending-grid">
+            <section class="movie-category">
+                <h2 class="section-title">Terror</h2>
+                <div class="carousel-content-wrapper">
+                    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-container" id="horror-carousel">
+                        <!-- Filmes de Terror -->
+                    </div>
+                    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
 
+            <section class="movie-category">
+                <h2 class="section-title">Ação</h2>
+                <div class="carousel-content-wrapper">
+                    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-container" id="action-carousel">
+                        <!-- Filmes de Ação -->
+                    </div>
+                    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <section class="movie-category">
+                <h2 class="section-title">Romance</h2>
+                <div class="carousel-content-wrapper">
+                    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-container" id="romance-carousel">
+                        <!-- Filmes de Romance -->
+                    </div>
+                    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <section class="movie-category">
+                <h2 class="section-title">Ficção Científica</h2>
+                <div class="carousel-content-wrapper">
+                    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-container" id="scifi-carousel">
+                        <!-- Filmes de Ficção -->
+                    </div>
+                    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <section class="movie-category">
+                <h2 class="section-title">Animação</h2>
+                <div class="carousel-content-wrapper">
+                    <button class="carousel-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="carousel-container" id="animation-carousel">
+                        <!-- Filmes de Animação -->
+                    </div>
+                    <button class="carousel-arrow next"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </section>
 
         </main>
     </div>
 
-    </div>
-
+    <!-- Modal de Detalhes do Filme (Reutilizado) -->
     <div id="reviewModal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close-btn" id="closeModalBtn">&times;</button>
@@ -140,7 +154,7 @@
                     <div class="rating-box">
                         <span class="rating-label">Geral</span>
                         <div class="rating-value" id="modalMovieRating">
-
+                            <!-- Nota Geral será inserida aqui -->
                         </div>
                     </div>
                     <div class="rating-box">

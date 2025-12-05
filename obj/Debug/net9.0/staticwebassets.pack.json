@@ -1,0 +1,429 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\Cadastro-images\\cinema.png",
+      "PackagePath": "staticwebassets\\assets\\Cadastro-images\\cinema.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\Cadastro-images\\eye-slash.png",
+      "PackagePath": "staticwebassets\\assets\\Cadastro-images\\eye-slash.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\Cadastro-images\\eye.png",
+      "PackagePath": "staticwebassets\\assets\\Cadastro-images\\eye.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\Cadastro-images\\facebook.png",
+      "PackagePath": "staticwebassets\\assets\\Cadastro-images\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\Cadastro-images\\google.png",
+      "PackagePath": "staticwebassets\\assets\\Cadastro-images\\google.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\Cadastro-images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\Cadastro-images\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\Bailarina.png",
+      "PackagePath": "staticwebassets\\assets\\home-images\\Bailarina.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\Demonslayer.jpg",
+      "PackagePath": "staticwebassets\\assets\\home-images\\Demonslayer.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\EstrelaPreta.png",
+      "PackagePath": "staticwebassets\\assets\\home-images\\EstrelaPreta.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\EstrelaVermelha.png",
+      "PackagePath": "staticwebassets\\assets\\home-images\\EstrelaVermelha.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\F1.jpg",
+      "PackagePath": "staticwebassets\\assets\\home-images\\F1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\GeometricaSans-Regular (1).ttf",
+      "PackagePath": "staticwebassets\\assets\\home-images\\GeometricaSans-Regular (1).ttf"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\HTYD.jpg",
+      "PackagePath": "staticwebassets\\assets\\home-images\\HTYD.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\LaborUnion-Regular.otf",
+      "PackagePath": "staticwebassets\\assets\\home-images\\LaborUnion-Regular.otf"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\LogoCinemantica.png",
+      "PackagePath": "staticwebassets\\assets\\home-images\\LogoCinemantica.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\Sinners.jpg",
+      "PackagePath": "staticwebassets\\assets\\home-images\\Sinners.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\demon-slayer-3840x2160-23615.jpg",
+      "PackagePath": "staticwebassets\\assets\\home-images\\demon-slayer-3840x2160-23615.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\spider-man-across-the-spider-verse-1920x1080-v0-ki4gcq26iw4b1.png",
+      "PackagePath": "staticwebassets\\assets\\home-images\\spider-man-across-the-spider-verse-1920x1080-v0-ki4gcq26iw4b1.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\home-images\\superman-2025-7680x4320-20308.jpg",
+      "PackagePath": "staticwebassets\\assets\\home-images\\superman-2025-7680x4320-20308.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\imagens\\Logo.png",
+      "PackagePath": "staticwebassets\\assets\\login-images\\imagens\\Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\imagens\\cinema.png",
+      "PackagePath": "staticwebassets\\assets\\login-images\\imagens\\cinema.png"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\svg\\Group 5.svg",
+      "PackagePath": "staticwebassets\\assets\\login-images\\svg\\Group 5.svg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\svg\\eye-slash.svg",
+      "PackagePath": "staticwebassets\\assets\\login-images\\svg\\eye-slash.svg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\svg\\eye.svg",
+      "PackagePath": "staticwebassets\\assets\\login-images\\svg\\eye.svg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\svg\\facebook.svg",
+      "PackagePath": "staticwebassets\\assets\\login-images\\svg\\facebook.svg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\svg\\google.svg",
+      "PackagePath": "staticwebassets\\assets\\login-images\\svg\\google.svg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\assets\\login-images\\svg\\logo.svg",
+      "PackagePath": "staticwebassets\\assets\\login-images\\svg\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\css\\cadastro\\cadastro.css",
+      "PackagePath": "staticwebassets\\css\\cadastro\\cadastro.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\css\\cadastro\\global.css",
+      "PackagePath": "staticwebassets\\css\\cadastro\\global.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\css\\login\\login.css",
+      "PackagePath": "staticwebassets\\css\\login\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\css\\seguindo\\style.css",
+      "PackagePath": "staticwebassets\\css\\seguindo\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\js\\cadastro\\cadastro.js",
+      "PackagePath": "staticwebassets\\js\\cadastro\\cadastro.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\js\\home\\script.js",
+      "PackagePath": "staticwebassets\\js\\home\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\js\\home\\scriptcarrossel.js",
+      "PackagePath": "staticwebassets\\js\\home\\scriptcarrossel.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\js\\login\\login.js",
+      "PackagePath": "staticwebassets\\js\\login\\login.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\js\\seguindo\\script.js",
+      "PackagePath": "staticwebassets\\js\\seguindo\\script.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ProjetoCinemanticaMVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.ProjetoCinemanticaMVC.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.ProjetoCinemanticaMVC.props",
+      "PackagePath": "build\\ProjetoCinemanticaMVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.ProjetoCinemanticaMVC.props",
+      "PackagePath": "buildMultiTargeting\\ProjetoCinemanticaMVC.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.ProjetoCinemanticaMVC.props",
+      "PackagePath": "buildTransitive\\ProjetoCinemanticaMVC.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

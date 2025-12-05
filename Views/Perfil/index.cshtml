@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemantica - Perfil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/home.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <button class="hamburger active-button"></button>
+        <a href="../Tela home/index.html" class="barra-topo">
+            <img src="../Tela home/Styles.css/LogoCinemantica.png" alt="Logotipo Cinemantica" class="logo">
+        </a>
+        <nav class="main-nav">
+            <div class="acoes-header">
+                <div class="barra-pesquisa">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Busque aqui...">
+                </div>
+                <div class="acoes-usuario">
+                    <div class="notificacao-usuario">
+                        <i class="fas fa-bell action-icon"></i>
+                        <div class="notification-dot"></div>
+                    </div>
+                    <div class="user-profile-container">
+                        <div class="icone-usuario" id="user-icon">
+                            <i class="fas fa-user profile-icon"></i>
+                        </div>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="/Tela login/login.html">Fazer login</a>
+                            <a href="/Tela cadastro/cadastro.html">Criar conta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="../Tela home/index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="../Tela Seguindo/index.html"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="index.html" class="active"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="../Tela destaques/destaques.html"><i class="fas fa-film"></i> Filmes em Destaque</a>
+                    </li>
+                    <li><a href="../Tela Avaliacoes/feed_avaliacoes.html"><i class="fas fa-star"></i> Avaliações</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="following-section">
+                <div class="following-header">
+                    <h3>Seguindo</h3>
+                    <span>Assistidos</span>
+                </div>
+                <ul class="following-list">
+                    <!-- Dynamic List -->
+                    <li style="padding: 10px; color: #aaa;">Carregando...</li>
+                </ul>
+                <button class="see-more-btn">
+                    <i class="fas fa-chevron-down"></i> Ver mais
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="profile-content-wrapper" style="visibility: hidden;"> <!-- Hidden initially to prevent flash -->
+                <div class="profile-header-container">
+                    <div class="profile-banner"></div>
+                    <div class="profile-info-bar">
+                        <div class="profile-avatar-wrapper">
+                            <img src="" alt="Foto de Perfil" class="profile-avatar-large">
+                        </div>
+                        <div class="profile-details">
+                            <h2 class="profile-username"></h2>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">Seguidores</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">Seguindo</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value">0</span>
+                                    <span class="stat-label">Avaliações</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="edit-profile-btn" style="display: none;"><i class="fas fa-pen"></i> Editar
+                            Perfil</button>
+                    </div>
+                </div>
+
+                <section class="reviews-section">
+                    <h2 class="section-title">Avaliações</h2>
+                    <!-- Reviews will be injected here -->
+                    <p style="color: #aaa; margin-top: 20px;">Carregando...</p>
+                </section>
+            </div>
+
+            <div class="login-overlay" id="login-overlay">
+                <h2>Acesso Restrito</h2>
+                <p>Faça login para visualizar seu perfil, editar informações e gerenciar suas avaliações.</p>
+                <a href="../Tela login/login.html" class="login-btn-overlay">Fazer Login</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal-overlay" id="edit-profile-modal">
+        <div class="edit-profile-modal">
+            <h2 class="section-title" style="margin-bottom: 20px;">Editar Perfil</h2>
+            <form class="edit-profile-form" id="edit-profile-form">
+                <div class="form-group">
+                    <label for="display-name">Nome de Exibição</label>
+                    <input type="text" id="display-name" placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="avatar-url">URL da Foto de Perfil</label>
+                    <input type="url" id="avatar-url" placeholder="https://exemplo.com/foto.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="banner-url">URL da Imagem de Capa</label>
+                    <input type="url" id="banner-url" placeholder="https://exemplo.com/capa.jpg">
+                </div>
+                <div class="modal-actions-row">
+                    <button type="button" class="btn-cancel" id="cancel-edit-profile">Cancelar</button>
+                    <button type="submit" class="btn-save">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../Tela home/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. Identify Context (Who is logged in? Who are we viewing?) ---
+            const currentUser = localStorage.getItem('currentUser'); // Email of logged-in user
+            const isLoggedIn = !!currentUser;
+
+            // Get 'user' param from URL (who we are viewing)
+            const urlParams = new URLSearchParams(window.location.search);
+            const viewUserEmail = urlParams.get('user');
+
+            // Determine if we are viewing our own profile
+            // If no 'user' param, or 'user' param matches logged-in user, we are viewing ourselves.
+            const isOwnProfile = !viewUserEmail || (currentUser && viewUserEmail === currentUser);
+
+            // The user ID we are actually displaying
+            const profileUserId = isOwnProfile ? currentUser : viewUserEmail;
+
+            const profileContent = document.querySelector('.profile-content-wrapper');
+            const loginOverlay = document.getElementById('login-overlay');
+
+            // --- 2. Guest Handling ---
+            // If not logged in and trying to view own profile (no param), show guest view
+            if (!isLoggedIn && !viewUserEmail) {
+                if (profileContent) profileContent.classList.add('blur-content');
+                if (loginOverlay) loginOverlay.classList.add('active');
+
+                // Make content visible (but blurred) so overlay sits on top correctly
+                if (profileContent) profileContent.style.visibility = 'visible';
+
+                // Set generic data
+                document.querySelector('.profile-username').textContent = "Visitante";
+                document.querySelector('.profile-avatar-large').src = "https://placehold.co/150x150/cccccc/757575?text=Guest";
+                document.querySelector('.profile-banner').style.backgroundImage = "none";
+                document.querySelector('.profile-banner').style.backgroundColor = "#333";
+                document.querySelectorAll('.stat-value').forEach(stat => stat.textContent = "0");
+                document.querySelector('.reviews-section').innerHTML = '<h2 class="section-title">Avaliações</h2><p style="color: #aaa; margin-top: 20px;">Nenhuma avaliação visível.</p>';
+                return;
+            }
+
+            // --- 3. Load Profile Data ---
+            // Load data for the user we are viewing
+            const storageKey = `userProfile_${profileUserId}`;
+            const profileData = JSON.parse(localStorage.getItem(storageKey)) || {
+                name: 'Usuário',
+                avatar: 'https://placehold.co/150x150/e0e0e0/000?text=User',
+                banner: ''
+            };
+
+            // Update UI Elements
+            const profileAvatar = document.querySelector('.profile-avatar-large');
+            const profileBanner = document.querySelector('.profile-banner');
+            const profileUsername = document.querySelector('.profile-username');
+
+            profileUsername.textContent = profileData.name;
+            profileAvatar.src = profileData.avatar;
+            if (profileData.banner) {
+                profileBanner.style.backgroundImage = `url('${profileData.banner}')`;
+            }
+
+            // Reveal content now that data is loaded
+            if (profileContent) profileContent.style.visibility = 'visible';
+
+            // --- 4. Follow System Logic ---
+            const actionButtonContainer = document.querySelector('.profile-info-bar');
+            const existingBtn = document.querySelector('.edit-profile-btn');
+
+            // Stats keys
+            const followersKey = `userFollowers_${profileUserId}`;
+            const followingKey = `userFollowing_${profileUserId}`;
+
+            let followersList = JSON.parse(localStorage.getItem(followersKey)) || [];
+            let followingList = JSON.parse(localStorage.getItem(followingKey)) || [];
+
+            // Update Stats Display
+            const statsValues = document.querySelectorAll('.stat-value');
+            if (statsValues.length >= 3) {
+                statsValues[0].textContent = followersList.length; // Seguidores
+                statsValues[1].textContent = followingList.length; // Seguindo
+            }
+
+            if (isOwnProfile) {
+                // Show Edit Button (Default)
+                if (existingBtn) {
+                    existingBtn.style.display = 'block';
+                    existingBtn.innerHTML = '<i class="fas fa-pen"></i> Editar Perfil';
+                    existingBtn.classList.remove('follow-btn', 'unfollow-btn');
+                    existingBtn.classList.add('edit-profile-btn');
+                    existingBtn.style.backgroundColor = ''; // Reset color
+
+                    // Attach Edit Modal Event (re-attach if needed or ensure it's there)
+                    setupEditModal(profileData, storageKey, profileUserId);
+                }
+            } else {
+                // Viewing someone else: Show Follow/Unfollow Button
+                if (existingBtn) {
+                    existingBtn.style.display = 'block'; // Ensure it's visible
+                    // Check if already following
+                    const myFollowingKey = `userFollowing_${currentUser}`;
+                    let myFollowingList = JSON.parse(localStorage.getItem(myFollowingKey)) || [];
+                    const isFollowing = myFollowingList.includes(profileUserId);
+
+                    updateFollowButton(existingBtn, isFollowing);
+
+                    // Add Click Event
+                    // Note: We need to handle event listeners carefully to avoid duplicates if this runs multiple times, 
+                    // but here it runs once on load.
+                    // We clone the node to remove old listeners (simple trick)
+                    const newBtn = existingBtn.cloneNode(true);
+                    existingBtn.parentNode.replaceChild(newBtn, existingBtn);
+
+                    newBtn.addEventListener('click', () => {
+                        if (!isLoggedIn) {
+                            alert("Faça login para seguir usuários!");
+                            return;
+                        }
+                        toggleFollow(currentUser, profileUserId, newBtn);
+                    });
+                }
+            }
+
+            function updateFollowButton(btn, isFollowing) {
+                if (isFollowing) {
+                    btn.innerHTML = '<i class="fas fa-user-minus"></i> Deixar de Seguir';
+                    btn.className = 'edit-profile-btn unfollow-btn'; // Reuse class for layout, add specific style
+                    btn.style.backgroundColor = '#d32f2f'; // Red for unfollow
+                } else {
+                    btn.innerHTML = '<i class="fas fa-user-plus"></i> Seguir';
+                    btn.className = 'edit-profile-btn follow-btn';
+                    btn.style.backgroundColor = '#e50914'; // Brand red for follow
+                }
+            }
+
+            function toggleFollow(me, target, btn) {
+                const myFollowingKey = `userFollowing_${me}`;
+                const targetFollowersKey = `userFollowers_${target}`;
+
+                let myFollowing = JSON.parse(localStorage.getItem(myFollowingKey)) || [];
+                let targetFollowers = JSON.parse(localStorage.getItem(targetFollowersKey)) || [];
+
+                const isFollowing = myFollowing.includes(target);
+
+                if (isFollowing) {
+                    // Unfollow
+                    myFollowing = myFollowing.filter(id => id !== target);
+                    targetFollowers = targetFollowers.filter(id => id !== me);
+                } else {
+                    // Follow
+                    myFollowing.push(target);
+                    targetFollowers.push(me);
+                }
+
+                localStorage.setItem(myFollowingKey, JSON.stringify(myFollowing));
+                localStorage.setItem(targetFollowersKey, JSON.stringify(targetFollowers));
+
+                // Update Button
+                updateFollowButton(btn, !isFollowing);
+
+                // Update Stats (Followers count of the person we are viewing)
+                // We need to reload the list to get the new count
+                statsValues[0].textContent = targetFollowers.length;
+            }
+
+
+            // --- 5. Reviews Logic ---
+            const reviewsSection = document.querySelector('.reviews-section');
+            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+            // Filter reviews by the profile user we are viewing
+            const userReviews = reviews.filter(r => {
+                // Check userId first, then legacy user name
+                return r.userId === profileUserId || r.user === profileData.name || (profileUserId === 'admin' && r.user === 'Admin User');
+            });
+
+            // Update Reviews Count Stat
+            if (statsValues.length >= 3) {
+                statsValues[2].textContent = userReviews.length;
+            }
+
+            if (userReviews.length > 0) {
+                const title = reviewsSection.querySelector('.section-title');
+                reviewsSection.innerHTML = '';
+                reviewsSection.appendChild(title);
+
+                userReviews.forEach(review => {
+                    const reviewCard = document.createElement('div');
+                    reviewCard.classList.add('review-card');
+
+                    // Show delete button ONLY if it's our own profile
+                    const deleteBtnHtml = isOwnProfile ? `
+                        <button class="delete-review-btn" title="Excluir avaliação" data-movie="${review.movieTitle}">
+                            <i class="fas fa-trash"></i>
+                        </button>` : '';
+
+                    reviewCard.innerHTML = `
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
+                                <div class="reviewer-meta">
+                                    <span class="reviewer-name">${review.user}</span>
+                                    <span class="reviewer-action">Ver perfil</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <button class="review-tag">Resenha</button>
+                                ${deleteBtnHtml}
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <img src="${review.moviePoster}" alt="Poster do Filme" class="review-movie-poster">
+                            <div class="review-content">
+                                <h3 class="review-movie-title">${review.movieTitle}</h3>
+                                <div class="review-rating">
+                                    ${getStarsHtml(review.rating)}
+                                </div>
+                                <p class="review-text">${review.text}</p>
+                            </div>
+                        </div>
+                    `;
+                    reviewsSection.appendChild(reviewCard);
+                });
+
+                if (isOwnProfile) {
+                    document.querySelectorAll('.delete-review-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            if (confirm('Tem certeza que deseja excluir esta avaliação?')) {
+                                const movieTitle = btn.getAttribute('data-movie');
+                                deleteReview(movieTitle, currentUser);
+                            }
+                        });
+                    });
+                }
+            } else {
+                reviewsSection.innerHTML = '<h2 class="section-title">Avaliações</h2><p style="color: #aaa; margin-top: 20px;">Nenhuma avaliação encontrada para este usuário.</p>';
+            }
+
+            function deleteReview(movieTitle, userId) {
+                const currentReviews = JSON.parse(localStorage.getItem('reviews')) || [];
+                const reviewIndex = currentReviews.findIndex(r => (r.userId === userId || r.user === userId || r.user === 'Admin User') && r.movieTitle === movieTitle);
+
+                if (reviewIndex !== -1) {
+                    currentReviews.splice(reviewIndex, 1);
+                    localStorage.setItem('reviews', JSON.stringify(currentReviews));
+                    window.location.reload();
+                }
+            }
+
+            // --- 6. Edit Modal Setup (Encapsulated) ---
+            function setupEditModal(savedProfile, storageKey, userId) {
+                const editProfileBtn = document.querySelector('.edit-profile-btn');
+                const editProfileModal = document.getElementById('edit-profile-modal');
+                const cancelEditProfileBtn = document.getElementById('cancel-edit-profile');
+                const editProfileForm = document.getElementById('edit-profile-form');
+                const nameInput = document.getElementById('display-name');
+                const avatarInput = document.getElementById('avatar-url');
+                const bannerInput = document.getElementById('banner-url');
+
+                // Clear old listeners by cloning (simple way to reset)
+                const newEditBtn = editProfileBtn.cloneNode(true);
+                editProfileBtn.parentNode.replaceChild(newEditBtn, editProfileBtn);
+
+                newEditBtn.addEventListener('click', () => {
+                    nameInput.value = savedProfile.name;
+                    avatarInput.value = savedProfile.avatar;
+                    let currentBannerUrl = savedProfile.banner || '';
+                    if (!currentBannerUrl && document.querySelector('.profile-banner').style.backgroundImage) {
+                        const match = document.querySelector('.profile-banner').style.backgroundImage.match(/url\(['"]?(.*?)['"]?\)/);
+                        if (match) currentBannerUrl = match[1];
+                    }
+                    bannerInput.value = currentBannerUrl;
+                    editProfileModal.classList.add('active');
+                });
+
+                function closeEditModal() {
+                    editProfileModal.classList.remove('active');
+                }
+
+                cancelEditProfileBtn.onclick = closeEditModal;
+                editProfileModal.onclick = (e) => { if (e.target === editProfileModal) closeEditModal(); };
+
+                editProfileForm.onsubmit = (e) => {
+                    e.preventDefault();
+                    const newName = nameInput.value.trim();
+                    const newAvatar = avatarInput.value.trim();
+                    const newBanner = bannerInput.value.trim();
+
+                    if (newName) savedProfile.name = newName;
+                    if (newAvatar) savedProfile.avatar = newAvatar;
+                    if (newBanner) savedProfile.banner = newBanner;
+
+                    localStorage.setItem(storageKey, JSON.stringify(savedProfile));
+                    closeEditModal();
+                    window.location.reload(); // Reload to see changes
+                };
+            }
+        });
+
+        function getStarsHtml(rating) {
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    html += '<i class="fas fa-star" style="color: red;"></i>';
+                } else {
+                    html += '<i class="far fa-star"></i>';
+                }
+            }
+            return html;
+        }
+    </script>
+</body>
+
+</html>
