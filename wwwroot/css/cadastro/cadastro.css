@@ -10,16 +10,27 @@ body {
 }
 
 /* ESTILIZAÇÃO LADO ESQUERDO */
-.titulo {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
 .lado-esquerdo {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 6% 18%;
+}
+
+.topo {
+    text-align: center;
+}
+
+.titulo {
+    font-size: 3rem;
+    font-weight: 750;
+}
+
+.subtitulo {
+    font-family: "Geometrica Sans";
+    font-size: 1.9rem;
+    font-weight: 200;
+    margin-top: 2%;
 }
 
 .fazerCadastro {
@@ -38,29 +49,47 @@ body {
 }
 
 label {
+    font-size: 1.15rem;
     font-weight: 400;
     align-self: flex-start;
-    margin-top: 25px;
+    margin-top: 2%;
 }
 
 input {
-    padding: 12px;
+    padding: 14px;
     border: 1px solid var(--preto);
     border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 200;
+    font-size: 1.1rem;
+    font-weight: 250;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 1.4%;
 }
 
 input[type="checkbox"] {
     accent-color: var(--preto);
 }
 
+.halfInput {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+}
+
+.halfInputBox {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 2%;
+}
+
+.halfInput input {
+    width: 100%;
+}
+
 .campo-senha {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 100%;
     position: relative;
 }
 
@@ -118,7 +147,7 @@ input[type="checkbox"] {
 }
 
 .texto-lembrar {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 200;
     padding: 1.5%;
 }
@@ -128,11 +157,11 @@ input[type="checkbox"] {
     border: none;
     color: var(--branco);
     width: 90%;
-    padding: 3%;
-    font-weight: 700;
+    padding: 2.8%;
+    font-weight: 750;
     border-radius: 10px;
-    margin-top: 6%;
-    font-size: 1rem;
+    margin-top: 2.6%;
+    font-size: 1.1rem;
 
 }
 
@@ -142,8 +171,8 @@ input[type="checkbox"] {
 }
 
 .possui-conta {
-    font-size: 0.85rem;
-    font-weight: 350;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin-top: 2.5%;
 }
 
@@ -158,19 +187,19 @@ input[type="checkbox"] {
 }
 
 .botoes-sociais {
-    margin-top: 6%;
+    margin-top: 4%;
     display: flex;
     flex-direction: row;
     /* Organizar em linha horizontal */
     gap: 12%;
-    width: 30%;
+    width: 25%;
 }
 
 
 /* ESTILIZAÇÃO LADO DIREITO */
 
 .lado-direito {
-    background-image: url(/assets/Cadastro-images/cinema.png);
+    background-image: url(/assets/Cadastro-images/images/cinema.webp);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -205,6 +234,32 @@ input[type="checkbox"] {
 }
 
 /* RESPONSIVIDADE */
+@media (max-width: 1135px) {
+    input::placeholder {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 1075px) {
+    .titulo {
+        font-size: 2.8rem;
+    }
+
+    input::placeholder {
+        font-size: 1rem;
+    }
+
+    .halfInput {
+        flex-direction: column;
+    }
+
+    .botoes-sociais {
+        width: 30%;
+    }
+    .possui-conta {
+        font-size: 0.85rem;
+    }
+}
 
 @media(max-width: 935px) {
     header {
@@ -213,21 +268,34 @@ input[type="checkbox"] {
 
     .titulo {
         text-align: center;
+        font-size: 2.7rem;
+    }
+
+    .subtitulo{
+        font-size: 1.7rem;
     }
 }
 
-@media(max-width: 770px) {
-    .titulo{
-        font-size: 2.19rem;
+@media(max-width: 890px) {
+    .possui-conta {
+        font-size: 0.85rem;
     }
-    
+}
+
+/* MOBILE */
+@media(max-width: 770px) {
+    .halfInput {
+        flex-direction: row;
+    }
+
     .titulo {
+        font-size: 2.19rem;
         text-align: center;
     }
 
     .container-cadastro {
         grid-template-columns: 1fr;
-        height: 100%;
+        height: auto;
     }
 
     .lado-direito {
@@ -235,8 +303,9 @@ input[type="checkbox"] {
     }
 
     .lado-esquerdo {
-        height: 100vh;
-        background-image: url(/assets/Cadastro-images/cinema.png);
+        margin: 0;
+        height: auto;
+        background-image: url(/assets/Cadastro-images/images/cinema.webp);
     }
 
     .efeitoMobile {
@@ -245,7 +314,7 @@ input[type="checkbox"] {
         align-items: center;
         background-color: rgba(0, 0, 0, 0.186);
         backdrop-filter: blur(10px);
-        height: 100%;
+        height: auto;
         width: 100%;
     }
 
@@ -255,6 +324,10 @@ input[type="checkbox"] {
         padding: 5%;
         border-radius: 20px;
         width: 70%;
+    }
+
+    input::placeholder {
+        font-size: 1rem;
     }
 
     .check-lembrar {
@@ -271,9 +344,13 @@ input[type="checkbox"] {
     }
 }
 
-@media(max-width: 670px){
-    .titulo{
-        font-size: 1.9rem;
+@media(max-width: 670px) {
+    .titulo {
+        font-size: 2.5rem;
+    }
+
+    .subtitulo{
+        font-size: 1.6rem;
     }
 
     header {
@@ -281,6 +358,25 @@ input[type="checkbox"] {
     }
 
     .possui-conta {
+        font-size: 0.90rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .halfInput {
+        flex-direction: column;
+    }
+
+    input::placeholder {
+        font-size: 1rem;
+    }
+
+    .possui-conta {
         font-size: 0.80rem;
+    }
+
+    /* IMPROVISO */
+    .container-cadastro {
+       height: auto; 
     }
 }

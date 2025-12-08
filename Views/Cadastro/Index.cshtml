@@ -17,37 +17,64 @@
 
 <body>
     <main class="container-cadastro">
-
+      
         <!-- LADO ESQUERDO -->
         <section class="lado-esquerdo">
-
             <div class="efeitoMobile">
+            
                 <section class="fazerCadastro">
                     <header class="topo">
                         <h1 class="titulo">Faça seu cadastro</h1>
+                        <p class="subtitulo">Avalie filmes, siga pessoas e descubra novas histórias.</p>
                     </header>
 
                     @* FORMULÁRIOS *@
                     <form class="forms-cadastro" asp-action="Criar" asp-controller="Cadastro" method="post">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="Digite seu e-mail" name="email"required>
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
 
-                        <label for="senha">Senha</label>
-                        <div class="campo-senha">
-                            <input type="password" id="senha" placeholder="Digite sua senha" name="senha" required>
-                            <img class="iconeOlho" src="~/assets/cadastro-images/eye.png" alt="" id="iconeOlho" onclick="OcultarSenha()">
-                            <img class="iconeOlhoSlash" src="~/assets/cadastro-images/eye-slash.png" alt="" id="iconeOlhoSlash"
-                                onclick="OcultarSenha(); return false">
+                        <div class="halfInput">
+
+                            <div class="halfInputBox">
+                                <label for="nickname">Nome de usuário</label>
+                                <input type="text" id="nickname" name="nickname"
+                                    placeholder="Digite o usuário" required>
+                            </div>
+                            <div class="halfInputBox">
+                                <label for="dataNascimento">Data de nascimento</label>
+                                <input type="date" id="dataNascimento" name="dataNascimento"
+                                    placeholder="Digite a data de nascimento" required>
+                            </div>
                         </div>
 
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
 
-                        <label for="senhaConfirm">Confirmar senha</label>
-                        <div class="campo-senha">
-                            <input type="password" id="confirmarSenha" placeholder="Digite sua senha" name="confirmarSenha" required>
-                            <img class="iconeOlhoConfirm" src="~/assets/cadastro-images/eye.png" alt="" id="iconeOlhoConfirm"
-                                onclick="OcultarSenhaConfirm()">
-                            <img class="iconeOlhoSlashConfirm" src="~/assets/cadastro-images/eye-slash.png" alt=""
-                                id="iconeOlhoSlashConfirm" onclick="OcultarSenhaConfirm(); return false">
+                        <div class="halfInput">
+
+                            <div class="halfInputBox">
+                                <label for="senha">Senha</label>
+                                <div class="campo-senha">
+                                    <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
+                                        required>
+                                    <img class="iconeOlho" src="~/assets/Cadastro-images/icons/eye.svg" alt="" id="iconeOlho"
+                                        onclick="OcultarSenha()">
+                                    <img class="iconeOlhoSlash" src="~/assets/Cadastro-images/icons/eye-slash.svg" alt=""
+                                        id="iconeOlhoSlash" onclick="OcultarSenha(); return false">
+                                </div>
+                            </div>
+
+                            <div class="halfInputBox">
+                                <label for="confirmarSenha">Confirmar senha</label>
+                                <div class="campo-senha">
+                                    <input type="password" id="confirmarSenha" name="confirmarSenha"
+                                        placeholder="Digite sua senha" required>
+                                    <img class="iconeOlhoConfirm" src="~/assets/Cadastro-images/icons/eye.svg" alt=""
+                                        id="iconeOlhoConfirm" onclick="OcultarSenhaConfirm()">
+                                    <img class="iconeOlhoSlashConfirm" src="~/assets/Cadastro-images/icons/eye-slash.svg" alt=""
+                                        id="iconeOlhoSlashConfirm" onclick="OcultarSenhaConfirm(); return false">
+                                </div>
+                            </div>
                         </div>
 
                         @if (ViewBag.Erro != null)
@@ -67,8 +94,8 @@
                         </p>
 
                         <div class="botoes-sociais">
-                            <img src="~/assets/cadastro-images/google.png" alt="Botão de link do google" width="35%">
-                            <img src="~/assets/cadastro-images/facebook.png" alt="Botão de link do facebook" width="35%">
+                            <img src="~/assets/Cadastro-images/icons/botao-google.svg" alt="Botão de link do google" width="35%">
+                            <img src="~/assets/Cadastro-images/icons/botao-face.svg" alt="Botão de link do facebook" width="35%">
                         </div>
 
 
@@ -82,7 +109,7 @@
             <div class="efeito">
 
                 <div class="container-logo">
-                    <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo" class="logo">
+                    <img src="~/assets/Cadastro-images/images/logo.png" alt="Logotipo" class="logo">
                 </div>
             </div>
         </aside>
