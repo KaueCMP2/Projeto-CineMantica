@@ -22,6 +22,10 @@ namespace ProjetoCinemanticaMVC.Controllers
 
         public IActionResult Index()
         {
+            if (HttpContext.Session.GetString("UsuarioId") != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 

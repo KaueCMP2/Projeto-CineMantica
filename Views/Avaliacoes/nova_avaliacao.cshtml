@@ -1,3 +1,7 @@
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,7 +16,7 @@
 <body>
     <header class="main-header">
         <button class="hamburger active-button"></button>
-        <a href="../Tela home/index.html" class="barra-topo">
+        <a href="@Url.Action("Index", "Home")" class="barra-topo">
             <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo Cinemantica" class="logo">
         </a>
         <nav class="main-nav">
@@ -31,8 +35,8 @@
                             <i class="fas fa-user profile-icon"></i>
                         </div>
                         <div class="user-dropdown" id="user-dropdown">
-                            <a href="Views/Login/Index.cshtml">Fazer login</a>
-                            <a href="Views/Cadastro/Index.cshtml">Criar conta</a>
+                            <a href="@Url.Action("Index", "Login")">Fazer login</a>
+                            <a href="@Url.Action("Index", "Cadastro")">Criar conta</a>
                         </div>
                     </div>
                 </div>
@@ -44,12 +48,11 @@
         <aside class="sidebar">
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="Views/Home/Index.cshtml"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="Views/Seguindo/index.cshtml"><i class="fas fa-users"></i> Seguindo</a></li>
-                    <li><a href="Views/Perfil/index.cshtml"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="Views/Destaques/destaques.cshtml"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
-                    <li><a href="Views/Avaliacoes/feed_avaliacoes.cshtml"class="active"><i class="fas fa-star"></i> Avaliações</a>
-                    </li>
+                    <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="@Url.Action("Index", "Seguindo")"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="@Url.Action("Index", "Perfil")"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
+                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i> Avaliações</a></li>
                 </ul>
             </nav>
         </aside>
@@ -94,8 +97,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
-            const title = urlParams.get('title');
-            const poster = urlParams.get('poster');
+            // Pega parametros da URL (vindos do controller ou link direto)
+            const title = urlParams.get('title') || '@ViewBag.MovieTitle';
+            const poster = urlParams.get('poster') || '@ViewBag.MoviePoster';
 
             if (title) document.getElementById('reviewMovieTitle').textContent = title;
             if (poster) document.getElementById('reviewMoviePoster').src = poster;
@@ -134,7 +138,8 @@
                 const currentUser = localStorage.getItem('currentUser');
                 if (!currentUser) {
                     alert('Você precisa estar logado para avaliar.');
-                    window.location.href = '../Tela login/login.html';
+                    // Redireciona para o Controller de Login
+                    window.location.href = '/Login/Index';
                     return;
                 }
 
@@ -157,8 +162,8 @@
                     rating: rating,
                     text: reviewText,
                     date: date,
-                    userId: currentUser, // Important: Store User ID
-                    user: userProfile.name || currentUser, // Fallback name
+                    userId: currentUser,
+                    user: userProfile.name || currentUser, 
                     userAvatar: userProfile.avatar || 'https://placehold.co/150x150/e0e0e0/000?text=User'
                 };
 
@@ -168,10 +173,10 @@
                 localStorage.setItem('reviews', JSON.stringify(reviews));
 
                 alert('Avaliação publicada com sucesso!');
-                window.location.href = '../Tela Perfil/index.html';
+                // Redireciona para o Perfil
+                window.location.href = '/Perfil/Index';
             });
         });
     </script>
 </body>
-
 </html>

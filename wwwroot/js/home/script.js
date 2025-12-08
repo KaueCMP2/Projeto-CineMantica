@@ -161,14 +161,14 @@ document.addEventListener('DOMContentLoaded', function () {
             newReviewBtn.onclick = () => {
                 const isUserLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
                 if (isUserLoggedIn) {
-                    window.location.href = `../Tela Avaliacoes/nova_avaliacao.html?${params}`;
+                    window.location.href = `/Avaliacoes/Nova?${params}`;
                 } else {
                     alert("Você precisa estar logado para fazer uma avaliação!");
                 }
             };
 
             viewReviewsBtn.onclick = () => {
-                window.location.href = `../Tela Avaliacoes/ver_avaliacoes.html?${params}`;
+                window.location.href = `/Avaliacoes/Ver?${params}`;
             };
         }
 

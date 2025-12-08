@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainBanner = document.querySelector('.main-banner');
     const carouselContainer = document.querySelector('.background-carousel');
     const imageUrls = [
-        'Styles.css/superman-2025-7680x4320-20308.jpg',
-        'Styles.css/spider-man-across-the-spider-verse-1920x1080-v0-ki4gcq26iw4b1.png',
-        'Styles.css/demon-slayer-3840x2160-23615.jpg',
+        '/assets/home-images/superman-2025-7680x4320-20308.jpg',
+        '/assets/home-images/spider-man-across-the-spider-verse-1920x1080-v0-ki4gcq26iw4b1.png',
+        '/assets/home-images/demon-slayer-3840x2160-23615.jpg',
 
     ];
 

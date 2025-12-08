@@ -10,10 +10,22 @@
 </head>
 
 <body>
+    <script>
+        const serverLoggedIn = "@(Context.Session.GetString("UsuarioId") != null ? "true" : "false")";
+        const serverUser = "@Context.Session.GetString("UsuarioNome")";
+
+        if (serverLoggedIn === "true") {
+            localStorage.setItem('isLoggedIn', 'true');
+            if(serverUser) localStorage.setItem('currentUser', serverUser);
+        } else {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+        }
+    </script>
     <header class="main-header">
         <button class="hamburger active-button"></button>
-        <a href="../Tela home/index.html" class="barra-topo">
-            <img src="../Tela home/Styles.css/LogoCinemantica.png" alt="Logotipo Cinemantica" class="logo">
+        <a asp-controller="Home" asp-action="Index" class="barra-topo">
+            <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo Cinemantica" class="logo">
         </a>
         <nav class="main-nav">
             <div class="acoes-header">
@@ -31,8 +43,8 @@
                             <i class="fas fa-user profile-icon"></i>
                         </div>
                         <div class="user-dropdown" id="user-dropdown">
-                            <a href="/Tela login/login.html">Fazer login</a>
-                            <a href="/Tela cadastro/cadastro.html">Criar conta</a>
+                            <a asp-controller="Login" asp-action="Index">Fazer login</a>
+                            <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>
                         </div>
                     </div>
                 </div>
@@ -44,12 +56,12 @@
         <aside class="sidebar">
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="../Tela home/index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="index.html" class="active"><i class="fas fa-users"></i> Seguindo</a></li>
-                    <li><a href="../Tela Perfil/index.html"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="../Tela destaques/destaques.html"><i class="fas fa-film"></i> Filmes em Destaque</a>
+                    <li><a asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a asp-controller="Seguindo" asp-action="Index" class="active"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a asp-controller="Perfil" asp-action="Index"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a asp-controller="Destaques" asp-action="Index"><i class="fas fa-film"></i> Filmes em Destaque</a>
                     </li>
-                    <li><a href="../Tela Avaliacoes/feed_avaliacoes.html"><i class="fas fa-star"></i> Avaliações</a>
+                    <li><a asp-controller="Avaliacoes" asp-action="Feed"><i class="fas fa-star"></i> Avaliações</a>
                     </li>
                 </ul>
             </nav>
@@ -112,7 +124,7 @@
                     const bubbleItem = document.createElement('div');
                     bubbleItem.className = 'user-bubble';
                     bubbleItem.innerHTML = `
-                        <a href="../Tela Perfil/index.html?user=${userId}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
+                        <a href="/Perfil/Index?user=${userId}" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
                             <img src="${userProfile.avatar}" alt="${userProfile.name}">
                             <span>${userProfile.name.split(' ')[0]}</span>
                             <span style="font-size: 0.8em; color: #aaa; margin-top: 4px;">${userReviewsCount} assistidos</span>
@@ -147,7 +159,7 @@
                                 <img src="${review.userAvatar}" alt="User Avatar">
                                 <div class="user-details">
                                     <span class="username">${review.user}</span>
-                                    <a href="../Tela Perfil/index.html?user=${review.userId || review.user}" class="view-profile-link">Ver perfil</a>
+                                    <a href="/Perfil/Index?user=${review.userId || review.user}" class="view-profile-link">Ver perfil</a>
                                 </div>
                             </div>
                             <button class="review-tag">Resenha</button>

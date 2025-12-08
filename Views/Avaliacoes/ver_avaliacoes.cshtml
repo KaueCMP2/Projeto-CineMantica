@@ -1,3 +1,7 @@
+@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,7 +16,7 @@
 <body>
     <header class="main-header">
         <button class="hamburger active-button"></button>
-        <a href="../Tela home/index.html" class="barra-topo">
+        <a href="@Url.Action("Index", "Home")" class="barra-topo">
             <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo Cinemantica" class="logo">
         </a>
         <nav class="main-nav">
@@ -31,8 +35,8 @@
                             <i class="fas fa-user profile-icon"></i>
                         </div>
                         <div class="user-dropdown" id="user-dropdown">
-                            <a href="Views/Login/Index.cshtml">Fazer login</a>
-                            <a href="Views/Cadastro/Index.cshtml">Criar conta</a>
+                            <a href="@Url.Action("Index", "Login")">Fazer login</a>
+                            <a href="@Url.Action("Index", "Cadastro")">Criar conta</a>
                         </div>
                     </div>
                 </div>
@@ -44,12 +48,11 @@
         <aside class="sidebar">
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="Views/Home/Index.cshtml"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="Views/Seguindo/index.cshtml"><i class="fas fa-users"></i> Seguindo</a></li>
-                    <li><a href="Views/Perfil/index.cshtml"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="Views/Destaques/destaques.cshtml"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
-                    <li><a href="Views/Avaliacoes/feed_avaliacoes.cshtml"class="active"><i class="fas fa-star"></i> Avaliações</a>
-                    </li>
+                    <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="@Url.Action("Index", "Seguindo")"><i class="fas fa-users"></i> Seguindo</a></li>
+                    <li><a href="@Url.Action("Index", "Perfil")"><i class="fas fa-user"></i> Perfil</a></li>
+                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
+                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i> Avaliações</a></li>
                 </ul>
             </nav>
         </aside>
@@ -65,7 +68,6 @@
                 </div>
 
                 <div class="reviews-list">
-                    <!-- Reviews will be loaded here -->
                     <p style="color: #ccc; text-align: center;">Carregando avaliações...</p>
                 </div>
             </div>
@@ -86,11 +88,11 @@
             const reviewsList = document.querySelector('.reviews-list');
             const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
-            // Filtrar por filme (usando título como ID por enquanto, ideal seria ID do filme)
+            // Filtrar por filme
             const movieReviews = reviews.filter(r => r.movieTitle === title);
 
             if (movieReviews.length > 0) {
-                reviewsList.innerHTML = ''; // Limpa loading/exemplos
+                reviewsList.innerHTML = '';
                 movieReviews.forEach(review => {
                     const reviewCard = document.createElement('div');
                     reviewCard.classList.add('review-card');
@@ -100,7 +102,7 @@
                                 <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
                                 <div class="reviewer-meta">
                                     <span class="reviewer-name">${review.user}</span>
-                                    <a href="../Tela Perfil/index.html?user=${review.userId || review.user}" class="reviewer-action">Ver perfil</a>
+                                    <a href="/Perfil/Index?user=${review.userId || review.user}" class="reviewer-action">Ver perfil</a>
                                 </div>
                             </div>
                             <div class="review-date">${review.date}</div>
@@ -132,5 +134,4 @@
         }
     </script>
 </body>
-
 </html>
