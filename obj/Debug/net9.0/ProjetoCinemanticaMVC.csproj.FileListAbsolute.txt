@@ -988,8 +988,6 @@ C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\
 C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.pdb
 C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
-C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\net9.0\compressed\yiz6pn2qis-ikm1hsxcd6.gz
-C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-v86u37gmcj.gz
 C:\Users\48705777801\Desktop\Cine Clone\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\48705777801\Desktop\Cine Clone\bin\Debug\net9.0\appsettings.json
 C:\Users\48705777801\Desktop\Cine Clone\bin\Debug\net9.0\ProjetoCinemanticaMVC.staticwebassets.runtime.json
@@ -1323,3 +1321,5 @@ C:\Users\48705777801\Desktop\Cine Clone\obj\Debug\net9.0\ProjetoCinemanticaMVC.p
 C:\Users\48705777801\Desktop\Cine Clone\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\48705777801\Desktop\Cine Clone\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 C:\Users\48705777801\Desktop\Cine Clone\obj\Debug\net9.0\compressed\jsyn9cals9-6e7u0q4p29.gz
+C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-6e7u0q4p29.gz
+C:\Users\48705777801\Desktop\Cinemantica 31-10-25\Projeto-CineMantica\obj\Debug\net9.0\compressed\yiz6pn2qis-dzs2xdwd3p.gz

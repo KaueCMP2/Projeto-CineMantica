@@ -14,6 +14,18 @@
 </head>
 
 <body>
+    <script>
+        const serverLoggedIn = "@(Context.Session.GetString("UsuarioId") != null ? "true" : "false")";
+        const serverUser = "@Context.Session.GetString("UsuarioNome")";
+
+        if (serverLoggedIn === "true") {
+            localStorage.setItem('isLoggedIn', 'true');
+            if(serverUser) localStorage.setItem('currentUser', serverUser);
+        } else {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('currentUser');
+        }
+    </script>
     <header class="main-header">
         <button class="hamburger active-button"></button>
         <a href="@Url.Action("Index", "Home")" class="barra-topo">

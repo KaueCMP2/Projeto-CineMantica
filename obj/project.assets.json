@@ -7856,11 +7856,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48705777801\\Desktop\\Cine Clone\\ProjetoCinemanticaMVC.csproj",
+      "projectUniqueName": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
       "projectName": "ProjetoCinemanticaMVC",
-      "projectPath": "C:\\Users\\48705777801\\Desktop\\Cine Clone\\ProjetoCinemanticaMVC.csproj",
+      "projectPath": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
       "packagesPath": "C:\\Users\\48705777801\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48705777801\\Desktop\\Cine Clone\\obj\\",
+      "outputPath": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\48705777801\\AppData\\Roaming\\NuGet\\NuGet.Config"

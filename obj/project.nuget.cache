@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IpMdCj0X2Cs=",
+  "dgSpecHash": "mjYIq7QjpEU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\48705777801\\Desktop\\Cine Clone\\ProjetoCinemanticaMVC.csproj",
+  "projectFilePath": "C:\\Users\\48705777801\\Desktop\\Cinemantica 31-10-25\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48705777801\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\48705777801\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
