@@ -17,12 +17,12 @@
 
 <body>
     <main class="container-cadastro">
-      
+
         <!-- LADO ESQUERDO -->
         <section class="lado-esquerdo">
             <div class="efeitoMobile">
-            
-                <section class="fazerCadastro">
+
+                <div class="fazerCadastro">
                     <header class="topo">
                         <h1 class="titulo">Faça seu cadastro</h1>
                         <p class="subtitulo">Avalie filmes, siga pessoas e descubra novas histórias.</p>
@@ -37,8 +37,8 @@
 
                             <div class="halfInputBox">
                                 <label for="nickname">Nome de usuário</label>
-                                <input type="text" id="nickname" name="nickname"
-                                    placeholder="Digite o usuário" required>
+                                <input type="text" id="nickname" name="nickname" placeholder="Digite o usuário"
+                                    required>
                             </div>
                             <div class="halfInputBox">
                                 <label for="dataNascimento">Data de nascimento</label>
@@ -57,10 +57,10 @@
                                 <div class="campo-senha">
                                     <input type="password" id="senha" name="senha" placeholder="Digite sua senha"
                                         required>
-                                    <img class="iconeOlho" src="~/assets/Cadastro-images/icons/eye.svg" alt="" id="iconeOlho"
-                                        onclick="OcultarSenha()">
-                                    <img class="iconeOlhoSlash" src="~/assets/Cadastro-images/icons/eye-slash.svg" alt=""
-                                        id="iconeOlhoSlash" onclick="OcultarSenha(); return false">
+                                    <img class="iconeOlho" src="~/assets/Cadastro-images/icons/eye.svg" alt=""
+                                        id="iconeOlho" onclick="OcultarSenha()">
+                                    <img class="iconeOlhoSlash" src="~/assets/Cadastro-images/icons/eye-slash.svg"
+                                        alt="" id="iconeOlhoSlash" onclick="OcultarSenha(); return false">
                                 </div>
                             </div>
 
@@ -71,7 +71,8 @@
                                         placeholder="Digite sua senha" required>
                                     <img class="iconeOlhoConfirm" src="~/assets/Cadastro-images/icons/eye.svg" alt=""
                                         id="iconeOlhoConfirm" onclick="OcultarSenhaConfirm()">
-                                    <img class="iconeOlhoSlashConfirm" src="~/assets/Cadastro-images/icons/eye-slash.svg" alt=""
+                                    <img class="iconeOlhoSlashConfirm"
+                                        src="~/assets/Cadastro-images/icons/eye-slash.svg" alt=""
                                         id="iconeOlhoSlashConfirm" onclick="OcultarSenhaConfirm(); return false">
                                 </div>
                             </div>
@@ -94,13 +95,17 @@
                         </p>
 
                         <div class="botoes-sociais">
-                            <img src="~/assets/Cadastro-images/icons/botao-google.svg" alt="Botão de link do google" width="35%">
-                            <img src="~/assets/Cadastro-images/icons/botao-face.svg" alt="Botão de link do facebook" width="35%">
+                            <a href="#" class="google">
+                                <img src="~/assets/Cadastro-images/icons/botao-google.svg" alt="Botão de link do google" class="google">
+                            </a>
+                            <a href="#" class="facebook">
+                                <img src="~/assets/Cadastro-images/icons/botao-face.svg" alt="Botão de link do facebook" class="facebook">
+                            </a>
                         </div>
 
 
                     </form>
-                </section>
+                </div>
             </div>
         </section>
 

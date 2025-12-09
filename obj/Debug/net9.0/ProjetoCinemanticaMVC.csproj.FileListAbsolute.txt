@@ -1574,10 +1574,8 @@ C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\bhsfyiwusl-xysdpsh83a.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\pygyem9xd8-gcy2u86s6e.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\ennee860nk-wjjda4zrmx.gz
-C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\toqs6soo17-ukjtmaydxn.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\003xdj0w92-75k6h5tu01.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\b9m6bbh87n-b9sayid5wm.gz
-C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\groy9zffk6-seuvi8y4qc.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\qctrifi4hb-61n19gt1b8.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\9b6x9x6bq4-d5zdwg7cat.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-6e7u0q4p29.gz
@@ -1659,4 +1657,6 @@ C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\ldm94aqm3h-9t0pva4z3o.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\5dp4brdhlt-ibrzma53gh.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\7pue0560cq-g4zy14r9tn.gz
-C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\v4sefxbhl8-jg8arf0j9h.gz
+C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\groy9zffk6-thes8xts3l.gz
+C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\v4sefxbhl8-zqpld25jo6.gz
+C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\toqs6soo17-pa7g99orgp.gz
