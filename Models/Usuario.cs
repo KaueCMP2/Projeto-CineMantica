@@ -13,7 +13,7 @@ public partial class Usuario
     [Key]
     public int id_usuario { get; set; }
 
-    [StringLength(40)]
+    [StringLength(255)]
     [Unicode(false)]
     public string nome { get; set; } = null!;
 
@@ -37,10 +37,18 @@ public partial class Usuario
 
     public int RegraId { get; set; }
 
+    public byte[]? Banner { get; set; }
+
     [InverseProperty("id_usuarioNavigation")]
     public virtual ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
 
     [ForeignKey("RegraId")]
     [InverseProperty("Usuarios")]
     public virtual RegraPerfil Regra { get; set; } = null!;
+
+    [InverseProperty("seguidor")]
+    public virtual ICollection<Seguindo> Seguindoseguidors { get; set; } = new List<Seguindo>();
+
+    [InverseProperty("seguido")]
+    public virtual ICollection<Seguindo> Seguindoseguidos { get; set; } = new List<Seguindo>();
 }

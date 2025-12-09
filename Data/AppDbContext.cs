@@ -18,6 +18,8 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<RegraPerfil> RegraPerfils { get; set; }
 
+    public virtual DbSet<Seguindo> Seguindos { get; set; }
+
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
     public virtual DbSet<diretorFilme> diretorFilmes { get; set; }
@@ -47,6 +49,21 @@ public partial class AppDbContext : DbContext
         modelBuilder.Entity<RegraPerfil>(entity =>
         {
             entity.HasKey(e => e.IdRegra).HasName("PK__RegraPer__E4F2CC24FC391EF7");
+        });
+
+        modelBuilder.Entity<Seguindo>(entity =>
+        {
+            entity.HasKey(e => e.id_seguindo).HasName("PK__Seguindo__78620761D5A1E330");
+
+            entity.Property(e => e.data_seguindo).HasDefaultValueSql("(getdate())");
+
+            entity.HasOne(d => d.seguido).WithMany(p => p.Seguindoseguidos)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Seguindo_Seguido");
+
+            entity.HasOne(d => d.seguidor).WithMany(p => p.Seguindoseguidors)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Seguindo_Seguidor");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
