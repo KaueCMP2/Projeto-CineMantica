@@ -20,9 +20,9 @@ namespace ProjetoCinemanticaMVC.Controllers
             return View();
         }
 
-        public IActionResult Criar(string email, string senha, string confirmarSenha)
+        public IActionResult Criar(string nome, string nickname, DateOnly dataNascimento, string email, string senha, string confirmarSenha)
         {
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(confirmarSenha))
+            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(nickname) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(confirmarSenha))
             {
                 ViewBag.Erro = "Preencha todos os campos!";
                 return View("Index");
@@ -45,10 +45,11 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             Usuario usuario = new Usuario
             {
-                nome = "Usuário",
+                nome = nome,
+                nick_name = nickname,
+                data_nascimento = dataNascimento,
                 email = email,
                 senha = hash,
-                nick_name = "Usuário",
                 desc_perfil = null,
                 foto_perfil = null,
                 RegraId = 1
