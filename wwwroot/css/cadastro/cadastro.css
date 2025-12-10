@@ -133,25 +133,6 @@ input[type="checkbox"] {
     width: 25px;
 }
 
-.lembrar-usuario {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-top: 2%;
-}
-
-.check-lembrar {
-    width: 20px;
-    height: 20px;
-
-}
-
-.texto-lembrar {
-    font-size: 1.1rem;
-    font-weight: 200;
-    padding: 1.5%;
-}
-
 .botao-registrar {
     background-color: var(--vermelho-escuro);
     border: none;
@@ -160,7 +141,7 @@ input[type="checkbox"] {
     padding: 2.8%;
     font-weight: 750;
     border-radius: 10px;
-    margin-top: 2.6%;
+    margin-top: 6%;
     font-size: 1.1rem;
 
 }
@@ -344,15 +325,6 @@ input[type="checkbox"] {
 
     input::placeholder {
         font-size: 1rem;
-    }
-
-    .check-lembrar {
-        width: 18px;
-        height: 18px;
-    }
-
-    .texto-lembrar {
-        font-size: 0.98rem;
     }
 
     .possui-conta {

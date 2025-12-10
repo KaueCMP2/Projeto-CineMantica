@@ -1658,5 +1658,5 @@ C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\5dp4brdhlt-ibrzma53gh.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\7pue0560cq-g4zy14r9tn.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\groy9zffk6-thes8xts3l.gz
-C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\v4sefxbhl8-zqpld25jo6.gz
 C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\toqs6soo17-pa7g99orgp.gz
+C:\Users\47014999869\Desktop\CinemanticaTeste\Projeto-CineMantica\obj\Debug\net9.0\compressed\v4sefxbhl8-6re5fbfiav.gz
