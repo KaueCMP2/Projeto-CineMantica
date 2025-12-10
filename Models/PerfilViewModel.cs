@@ -30,5 +30,8 @@ namespace ProjetoCinemanticaMVC.Models
                 BannerBase64 != null
                 ? $"data:image/*;base64,{BannerBase64}"
                 : "/assets/img/banner-perfil.jpg";
+
+        public int seguidores_count { get; set; }
+        public int seguindo_count { get; set; }
     }
 }

@@ -31,6 +31,9 @@ namespace ProjetoCinemanticaMVC.Controllers
                 return RedirectToAction("Index", "Login");
             }
 
+            int seguidoresCount = _appDbContext.Seguindos.Count(u => u.seguidor_id == usuario.id_usuario);
+            int seguindoCount = _appDbContext.Seguindos.Count(u => u.seguindo_id == usuario.id_usuario);
+
             var viewModel = new PerfilViewModel
             {
                 id_usuario = usuario.id_usuario,
@@ -39,33 +42,15 @@ namespace ProjetoCinemanticaMVC.Controllers
                 desc_perfil = usuario.desc_perfil,
                 FotoBase64 = usuario.foto_perfil != null ? Convert.ToBase64String(usuario.foto_perfil) : null,
                 data_nascimento = usuario.data_nascimento,
-                BannerBase64 = usuario.Banner != null ? Convert.ToBase64String(usuario.Banner) : null
+                BannerBase64 = usuario.Banner != null ? Convert.ToBase64String(usuario.Banner) : null,
+                seguidores_count = seguidoresCount,
+                seguindo_count = seguindoCount
             };
 
             return View(viewModel);
-
-            // return View();
         }
 
-        [HttpPost]
-        public IActionResult Index(PerfilViewModel model)
-        {   
-            var usuarioDb = _appDbContext.Usuarios.FirstOrDefault(u => u.id_usuario == u.id_usuario);
-
-            if (usuarioDb != null)
-            {
-                usuarioDb.nome = model.nome;
-                usuarioDb.email = model.Email;
-                usuarioDb.desc_perfil = model.desc_perfil;
-                // usuarioDb.foto_perfil = model.FotoBase64;
-                usuarioDb.data_nascimento = model.data_nascimento;
-
-                _appDbContext.SaveChanges();
-            }
-
-            return RedirectToAction("Index");
-        }
-
+        
         [HttpPost]
         public IActionResult AtualizarFoto(IFormFile foto, IFormFile banner, int id_usuario, string nome)
         {

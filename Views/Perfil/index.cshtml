@@ -100,11 +100,11 @@
                             <h2 class="profile-username">@Model.nome</h2>
                             <div class="profile-stats">
                                 <div class="stat-item">
-                                    <span class="stat-value">0</span>
+                                    <span class="stat-value">@Model.seguidores_count</span>
                                     <span class="stat-label">Seguidores</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-value">0</span>
+                                    <span class="stat-value">@Model.seguindo_count</span>
                                     <span class="stat-label">Seguindo</span>
                                 </div>
                                 <div class="stat-item">
@@ -162,6 +162,30 @@
             </form>
         </div>
     </div>
+    <div class="review-header">
+                            <div class="reviewer-info">
+                                <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
+                                <div class="reviewer-meta">
+                                    <span class="reviewer-name">${review.user}</span>
+                                    <span class="reviewer-action">Ver perfil</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <button class="review-tag">Resenha</button>
+                                ${deleteBtnHtml}
+                            </div>
+                        </div>
+                        <div class="review-body">
+                            <img src="${review.moviePoster}" alt="Poster do Filme" class="review-movie-poster">
+                            <div class="review-content">
+                                <h3 class="review-movie-title">${review.movieTitle}</h3>
+                                <div class="review-rating">
+                                    ${getStarsHtml(review.rating)}
+                                </div>
+                                <p class="review-text">${review.text}</p>
+                            </div>
+                        </div>
+
 
     <script src="../Tela home/script.js"></script>
     <script src="~/js/perfil/perfil.js"></script>

@@ -49,6 +49,6 @@ public partial class Usuario
     [InverseProperty("seguidor")]
     public virtual ICollection<Seguindo> Seguindoseguidors { get; set; } = new List<Seguindo>();
 
-    [InverseProperty("seguido")]
-    public virtual ICollection<Seguindo> Seguindoseguidos { get; set; } = new List<Seguindo>();
+    [InverseProperty("seguindo")]
+    public virtual ICollection<Seguindo> Seguindoseguindos { get; set; } = new List<Seguindo>();
 }
