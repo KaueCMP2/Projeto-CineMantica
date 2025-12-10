@@ -78,7 +78,7 @@
                     <h3 id="reviewMovieTitle" style="margin-left: 20px;">Filme</h3>
                 </div>
 
-                <form id="newReviewForm" class="review-form">
+                <form method="post" asp-controller="Comentario" asp-action="CriarComentario" id="newReviewForm" class="review-form">
                     <div class="rating-input">
                         <label>Sua Nota:</label>
                         <div class="star-rating">
@@ -93,11 +93,11 @@
 
                     <div class="form-group">
                         <label for="reviewText">Sua Resenha:</label>
-                        <textarea id="reviewText" rows="6" placeholder="O que você achou do filme?" required></textarea>
+                        <input name="descricao" id="reviewText" rows="6" placeholder="O que você achou do filme?" required></textarea>
                     </div>
 
                     <div class="form-actions">
-                        <button type="button" class="btn-cancel" onclick="history.back()">Cancelar</button>
+                        <button type="button" class="btn-cancel">Cancelar</button>
                         <button type="submit" class="btn-submit">Publicar Avaliação</button>
                     </div>
                 </form>
@@ -106,7 +106,7 @@
     </div>
 
     <script src="~/js/home/script.js"></script>
-    <script>
+    @* <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             // Pega parametros da URL (vindos do controller ou link direto)
@@ -189,6 +189,6 @@
                 window.location.href = '/Perfil/Index';
             });
         });
-    </script>
+    </script> *@
 </body>
 </html>

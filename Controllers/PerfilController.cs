@@ -50,7 +50,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             return View(viewModel);
         }
 
-        
+
         [HttpPost]
         public IActionResult AtualizarFoto(IFormFile foto, IFormFile banner, int id_usuario, string nome, string desc_perfil)
         {
@@ -89,9 +89,9 @@ namespace ProjetoCinemanticaMVC.Controllers
             }
 
             _appDbContext.SaveChanges();
-                
+
             return RedirectToAction("Index");
+        }
     }
-}
 
 }
