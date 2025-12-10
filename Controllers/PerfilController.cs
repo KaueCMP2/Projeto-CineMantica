@@ -52,7 +52,7 @@ namespace ProjetoCinemanticaMVC.Controllers
 
         
         [HttpPost]
-        public IActionResult AtualizarFoto(IFormFile foto, IFormFile banner, int id_usuario, string nome)
+        public IActionResult AtualizarFoto(IFormFile foto, IFormFile banner, int id_usuario, string nome, string desc_perfil)
         {
 
             // if (usuarioId == null)
@@ -63,6 +63,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             var usuario = _appDbContext.Usuarios.FirstOrDefault(usuario => usuario.id_usuario == id_usuario);
 
             usuario.nome = nome;
+            usuario.desc_perfil = desc_perfil;
 
             if (usuario == null)
             {
