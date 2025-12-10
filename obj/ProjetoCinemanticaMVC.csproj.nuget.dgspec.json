@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47014999869\\Desktop\\CinemanticaTeste\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {}
+    "C:\\Users\\53789144851\\Desktop\\Backup\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47014999869\\Desktop\\CinemanticaTeste\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {
+    "C:\\Users\\53789144851\\Desktop\\Backup\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47014999869\\Desktop\\CinemanticaTeste\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+        "projectUniqueName": "C:\\Users\\53789144851\\Desktop\\Backup\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
         "projectName": "ProjetoCinemanticaMVC",
-        "projectPath": "C:\\Users\\47014999869\\Desktop\\CinemanticaTeste\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
-        "packagesPath": "C:\\Users\\47014999869\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47014999869\\Desktop\\CinemanticaTeste\\Projeto-CineMantica\\obj\\",
+        "projectPath": "C:\\Users\\53789144851\\Desktop\\Backup\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+        "packagesPath": "C:\\Users\\53789144851\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\53789144851\\Desktop\\Backup\\Projeto-CineMantica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\47014999869\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\53789144851\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
