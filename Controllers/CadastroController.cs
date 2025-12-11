@@ -51,7 +51,6 @@ namespace ProjetoCinemanticaMVC.Controllers
                 nick_name = "Usuário",
                 desc_perfil = null,
                 foto_perfil = null,
-                RegraId = 1
             };
 
             //* Salvar no banco
