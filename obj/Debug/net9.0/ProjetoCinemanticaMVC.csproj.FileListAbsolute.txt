@@ -1922,7 +1922,6 @@ C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compres
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\groy9zffk6-thes8xts3l.gz
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\qctrifi4hb-61n19gt1b8.gz
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\9b6x9x6bq4-d5zdwg7cat.gz
-C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-6e7u0q4p29.gz
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\yiz6pn2qis-dzs2xdwd3p.gz
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\0ovo2lb38k-22io6brsus.gz
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\cfjtq91ij4-51qm1gux6g.gz
@@ -1998,3 +1997,4 @@ C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\Projeto
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\i45la3iwft-g7mfbkufp0.gz
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\ennee860nk-f0o8pod3tj.gz
+C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-ddx0xfa7qf.gz

@@ -8,7 +8,7 @@ public class HomeController : Controller
 {
     public IActionResult Index()
     {
-        if(HttpContext.Session.GetString("UsuarioNome") == null)
+        if (HttpContext.Session.GetString("UsuarioNome") == null)
         {
             return RedirectToAction("Index", "Login");
         }
@@ -17,4 +17,18 @@ public class HomeController : Controller
         ViewBag.Usuario = HttpContext.Session.GetString("UsuarioNome");
         return View();
     }
+
+    [HttpPost]
+    public IActionResult ReceiveMovieData([FromBody] MovieIdDto data)
+    {
+        if (data == null || data.MovieId <= 0)
+            return BadRequest("ID inválido.");
+
+        // Aqui você pode salvar no banco, session, cache, logs etc.
+        HttpContext.Session.SetInt32("MovieId", data.MovieId);
+        Console.WriteLine("Filme recebido: " + data.MovieId);
+
+        return Json(new { ok = true, filmeIdRecebido = data.MovieId });
+    }
+
 }

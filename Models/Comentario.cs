@@ -27,10 +27,6 @@ public partial class Comentario
     [Precision(0)]
     public DateTime data_post { get; set; }
 
-    [ForeignKey("id_filme")]
-    [InverseProperty("Comentarios")]
-    public virtual Filme? id_filmeNavigation { get; set; }
-
     [ForeignKey("id_usuario")]
     [InverseProperty("Comentarios")]
     public virtual Usuario? id_usuarioNavigation { get; set; }

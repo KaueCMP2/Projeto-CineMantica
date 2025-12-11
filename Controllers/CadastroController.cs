@@ -52,7 +52,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 senha = hash,
                 desc_perfil = null,
                 foto_perfil = null,
-                RegraId = 1
+                // RegraId = 1
             };
 
             //* Salvar no banco

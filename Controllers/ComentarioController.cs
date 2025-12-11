@@ -34,13 +34,14 @@ namespace ProjetoCinemanticaMVC.Controllers
             }
 
             int? usuarioId = HttpContext.Session.GetInt32("UsuarioId"); 
+            int? movieId = HttpContext.Session.GetInt32("MovieId");
 
 
             var comentario = new Comentario
             {
                 tipo_comentario = "comentario",
                 id_usuario = usuarioId,
-                id_filme = 1002,
+                id_filme = movieId,
                 descricao = descricao,
                 data_post = DateTime.Now
             };
