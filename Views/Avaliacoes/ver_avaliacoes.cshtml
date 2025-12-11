@@ -1,3 +1,5 @@
+@model ProjetoCinemanticaMVC.Models.ComentarioViewModel
+
 @{
     Layout = null;
 }
@@ -80,7 +82,24 @@
                 </div>
 
                 <div class="reviews-list">
-                    <p style="color: #ccc; text-align: center;">Carregando avaliações...</p>
+                    @* <p style="color: #ccc; text-align: center;">Carregando avaliações...</p> *@
+                    <div class="review-header">
+                            <div class="reviewer-info">
+                                <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
+                                <div class="reviewer-meta">
+                                    <span class="reviewer-name">@Model.nome_usuario</span>
+                                    <a href="/Perfil/Index?user=${review.userId || review.user}" class="reviewer-action">Ver perfil</a>
+                                </div>
+                            </div>
+                            <div class="review-date>@Model.data_post</div>
+                        </div>
+                        <div class="review-body-simple">
+                            <div class="review-rating">
+                                ${getStarsHtml(review.rating)}
+                            </div>
+                            <p class="review-text>@Model.descricao</p>
+                        </div>
+                    `;
                 </div>
             </div>
         </main>
@@ -103,7 +122,7 @@
             // Filtrar por filme
             const movieReviews = reviews.filter(r => r.movieTitle === title);
 
-            if (movieReviews.length > 0) {
+            @* if (movieReviews.length > 0) {
                 reviewsList.innerHTML = '';
                 movieReviews.forEach(review => {
                     const reviewCard = document.createElement('div');
@@ -131,7 +150,7 @@
             } else {
                 reviewsList.innerHTML = '<p style="color: #ccc; text-align: center;">Nenhuma avaliação encontrada para este filme.</p>';
             }
-        });
+        }); *@
 
         function getStarsHtml(rating) {
             let html = '';
