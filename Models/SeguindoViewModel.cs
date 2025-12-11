@@ -2,7 +2,9 @@ namespace ProjetoCinemanticaMVC.Models
 {
     public class SeguindoViewModel
     {
-        public List<Seguindo> Seguindo { get; set; } = new List<Seguindo>();
-        public List<Comentario> Feed { get; set; }
+        public string ?NomeUsuario { get; set; }
+        public byte[] ?FotoUsuario { get; set; }
+        public List<Seguindo> ?Seguindo { get; set; } 
+        public List<Comentario> ?Feed { get; set; }
     }
 }

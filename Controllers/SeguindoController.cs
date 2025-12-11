@@ -24,24 +24,28 @@ namespace ProjetoCinemanticaMVC.Controllers
                 return RedirectToAction("Index", "Login");
             }
 
-            
+           
 
             int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
 
+            var usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.id_usuario == usuarioId);
+
             var seguindo = _context.Seguindos
-                .Where(s => s.seguidor_id == usuarioId)
+                .Where(s => s.seguindo_id == usuarioId)
                 .ToList();
 
-            var seguindoIds = seguindo.Select(s => s.seguido_id).ToList();
+            var seguindoIds = seguindo.Select(s => s.seguidor_id).ToList();
 
             var feed = _context.Comentarios
                 .Include(c => c.id_usuarioNavigation)
                 .Where(c => c.id_usuario.HasValue && seguindoIds.Contains(c.id_usuario.Value))
-                .OrderByDescending(c => c.data_postagem)
+                .OrderByDescending(c => c.data_post)
                 .ToList();
 
             var viewModel = new SeguindoViewModel
             {
+                NomeUsuario = usuario?.nome,
+                FotoUsuario = usuario?.foto_perfil,
                 Seguindo = seguindo,
                 Feed = feed
             };
@@ -60,14 +64,14 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             // evita seguir duas vezes
             bool existe = _context.Seguindos
-                .Any(s => s.seguidor_id == usuarioId && s.seguido_id == idSeguido);
+                .Any(s => s.seguindo_id == usuarioId && s.seguidor_id == idSeguido);
 
             if (!existe)
             {
                 var seguir = new Seguindo
                 {
-                    seguidor_id = usuarioId.Value,
-                    seguido_id = idSeguido
+                    seguindo_id = usuarioId.Value,
+                    seguidor_id = idSeguido
                 };
 
                 _context.Seguindos.Add(seguir);
@@ -87,7 +91,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 return Unauthorized();
 
             var rel = _context.Seguindos
-                .FirstOrDefault(s => s.seguidor_id == usuarioId && s.seguido_id == idSeguido);
+                .FirstOrDefault(s => s.seguindo_id == usuarioId && s.seguidor_id == idSeguido);
 
             if (rel != null)
             {
@@ -95,7 +99,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 _context.SaveChanges();
             }
 
-            return View("Index");
+            return RedirectToAction("Index");
         }
 
         

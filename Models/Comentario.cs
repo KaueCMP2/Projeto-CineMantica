@@ -18,10 +18,14 @@ public partial class Comentario
 
     public int? id_usuario { get; set; }
 
-    [Column(TypeName = "datetime")]
-    public DateTime? data_postagem { get; set; }
-
     public int? id_filme { get; set; }
+
+    [StringLength(500)]
+    [Unicode(false)]
+    public string descricao { get; set; } = null!;
+
+    [Precision(0)]
+    public DateTime data_post { get; set; }
 
     [ForeignKey("id_filme")]
     [InverseProperty("Comentarios")]
