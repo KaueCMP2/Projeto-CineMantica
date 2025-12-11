@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     localStorage.removeItem('isLoggedIn');
                     localStorage.removeItem('currentUser');
                     // Optional: remove userProfile if you want to clear settings
-                    window.location.href = "../Tela login/login.html";
+                    window.location.href = "../Login/Sair";
                 });
             }
         }

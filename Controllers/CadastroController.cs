@@ -1,4 +1,5 @@
 using System.Security.Policy;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoCinemanticaMVC.Data;
 using ProjetoCinemanticaMVC.Models;
@@ -14,50 +15,76 @@ namespace ProjetoCinemanticaMVC.Controllers
         {
             _context = context;
         }
-
+        
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Criar(string email, string senha, string confirmarSenha)
+        [HttpPost]
+        public async Task<IActionResult> Criar(string nome, string nick_name, string data_nascimento, string email, string senha, string confirmar)
         {
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha) || string.IsNullOrWhiteSpace(confirmarSenha))
+            if( string.IsNullOrWhiteSpace(nome) ||
+                string.IsNullOrWhiteSpace(nick_name) ||
+                string.IsNullOrWhiteSpace(data_nascimento) ||
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(senha) ||
+                string.IsNullOrWhiteSpace(confirmar))
             {
-                ViewBag.Erro = "Preencha todos os campos!";
+                ViewBag.Erro = "Preencha todos os campos";
                 return View("Index");
             }
 
-            if (senha != confirmarSenha)
+            if(senha != confirmar)
             {
-                ViewBag.Erro = "As senhas não conferem";
+                ViewBag.Erro = "As senhas não conferem.";
                 return View("Index");
             }
-
-            //* Verificando se já existe email cadastrado no sistema
-            if (_context.Usuarios.Any(usuario => usuario.email == email))
+            if(_context.Usuarios.Any(usuario => usuario.email == email))
             {
+                
                 ViewBag.Erro = "E-mail já cadastrado";
+                return View("Index");
+            }
+
+            if(_context.Usuarios.Any(usuario => usuario.nick_name == nick_name))
+            {
+                ViewBag.Erro = "Nome de usuário já cadastrado";
                 return View("Index");
             }
 
             byte[] hash = HashService.GerarHashBytes(senha);
 
+            if (!DateOnly.TryParse(data_nascimento, out var dataNasc))
+            {
+                ViewBag.Erro = "Data de nascimento inválida";
+                return View("Index");
+            }
+
             Usuario usuario = new Usuario
             {
-                nome = "Usuário",
+                nome = nome,
                 email = email,
                 senha = hash,
-                nick_name = "Usuário",
-                desc_perfil = null,
-                foto_perfil = null,
+                nick_name = nick_name,
+                data_nascimento = dataNasc
+                
             };
 
-            //* Salvar no banco
-            _context.Usuarios.Add(usuario); 
-            _context.SaveChanges();
+            Console.WriteLine(usuario.nome, usuario.email, usuario.nick_name, usuario.data_nascimento);
+            
+            await _context.Usuarios.AddAsync(usuario);
+            await _context.SaveChangesAsync();
 
-            return RedirectToAction("Index", "Login");
+            Console.WriteLine("Usuário cadastrado com sucesso!");
+            // redireciona para o login
+            return RedirectToAction("Index", "Home");
+
+
         }
+
     }
 }
+
+
+  

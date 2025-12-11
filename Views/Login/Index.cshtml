@@ -26,41 +26,48 @@
         </aside>
 
         <section class="direito">
-            <header class="cabecalho-login">
-                <h1>Faça seu login</h1>
-            </header>
-            <form method="post" action="/Login/Entrar" class="form-login">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="usuario" placeholder="Digite seu e-mail" required>
-                <label for="senha">Senha</label>
+            <div class="efeitoMobile">
+                
+                <div class="fazerLogin">
+                    <header class="cabecalho-login">
+                        <h1 class="titulo">Faça seu login</h1>
+                        <p class="subtitulo">Avalie filmes, siga pessoas e descubra novas histórias.</p>
+                    </header>
+                    <form method="post" action="/Login/Entrar" class="form-login">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="usuario" placeholder="Digite seu e-mail" required>
+                        <label for="senha">Senha</label>
 
-                <div class="campo-senha">
-                    <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
-                    <img src="~/assets/login-images/svg/eye.svg" alt="" class="iconeOlho" id="iconeOlho" onclick="OcultarSenha()">
-                    <img src="~/assets/login-images/svg/eye-slash.svg" alt="" class="iconeOlhoSlash" id="iconeOlhoSlash"
-                        onclick="OcultarSenha(); return false" >
-                </div>
+                        <div class="campo-senha">
+                            <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                            <img src="~/assets/login-images/svg/eye.svg" alt="" class="iconeOlho" id="iconeOlho"
+                                onclick="OcultarSenha()">
+                            <img src="~/assets/login-images/svg/eye-slash.svg" alt="" class="iconeOlhoSlash"
+                                id="iconeOlhoSlash" onclick="OcultarSenha(); return false">
+                        </div>
 
-                <div class="embaixo-input">
-                    <div class="lembrar">
-                        <input type="checkbox" name="lembrar" id="lembrar-senha">
-                        <label for="lembrar">Lembrar de mim</label>
+                        <div class="embaixo-input">
+                            <div class="lembrar">
+                                <input type="checkbox" name="lembrar" id="lembrar-senha">
+                                <label for="lembrar">Lembrar de mim</label>
+                            </div>
+                            <a href="forgot.html" class="esqueceu-senha">Esqueceu sua senha ?</a>
+                        </div>
+
+                        @* <button type="submit" class="botao-login" onclick="Login()">Entrar</button> *@
+                        <button type="submit" class="botao-login">Entrar</button>
+
+                        <p class="registrar">Não tem uma conta ? <a href="~/Cadastro/Index" class="">Registre-se</a></p>
+                    </form>
+                    <div class="redes-sociais">
+                        <a href="#" class="google">
+                            <img src="~/assets/login-images/svg/google.svg" alt="">
+                        </a>
+                        <a href="#" class="facebook">
+                            <img src="~/assets/login-images/svg/facebook.svg" alt="">
+                        </a>
                     </div>
-                    <a href="forgot.html" class="esqueceu-senha">Esqueceu sua senha ?</a>
                 </div>
-
-                @* <button type="submit" class="botao-login" onclick="Login()">Entrar</button> *@
-                <button type="submit" class="botao-login">Entrar</button>
-
-                <p class="registrar">Não tem uma conta ? <a href="~/Cadastro/Index" class="">Registre-se</a></p>
-            </form>
-            <div class="redes-sociais">
-                <a href="#" class="google">
-                    <img src="~/assets/login-images/svg/google.svg" alt="">
-                </a>
-                <a href="#" class="facebook">
-                    <img src="~/assets/login-images/svg/facebook.svg" alt="">
-                </a>
             </div>
         </section>
     </main>
@@ -68,5 +75,3 @@
 </body>
 
 </html>
-
-

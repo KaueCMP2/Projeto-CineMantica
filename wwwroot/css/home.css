@@ -1364,6 +1364,14 @@ body {
 .profile-banner {
     height: 300px;
     background-image: url('demon-slayer-3840x2160-23615.jpg');
+    /* background-size: fill; */
+    background-position: center;
+    width: 100%;
+    position: relative;
+}
+
+.profile-banner img {
+    height: 300px;
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -1382,6 +1390,7 @@ body {
 
 .profile-info-bar {
     display: flex;
+    flex-direction: row;
     align-items: flex-end;
     padding: 0 30px 20px 30px;
     position: relative;

@@ -1,3 +1,5 @@
+@Model Projeto-CineMantica.Models.SeguindoViewModel
+
 @{
     Layout = null;
 }
@@ -54,7 +56,7 @@
             </div>
         </nav>
     </header>
-
+@* a *@
     <div class="content-wrapper">
         <aside class="sidebar">
             <nav class="sidebar-nav">
@@ -159,9 +161,9 @@
                     reviewCard.innerHTML = `
                         <div class="review-header">
                             <div class="user-info">
-                                <img src="${review.userAvatar}" alt="User Avatar">
+                                <img src="${Model.FotoUsuario}" alt="User Avatar">
                                 <div class="user-details">
-                                    <span class="username">${review.user}</span>
+                                    <span class="username">${Model.NomeUsuario}</span>
                                     <a href="/Perfil/Index?user=${review.userId || review.user}" class="view-profile-link">Ver perfil</a>
                                 </div>
                             </div>
