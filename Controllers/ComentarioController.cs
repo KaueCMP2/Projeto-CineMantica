@@ -39,7 +39,7 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             var comentario = new Comentario
             {
-                tipo_comentario = "comentario",
+                tipo_comentario = tipo_comentario,
                 id_usuario = usuarioId,
                 id_filme = movieId,
                 descricao = descricao,

@@ -1962,6 +1962,11 @@ body {
 
 /* --- Estilos Adicionais para Nova Avaliação --- */
 
+.rating-input{
+    display: flex;
+    justify-content: space-between;
+}
+
 .star-rating-input {
     display: flex;
     flex-direction: row-reverse;

@@ -1996,5 +1996,5 @@ C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\Projeto
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\i45la3iwft-g7mfbkufp0.gz
-C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\ennee860nk-f0o8pod3tj.gz
 C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-ddx0xfa7qf.gz
+C:\Users\53789144851\Desktop\Backup\Projeto-CineMantica\obj\Debug\net9.0\compressed\ennee860nk-oa9bokdpqo.gz
