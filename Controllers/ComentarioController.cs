@@ -17,9 +17,20 @@ namespace ProjetoCinemanticaMVC.Controllers
             _appDbContext = appDbContext;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int idFilme)
         {
-            return View();
+            var comentarios = _appDbContext.Comentarios
+                .Where(c => c.id_filme == idFilme)
+                .OrderByDescending(c => c.data_post)
+                .Select(c => new ComentarioViewModel
+                {
+                    nome_usuario = c.usuario.nick_name,
+                    descricao = c.descricao,
+                    data_post = c.data_post
+                })
+                .ToList();
+
+            return View(comentarios);
         }
 
         [HttpPost]
@@ -33,7 +44,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 return View("Index", "Home");
             }
 
-            int? usuarioId = HttpContext.Session.GetInt32("UsuarioId"); 
+            int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
             int? movieId = HttpContext.Session.GetInt32("MovieId");
 
 

@@ -14,5 +14,6 @@ namespace ProjetoCinemanticaMVC.Models
         public DateTime data_post { get; set; }
         public string? nome_usuario { get; set; }
         public string? titulo_filme { get; set; }
+        // public List<Comentario> listaComentario {get; set;}
     }
 }

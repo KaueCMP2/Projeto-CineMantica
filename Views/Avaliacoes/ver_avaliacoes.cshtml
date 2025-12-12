@@ -1,4 +1,4 @@
-@model ProjetoCinemanticaMVC.Models.ComentarioViewModel
+@model List<ProjetoCinemanticaMVC.Models.ComentarioViewModel>
 
 @{
     Layout = null;
@@ -22,7 +22,7 @@
 
         if (serverLoggedIn === "true") {
             localStorage.setItem('isLoggedIn', 'true');
-            if(serverUser) localStorage.setItem('currentUser', serverUser);
+            if (serverUser) localStorage.setItem('currentUser', serverUser);
         } else {
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('currentUser');
@@ -65,8 +65,10 @@
                     <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="@Url.Action("Index", "Seguindo")"><i class="fas fa-users"></i> Seguindo</a></li>
                     <li><a href="@Url.Action("Index", "Perfil")"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
-                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i> Avaliações</a></li>
+                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a>
+                    </li>
+                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i>
+                            Avaliações</a></li>
                 </ul>
             </nav>
         </aside>
@@ -82,26 +84,39 @@
                 </div>
 
                 <div class="reviews-list">
-                    @* <p style="color: #ccc; text-align: center;">Carregando avaliações...</p> *@
-                    <div class="review-header">
-                            <div class="reviewer-info">
-                                <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
-                                <div class="reviewer-meta">
-                                    <span class="reviewer-name">@Model.nome_usuario</span>
-                                    <a href="/Perfil/Index?user=${review.userId || review.user}" class="reviewer-action">Ver perfil</a>
+                    @if (Model == null || !Model.Any())
+                    {
+                        <p style="color: #ccc; text-align: center;">Nenhuma avaliação encontrada para este filme.</p>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        @* <!-- se tiver avatar no model, use: <img src="@item.avatarUrl" ... /> --> *@
+                                        <img src="~/assets/default-avatar.png" alt="Avatar" class="reviewer-avatar" />
+                                        <div class="reviewer-meta">
+                                            <span class="reviewer-name">@item.nome_usuario</span>
+                                            @* link para perfil se tiver campo de id: <a href="/Perfil/Index?user=@item.usuarioId" class="reviewer-action">Ver perfil</a> *@
+                                        </div>
+                                    </div>
+                                    <div class="review-date">@item.data_post.ToString("dd/MM/yyyy HH:mm")</div>
+                                </div>
+
+                                <div class="review-body-simple">
+                                    <div class="review-rating">
+                                        @* Se tiver nota no ViewModel, renderize estrelas aqui *@
+                                    </div>
+                                    <p class="review-text">@item.descricao</p>
                                 </div>
                             </div>
-                            <div class="review-date>@Model.data_post</div>
-                        </div>
-                        <div class="review-body-simple">
-                            <div class="review-rating">
-                                ${getStarsHtml(review.rating)}
-                            </div>
-                            <p class="review-text>@Model.descricao</p>
-                        </div>
-                    `;
+                        }
+                    }
                 </div>
             </div>
+
         </main>
     </div>
 
@@ -152,17 +167,18 @@
             }
         }); *@
 
-        function getStarsHtml(rating) {
-            let html = '';
-            for (let i = 1; i <= 5; i++) {
-                if (i <= rating) {
-                    html += '<i class="fas fa-star" style="color: red;"></i>';
-                } else {
-                    html += '<i class="far fa-star"></i>';
+                function getStarsHtml(rating) {
+                    let html = '';
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= rating) {
+                            html += '<i class="fas fa-star" style="color: red;"></i>';
+                        } else {
+                            html += '<i class="far fa-star"></i>';
+                        }
+                    }
+                    return html;
                 }
-            }
-            return html;
-        }
     </script>
 </body>
+
 </html>
