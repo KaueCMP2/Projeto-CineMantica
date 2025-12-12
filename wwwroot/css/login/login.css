@@ -46,6 +46,7 @@
     justify-content: center;
     align-items: center;
     margin: 6% 18%;
+    gap: 58%;
 }
 
 .fazerLogin{
@@ -173,14 +174,14 @@ input[type="checkbox"] {
 
 .botao-login {
     background-color: var(--vermelho);
-    margin-top: 2.6%;
+    margin-top: 4%;
     color: white;
     padding: 2.8%;
     border: none;
     border-radius: 10px;
     font-weight: 750;
     font-size: 1.1rem;
-    width: 90%;
+    width: 100%;
 }
 
 .botao-login:hover {
@@ -205,17 +206,8 @@ input[type="checkbox"] {
     text-decoration: underline;
 }
 
-.redes-sociais {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 12%;
-    width: 25%;
-    margin-top: 4%;
-}
-
 .google {
+    margin-top: 4%;
     transition: transform 0.15s ease;
 }
 
@@ -223,38 +215,45 @@ input[type="checkbox"] {
     transform: translateY(-5px);
 }
 
-.facebook {
-    transition: transform 0.15s ease;
-}
-
-.facebook:hover {
-    transform: translateY(-5px);
-}
-
 /* RESPONSIVIDADE */
 
-@media (max-width:1070px) {
-    .lembrar label {
-        font-size: 0.9rem;
+ @media (max-width:1070px) {
+     .lembrar label {
+        font-size: 0.88rem;
     }
-    
+     
     .esqueceu-senha {
-        font-size: 0.8rem;
+        font-size: 0.84rem;
         padding: 1.2%;
     }
 
     .registrar{
         font-size: 0.9rem;
     }
+} 
+
+@media (max-width:1070px) {
+    .esqueceu-senha {
+        font-size: 0.71rem;
+    }
 }
 
-@media (max-width:880px) {
+@media (max-width:925px) {
     .registrar{
         font-size: 0.8rem;
     }
     .botoes-sociais {
         width: 10%;
     }
+
+    .embaixo-input{
+        flex-direction: column;
+    }
+
+    .esqueceu-senha {
+        font-size: 0.8rem;
+    }
+    
 }
 
 /* MOBILE */
@@ -271,6 +270,10 @@ input[type="checkbox"] {
         margin: 0;
         height: auto;
         background-image: url(/assets/login-images/imagens/cinema.png);
+    }
+
+    .embaixo-input{
+        flex-direction: row;
     }
 
     .efeitoMobile {
@@ -314,11 +317,25 @@ input[type="checkbox"] {
         font-size: 1.6rem;
     }
 
+    .esqueceu-senha {
+        font-size: 0.8rem;
+    }
+
     header {
         width: 95%;
     }
 
     .registrar{
+        font-size: 0.9rem;
+    }
+}
+
+@media(max-width: 515px) {
+    .embaixo-input{
+        flex-direction: column;
+    }
+
+    .esqueceu-senha{
         font-size: 0.9rem;
     }
 }
