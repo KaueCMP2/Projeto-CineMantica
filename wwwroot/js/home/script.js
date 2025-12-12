@@ -16,12 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- Login/Logout Logic in Header ---
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+       const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (isLoggedIn === 'true') {
         if (userDropdown) {
             userDropdown.innerHTML = `
-                <a href="../Tela Perfil/index.html">Meu Perfil</a>
+                <a href="/Perfil">Meu Perfil</a>
                 <a href="#" id="logout-btn">Sair</a>
             `;
 
@@ -29,9 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (logoutBtn) {
                 logoutBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    localStorage.removeItem('isLoggedIn');
-                    localStorage.removeItem('currentUser');
-                    window.location.href = "../Login/Sair";
+                    // Redireciona para a action Sair do LoginController para limpar a sessão no servidor
+                    window.location.href = "/Login/Sair";
                 });
             }
         }
