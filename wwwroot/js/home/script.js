@@ -208,12 +208,17 @@ document.addEventListener('DOMContentLoaded', function () {
         container.innerHTML = '';
 
 
-        const itemsToDisplay = type === 'grid' ? movies.slice(0, 4) : movies;
+                const itemsToDisplay = type === 'grid' ? movies.slice(0, 4) : movies;
 
         itemsToDisplay.forEach(movie => {
             const movieElement = document.createElement('div');
-            const posterSrc = movie.poster_path
-                ? `${IMAGE_BASE_URL}${movie.poster_path}`
+            let imagePath = movie.poster_path;
+            if (type === 'grid' && movie.backdrop_path) {
+                imagePath = movie.backdrop_path;
+            }
+
+            const posterSrc = imagePath
+                ? `${IMAGE_BASE_URL}${imagePath}`
                 : 'https://placehold.co/500x750?text=Sem+Imagem';
 
             if (type === 'carousel') {
