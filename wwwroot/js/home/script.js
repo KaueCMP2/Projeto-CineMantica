@@ -16,12 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // --- Login/Logout Logic in Header ---
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+       const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (isLoggedIn === 'true') {
         if (userDropdown) {
             userDropdown.innerHTML = `
-                <a href="../Tela Perfil/index.html">Meu Perfil</a>
+                <a href="/Perfil">Meu Perfil</a>
                 <a href="#" id="logout-btn">Sair</a>
             `;
 
@@ -29,16 +28,13 @@ document.addEventListener('DOMContentLoaded', function () {
             if (logoutBtn) {
                 logoutBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    localStorage.removeItem('isLoggedIn');
-                    localStorage.removeItem('currentUser');
-                    // Optional: remove userProfile if you want to clear settings
-                    window.location.href = "../Login/Sair";
+                    
+                    window.location.href = "/Login/Sair";
                 });
             }
         }
     }
 
-    // --- Sidebar Profile/Following Link Logic ---
     const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
     sidebarLinks.forEach(link => {
         const linkText = link.textContent.trim();
@@ -49,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Script para o menu hamburger
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.querySelector('.sidebar');
 
@@ -60,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Script para Carrosséis (Genérico para múltiplos carrosséis)
     const carouselWrappers = document.querySelectorAll('.carousel-content-wrapper');
 
     carouselWrappers.forEach(wrapper => {
@@ -70,14 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!container || !nextArrow || !prevArrow) return;
 
-        // Inicializa estado da seta anterior
         prevArrow.classList.add('hidden');
 
-        // Scroll Next
         nextArrow.addEventListener('click', () => {
             const card = container.querySelector('.movie-card');
             if (card) {
-                const scrollAmount = card.offsetWidth + 20; // Largura do card + gap
+                const scrollAmount = card.offsetWidth + 20;
                 container.scrollBy({
                     left: scrollAmount,
                     behavior: 'smooth'
@@ -93,17 +85,15 @@ document.addEventListener('DOMContentLoaded', function () {
         prevArrow.addEventListener('click', () => {
             const card = container.querySelector('.movie-card');
             if (card) {
-                const scrollAmount = card.offsetWidth + 20; // Largura do card + gap
+                const scrollAmount = card.offsetWidth + 20;
                 container.scrollBy({
                     left: -scrollAmount,
                     behavior: 'smooth'
                 });
 
-                // Opcional: Esconder seta anterior se voltar ao início (precisaria de lógica de scroll event)
             }
         });
 
-        // Adiciona listener de scroll para gerenciar visibilidade das setas (Opcional, mas bom para UX)
         container.addEventListener('scroll', () => {
             if (container.scrollLeft <= 0) {
                 prevArrow.classList.add('hidden');
@@ -113,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Script para o Modal de Resenha e Detalhes do Filme
     const reviewModal = document.getElementById('reviewModal');
     const reviewButtons = document.querySelectorAll('.review-tag');
     const closeModalBtn = document.getElementById('closeModalBtn');
@@ -176,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (reviewModal && closeModalBtn) {
-        // Evento para botões de resenha (Página Seguindo)
+
         if (reviewButtons) {
             reviewButtons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
@@ -197,16 +186,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-
-    // --- INTEGRAÇÃO COM A API DO TMDB ---
-    const API_KEY = 'd1f9bb73b6a11d4041713d4e2f755ea3'; // Substitua pela sua chave da API
+    const API_KEY = 'd1f9bb73b6a11d4041713d4e2f755ea3';
     const BASE_URL = 'https://api.themoviedb.org/3';
     const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 
     async function fetchMovies(endpoint, containerId, type) {
         try {
             const separator = endpoint.includes('?') ? '&' : '?';
-            const response = await fetch(`${BASE_URL}${endpoint}${separator}api_key=${API_KEY}&language=pt-BR`);
+            const response = await fetch(`${BASE_URL}${endpoint}${separator}api_key=${API_KEY}&language=pt-BR&include_adult=false`);
             const data = await response.json();
             displayMovies(data.results, containerId, type);
         } catch (error) {
@@ -218,9 +205,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const container = document.getElementById(containerId);
         if (!container) return;
 
-        container.innerHTML = ''; // Limpa o container
+        container.innerHTML = '';
 
-        // Limita o grid a 4 itens para manter o layout CSS, carrossel pode ter mais
+
         const itemsToDisplay = type === 'grid' ? movies.slice(0, 4) : movies;
 
         itemsToDisplay.forEach(movie => {
@@ -255,12 +242,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
             }
 
-            // Adiciona evento de clique para abrir o modal
             movieElement.addEventListener('click', () => {
                 openMovieModal(movie);
             });
 
-            // Adiciona cursor pointer para indicar clicável
             movieElement.style.cursor = 'pointer';
 
             container.appendChild(movieElement);
@@ -268,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function getStarRating(vote) {
-        const stars = Math.round(vote / 2); // Converte de 0-10 para 0-5
+        const stars = Math.round(vote / 2);
         let starHtml = '';
         for (let i = 0; i < 5; i++) {
             if (i < stars) {
@@ -280,7 +265,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return starHtml;
     }
 
-    // --- Sidebar Following List Logic ---
     function updateSidebarFollowingList() {
         const followingListContainer = document.querySelector('.sidebar .following-list');
         if (!followingListContainer) return;
@@ -302,8 +286,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     avatar: 'https://placehold.co/40x40/e0e0e0/000?text=User'
                 };
 
-                // Calculate watched count (mock logic or real if available)
-                // For now, let's count reviews by this user
                 const allReviews = JSON.parse(localStorage.getItem('reviews')) || [];
                 const userReviewsCount = allReviews.filter(r => r.userId === userId || r.user === userProfile.name).length;
 
@@ -323,19 +305,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Call it on load
     updateSidebarFollowingList();
 
-    // Chamadas iniciais
     if (API_KEY !== 'YOUR_API_KEY') {
-        // Home Page
+
         fetchMovies('/movie/now_playing', 'featured-carousel', 'carousel');
         fetchMovies('/movie/popular', 'trending-grid', 'grid');
 
-        // Destaques Page (Categorias)
-        // Comédia: 35, Terror: 27, Ação: 28, Romance: 10749, Ficção: 878, Animação: 16
-        // Filtros: Mais bem avaliados (vote_average.desc) e com mínimo de votos (vote_count.gte=300) para evitar desconhecidos
-        const filterParams = '&sort_by=popularity.desc';
+        const filterParams = '&sort_by=popularity.desc&certification_country=BR&certification.lte=16';
 
         fetchMovies(`/discover/movie?with_genres=35${filterParams}`, 'comedy-carousel', 'carousel');
         fetchMovies(`/discover/movie?with_genres=27${filterParams}`, 'horror-carousel', 'carousel');

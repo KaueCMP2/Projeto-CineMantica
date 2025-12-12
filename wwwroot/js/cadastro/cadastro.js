@@ -15,7 +15,7 @@ function OcultarSenha() {
 }
 
 function OcultarSenhaConfirm() {
-    let password = document.getElementById('confirmarSenha');
+    let password = document.getElementById('confirmar');
     
     if(password.type === "password"){
         password.type = "text";
