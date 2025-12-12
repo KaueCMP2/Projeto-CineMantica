@@ -1,4 +1,4 @@
-@Model Projeto-CineMantica.Models.SeguindoViewModel
+@model ProjetoCinemanticaMVC.Models.SeguindoViewModel
 
 @{
     Layout = null;
@@ -30,7 +30,7 @@
     <header class="main-header">
         <button class="hamburger active-button"></button>
         <a asp-controller="Home" asp-action="Index" class="barra-topo">
-            <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo Cinemantica" class="logo">
+            <img src="~/assets/Cadastro-images/images/logo.png" alt="Logotipo Cinemantica" class="logo">
         </a>
         <nav class="main-nav">
             <div class="acoes-header">
@@ -93,16 +93,120 @@
 
             <section class="feed-container">
                 <!-- Dynamic Feed -->
-                <div style="text-align: center; padding: 40px; color: #aaa;">
+                @* <div style="text-align: center; padding: 40px; color: #aaa;">
                     <p>Carregando feed...</p>
-                </div>
+                </div> *@
             </section>
+
+            @{
+    ViewData["Title"] = "Feed de Usuários Seguidos";
+}
+
+<div class="feed-container">
+
+    @if (Model.Feed != null && Model.Feed.Any())
+    {
+        foreach (var review in Model.Feed)
+        {
+            var foto = review.id_usuarioNavigation.foto_perfil;
+            var nome = review.id_usuarioNavigation.nome;
+
+            <article class="review-card">
+
+                <div class="review-header">
+                    <div class="user-info">
+
+                        <img src="@Model.FotoUsuario" alt="Avatar">
+
+                        <div class="user-details">
+                            <span class="username">@Model.NomeUsuario</span>
+                            <a href="/Perfil/Index?user=@review.id_usuarioNavigation.id_usuario" class="view-profile-link">Ver perfil</a>
+                        </div>
+                    </div>
+
+                    <button class="review-tag">Resenha</button>
+                </div>
+
+                <div class="review-body">
+                    <img src="~/assets/home-images/F1.png" class="review-movie-poster" alt="" />
+@* {@review.poster} @review.titulo_filme  @review.titulo_filme *@
+                    <div class="review-content">
+
+                        <h3 class="review-movie-title">F1</h3>
+@* 
+                        <div class="review-rating">
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                if (i <= review.nota)
+                                {
+                                    <i class="fas fa-star" style="color:red;"></i>
+                                }
+                                else
+                                {
+                                    <i class="far fa-star"></i>
+                                }
+                            }
+                        </div> *@
+
+                        <p class="review-description">
+                            @review.descricao
+                        </p>
+
+                    </div>
+                </div>
+            </article>
+        }
+    }
+    else
+    {
+        <div style="text-align: center; padding: 40px; color: #aaa;">
+            <i class="fas fa-film" style="font-size: 3em; margin-bottom: 20px;"></i>
+            <p>Nenhuma atividade recente dos usuários que você segue.</p>
+        </div>
+    }
+
+</div>
 
         </main>
     </div>
 
+
+
+<div class="following-users-bar">
+    @if (Model.Seguindo != null && Model.Seguindo.Any())
+    {
+        foreach (var item in Model.Seguindo)
+        {
+            var user = item.seguindo; // A propriedade de navegação do usuário seguido
+
+            <div class="user-bubble">
+                <a href="/Perfil/Index?user=@user.id_usuario" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
+                    <img src="@user.foto_perfil" alt="@user.nome" />
+
+                    <span>@user.nome.Split(" ")[0]</span>
+
+                    <span style="font-size: 0.8em; color: #aaa; margin-top: 4px;">
+                        @user.Comentarios.Count() assistidos
+                    </span>
+                </a>
+            </div>
+        }
+    }
+    else
+    {
+        <p style="color: #aaa; padding: 20px;">Siga usuários para vê-los aqui!</p>
+    }
+</div>
+
+
+<hr />
+
+
+
+
+
     <script src="../Tela home/script.js"></script>
-    <script>
+    @* <script>
         document.addEventListener('DOMContentLoaded', () => {
             const currentUser = localStorage.getItem('currentUser');
             const followingListKey = `userFollowing_${currentUser}`;
@@ -203,7 +307,7 @@
             }
             return html;
         }
-    </script>
+    </script> *@
 </body>
 
 </html>
