@@ -34,6 +34,9 @@ namespace ProjetoCinemanticaMVC.Controllers
                 .Where(s => s.seguindo_id == usuarioId)
                 .ToList();
 
+            // int? movieId = Comentario.id_filme;
+
+
             var seguindoIds = seguindo.Select(s => s.seguidor_id).ToList();
 
             var feed = _context.Comentarios
@@ -42,12 +45,15 @@ namespace ProjetoCinemanticaMVC.Controllers
                 .OrderByDescending(c => c.data_post)
                 .ToList();
 
+            
             var viewModel = new SeguindoViewModel
             {
+                
                 NomeUsuario = usuario?.nome,
-                FotoUsuario = usuario?.foto_perfil,
+                FotoUsuario = usuario?.foto_perfil != null ? Convert.ToBase64String(usuario.foto_perfil) : null,
                 Seguindo = seguindo,
                 Feed = feed
+
             };
 
             return View(viewModel);

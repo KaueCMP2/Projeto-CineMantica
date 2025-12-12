@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 @model ProjetoCinemanticaMVC.Models.SeguindoViewModel
-=======
-<!-- @Model Projeto-CineMantica.Models.SeguindoViewModel -->
->>>>>>> 723189aabe4c84a4cd4cc74b6702868d60a4df06
-=======
-<!-- @Model Projeto-CineMantica.Models.SeguindoViewModel -->
->>>>>>> refs/remotes/origin/mvc
+
 
 @{
     Layout = null;
@@ -124,7 +117,7 @@
                 <div class="review-header">
                     <div class="user-info">
 
-                        <img src="@Model.FotoUsuario" alt="Avatar">
+                        <img src="@(Model.FotoUsuario != null ? $"data:image/*;base64,{Model.FotoUsuario}" : "/assets/img/img-perfil.png")" alt="Avatar">
 
                         <div class="user-details">
                             <span class="username">@Model.NomeUsuario</span>
@@ -178,7 +171,6 @@
         </main>
     </div>
 
-<<<<<<< HEAD
 
 
 <div class="following-users-bar">
@@ -216,10 +208,6 @@
 
     <script src="../Tela home/script.js"></script>
     @* <script>
-=======
-    <script src="~/js/home/script.js"></script>
-    <script>
->>>>>>> refs/remotes/origin/mvc
         document.addEventListener('DOMContentLoaded', () => {
             const currentUser = localStorage.getItem('currentUser');
             const followingListKey = `userFollowing_${currentUser}`;
