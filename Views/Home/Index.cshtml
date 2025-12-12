@@ -22,7 +22,7 @@
 
         if (serverLoggedIn === "true") {
             localStorage.setItem('isLoggedIn', 'true');
-            if (serverUser) localStorage.setItem('currentUser', serverUser);
+            if(serverUser) localStorage.setItem('currentUser', serverUser);
         } else {
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('currentUser');
@@ -166,11 +166,7 @@
 
                 <div class="modal-actions">
                     <button class="modal-btn">Fazer nova Avaliação</button>
-                    @* <button class="modal-btn"> *@
-                    <a href="/Comentario/Index?idFilme=1084242">
-                            Ver avaliações
-                        </a>
-                    @* </button> *@
+                    <button class="modal-btn">Ver Avaliações</button>
                 </div>
             </div>
             <div class="modal-right">

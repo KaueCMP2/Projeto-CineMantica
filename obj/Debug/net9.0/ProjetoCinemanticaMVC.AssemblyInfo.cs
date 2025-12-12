@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ProjetoCinemanticaMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f7201a446609f9b11a4f513eb74443430de4611")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7a2bba27d01ae391f252822f71f757799d76eba")]
 [assembly: System.Reflection.AssemblyProductAttribute("ProjetoCinemanticaMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ProjetoCinemanticaMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

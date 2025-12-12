@@ -76,13 +76,12 @@
         <main class="main-content">
             <div class="reviews-page-container">
                 <div class="movie-header-small">
-                    <img src="" alt="Poster" class="header-poster" id="viewReviewsPoster">
+                    <img src="" alt="Poster" class="header-poster" id="viewReviewsPoster" />
                     <div class="header-info">
                         <h2 id="viewReviewsTitle">Título do Filme</h2>
                         <span class="header-subtitle">Avaliações da Comunidade</span>
                     </div>
                 </div>
-
                 <div class="reviews-list">
                     @if (Model == null || !Model.Any())
                     {
@@ -121,7 +120,7 @@
     </div>
 
     <script src="~/js/home/script.js"></script>
-    <script>
+     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const title = urlParams.get('title');
@@ -129,55 +128,19 @@
 
             if (title) document.getElementById('viewReviewsTitle').textContent = title;
             if (poster) document.getElementById('viewReviewsPoster').src = poster;
+        });
 
-            // Carregar avaliações
-            const reviewsList = document.querySelector('.reviews-list');
-            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-
-            // Filtrar por filme
-            const movieReviews = reviews.filter(r => r.movieTitle === title);
-
-            @* if (movieReviews.length > 0) {
-                reviewsList.innerHTML = '';
-                movieReviews.forEach(review => {
-                    const reviewCard = document.createElement('div');
-                    reviewCard.classList.add('review-card');
-                    reviewCard.innerHTML = `
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
-                                <div class="reviewer-meta">
-                                    <span class="reviewer-name">${review.user}</span>
-                                    <a href="/Perfil/Index?user=${review.userId || review.user}" class="reviewer-action">Ver perfil</a>
-                                </div>
-                            </div>
-                            <div class="review-date">${review.date}</div>
-                        </div>
-                        <div class="review-body-simple">
-                            <div class="review-rating">
-                                ${getStarsHtml(review.rating)}
-                            </div>
-                            <p class="review-text">${review.text}</p>
-                        </div>
-                    `;
-                    reviewsList.appendChild(reviewCard);
-                });
-            } else {
-                reviewsList.innerHTML = '<p style="color: #ccc; text-align: center;">Nenhuma avaliação encontrada para este filme.</p>';
-            }
-        }); *@
-
-                function getStarsHtml(rating) {
-                    let html = '';
-                    for (let i = 1; i <= 5; i++) {
-                        if (i <= rating) {
-                            html += '<i class="fas fa-star" style="color: red;"></i>';
-                        } else {
-                            html += '<i class="far fa-star"></i>';
-                        }
-                    }
-                    return html;
+        function getStarsHtml(rating) {
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    html += '<i class="fas fa-star"></i>';
+                } else {
+                    html += '<i class="far fa-star"></i>';
                 }
+            }
+            return html;
+        }
     </script>
 </body>
 
