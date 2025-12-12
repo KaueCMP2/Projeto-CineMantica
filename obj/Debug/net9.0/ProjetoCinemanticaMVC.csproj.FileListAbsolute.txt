@@ -2675,6 +2675,7 @@ C:\Users\53695322810\Desktop\ProjetoSemestral\proj\Projeto-CineMantica\obj\Debug
 C:\Users\53695322810\Desktop\ProjetoSemestral\proj\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\53695322810\Desktop\ProjetoSemestral\proj\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\43159446883\Desktop\MVC Cinemantica\Projeto-CineMantica\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\43159446883\Desktop\MVC Cinemantica\Projeto-CineMantica\bin\Debug\net9.0\appsettings.json
 C:\Users\43159446883\Desktop\MVC Cinemantica\Projeto-CineMantica\bin\Debug\net9.0\ProjetoCinemanticaMVC.staticwebassets.runtime.json
@@ -3014,6 +3015,8 @@ C:\Users\43159446883\Desktop\MVC Cinemantica\Projeto-CineMantica\obj\Debug\net9.
 C:\Users\43159446883\Desktop\MVC Cinemantica\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\43159446883\Desktop\MVC Cinemantica\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 =======
+=======
+>>>>>>> refs/remotes/origin/mvc
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\bin\Debug\net9.0\appsettings.json
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\bin\Debug\net9.0\ProjetoCinemanticaMVC.staticwebassets.runtime.json
@@ -3352,4 +3355,7 @@ C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineM
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\9b6x9x6bq4-687py1e0es.gz
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-nwryjh2yyy.gz
+<<<<<<< HEAD
 >>>>>>> 723189aabe4c84a4cd4cc74b6702868d60a4df06
+=======
+>>>>>>> refs/remotes/origin/mvc
