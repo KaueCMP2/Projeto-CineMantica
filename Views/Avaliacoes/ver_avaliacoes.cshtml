@@ -94,13 +94,11 @@
                             <div class="review-card">
                                 <div class="review-header">
                                     <div class="reviewer-info">
-                                        @* <!-- se tiver avatar no model, use: <img src="@item.usuario.foto_perfil" ... /> --> *@
-                                        @* <img src="~/assets/default-avatar.png" alt="Avatar" class="reviewer-avatar" /> *@
                                         <img src="@(@item.foto_perfil != null ? $"data:image/*;base64,{@item.foto_perfil }" : "/assets/img/banner-perfil.jpg")" alt="Avatar" class="reviewer-avatar" />
                                         
                                         <div class="reviewer-meta">
-                                            <span class="reviewer-name">@item.usuario.nome</span>
-                                            @* link para perfil se tiver campo de id: <a href="/Perfil/Index?user=@item.usuarioId" class="reviewer-action">Ver perfil</a> *@
+                                            <span class="reviewer-name">@item.nome_usuario</span>
+                                            <a href="/Perfil/Index?user=@item.usuario.id_usuario" class="reviewer-action">Ver perfil</a>
                                         </div>
                                     </div>
                                     <div class="review-date">@item.data_post.ToString("dd/MM/yyyy HH:mm")</div>
