@@ -30,7 +30,6 @@ public partial class Comentario
     [ForeignKey("id_usuario")]
     [InverseProperty("Comentarios")]
     public virtual Usuario? id_usuarioNavigation { get; set; }
-
-    public Usuario usuario { get; set; }
+    // public Usuario usuario { get; set; }
 
 }

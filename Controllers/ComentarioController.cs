@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
+using Microsoft.EntityFrameworkCore;
 using ProjetoCinemanticaMVC.Data;
 using ProjetoCinemanticaMVC.Models;
 
@@ -17,21 +18,35 @@ namespace ProjetoCinemanticaMVC.Controllers
             _appDbContext = appDbContext;
         }
 
-        public IActionResult Index(int idFilme)
+        public IActionResult Index(string title, string poster)
         {
+            ViewBag.Title = title;
+            ViewBag.Poster = poster;
+
+            int? movieId = HttpContext.Session.GetInt32("MovieId");
+
+            Console.WriteLine("MovieId = " + movieId);
+
             var comentarios = _appDbContext.Comentarios
-                .Where(c => c.id_filme == idFilme)
+                .Include(c => c.id_usuarioNavigation) // IMPORTANTE!
+                .Where(c => c.id_filme == movieId)
                 .OrderByDescending(c => c.data_post)
                 .Select(c => new ComentarioViewModel
                 {
-                    nome_usuario = c.usuario.nick_name,
+                    nome_usuario = c.id_usuarioNavigation.nick_name,
                     descricao = c.descricao,
-                    data_post = c.data_post
+                    data_post = c.data_post,
+                    usuario = c.id_usuarioNavigation,
+                    foto_perfil = Convert.ToBase64String(c.id_usuarioNavigation.foto_perfil)
+                    
                 })
                 .ToList();
 
-            return View(comentarios);
+            Console.WriteLine("Qtd comentários: " + comentarios.Count);
+
+            return View("~/Views/Avaliacoes/ver_avaliacoes.cshtml", comentarios);
         }
+
 
         [HttpPost]
         public IActionResult CriarComentario(string tipo_comentario, int id_usuario, int id_filme, string descricao)

@@ -13,7 +13,9 @@ namespace ProjetoCinemanticaMVC.Models
         public string descricao { get; set; } = null!;
         public DateTime data_post { get; set; }
         public string? nome_usuario { get; set; }
-        public string? titulo_filme { get; set; }
+        public string? titulo_filme { get; set; }   
+        public Usuario usuario {get;set;}
+        public string? foto_perfil{get;set;}
         // public List<Comentario> listaComentario {get; set;}
     }
 }

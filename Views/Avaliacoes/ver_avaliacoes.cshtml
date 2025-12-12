@@ -76,9 +76,9 @@
         <main class="main-content">
             <div class="reviews-page-container">
                 <div class="movie-header-small">
-                    <img src="" alt="Poster" class="header-poster" id="viewReviewsPoster" />
+                    <img src="@ViewBag.Poster" alt="Poster" class="header-poster" id="viewReviewsPoster" />
                     <div class="header-info">
-                        <h2 id="viewReviewsTitle">Título do Filme</h2>
+                        <h2 id="viewReviewsTitle">@ViewBag.Title</h2>
                         <span class="header-subtitle">Avaliações da Comunidade</span>
                     </div>
                 </div>
@@ -94,10 +94,12 @@
                             <div class="review-card">
                                 <div class="review-header">
                                     <div class="reviewer-info">
-                                        @* <!-- se tiver avatar no model, use: <img src="@item.avatarUrl" ... /> --> *@
-                                        <img src="~/assets/default-avatar.png" alt="Avatar" class="reviewer-avatar" />
+                                        @* <!-- se tiver avatar no model, use: <img src="@item.usuario.foto_perfil" ... /> --> *@
+                                        @* <img src="~/assets/default-avatar.png" alt="Avatar" class="reviewer-avatar" /> *@
+                                        <img src="@(@item.foto_perfil != null ? $"data:image/*;base64,{@item.foto_perfil }" : "/assets/img/banner-perfil.jpg")" alt="Avatar" class="reviewer-avatar" />
+                                        
                                         <div class="reviewer-meta">
-                                            <span class="reviewer-name">@item.nome_usuario</span>
+                                            <span class="reviewer-name">@item.usuario.nome</span>
                                             @* link para perfil se tiver campo de id: <a href="/Perfil/Index?user=@item.usuarioId" class="reviewer-action">Ver perfil</a> *@
                                         </div>
                                     </div>

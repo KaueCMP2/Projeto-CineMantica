@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             viewReviewsBtn.onclick = () => {
-                window.location.href = `/Avaliacoes/Ver?${params}`;
+                window.location.href = `/Comentario/Index?${params}`;
             };
         }
 
@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch('/Home/ReceiveMovieData', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({movieId: movie.id})
+            body: JSON.stringify({ movieId: movie.id })
         }).then(res => {
             res.json()
             console.log('Dados enviados com sucesso para o C#');
