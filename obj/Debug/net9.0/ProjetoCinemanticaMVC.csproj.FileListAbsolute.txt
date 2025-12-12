@@ -3011,4 +3011,4 @@ C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineM
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\9b6x9x6bq4-687py1e0es.gz
-C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-x5ii7lgk4x.gz
+C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-nwryjh2yyy.gz

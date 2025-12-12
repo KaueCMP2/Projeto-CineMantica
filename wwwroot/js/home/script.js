@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (logoutBtn) {
                 logoutBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    // Redireciona para a action Sair do LoginController para limpar a sessão no servidor
+                    
                     window.location.href = "/Login/Sair";
                 });
             }
