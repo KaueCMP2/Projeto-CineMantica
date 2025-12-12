@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47014999869\\Desktop\\Cine\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {}
+    "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47014999869\\Desktop\\Cine\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {
+    "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47014999869\\Desktop\\Cine\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+        "projectUniqueName": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
         "projectName": "ProjetoCinemanticaMVC",
-        "projectPath": "C:\\Users\\47014999869\\Desktop\\Cine\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
-        "packagesPath": "C:\\Users\\47014999869\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47014999869\\Desktop\\Cine\\Projeto-CineMantica\\obj\\",
+        "projectPath": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+        "packagesPath": "C:\\Users\\43159446883\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\47014999869\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\43159446883\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
