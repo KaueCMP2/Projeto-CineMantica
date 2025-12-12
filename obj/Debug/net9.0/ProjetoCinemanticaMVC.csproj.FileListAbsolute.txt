@@ -2936,7 +2936,6 @@ C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineM
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\b9m6bbh87n-b9sayid5wm.gz
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\groy9zffk6-thes8xts3l.gz
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\qctrifi4hb-61n19gt1b8.gz
-C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\9b6x9x6bq4-d5zdwg7cat.gz
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-98zz0mt0qm.gz
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\yiz6pn2qis-dzs2xdwd3p.gz
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\0ovo2lb38k-22io6brsus.gz
@@ -3012,3 +3011,4 @@ C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineM
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.pdb
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
+C:\Users\53695322810\Desktop\Correção de bugs e filtro de filmes\Projeto-CineMantica\obj\Debug\net9.0\compressed\9b6x9x6bq4-687py1e0es.gz
