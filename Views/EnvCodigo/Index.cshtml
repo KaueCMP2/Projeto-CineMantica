@@ -1,0 +1,66 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/senha/forgot.css">
+    <link rel="stylesheet" href="~/css/cadastro/global.css">
+    <script defer src="~/js/script.js"></script>
+    <title>Envio codigo alterar senha</title>
+</head>
+
+<body>
+    <form method="post" asp-action="EnviarCodigoUsu" asp-asp-controller="EnvCodigoController" class="container">
+        <div class="header">
+            <h1 class="titulo">ESQUECEU SUA SENHA ?</h1>
+            <p class="subtitulo">Um codigo será enviado para seu e-mail</p>
+        </div>
+        <div class="campo-input">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+            <label class="none" for="senha">Codigo Recuperção</label>
+            <input class="none" name="Codigo">
+        </div>
+        <div class="botoes">
+            <button type="submit" class="botao" id="botao1">Enviar codigo</button>
+            <a href="login.html" class="voltar">Voltar para login</a>
+        </div>
+        <div class="erro">@ViewBag.erro</div>
+    </form>
+</body>
+
+
+@if (ViewBag.Modal == true)
+{
+    <script>
+        window.onload = function(){
+        let form2 = document.getElementById("form2");
+        form2.style.display = 'flex';
+        }
+    </script>
+}
+
+<form method="post" asp-action="validarCodigo" asp-asp-controller="EnvCodigoController" class="form2" id="form2">
+    <div class="conteiner2">
+        <div class="header2">
+            <h1 class="titulo2">CONFIRMAR O CODIGO</h1>
+            <p class="subtitulo2">Confirme o codigo que foi enviado para seu email</p>
+        </div>
+        <div class="campo-input">
+            <label for="codigo">Codigo confirmação</label>
+            <input type="text" name="codigo" id="codigo" placeholder="Digite o seu codigo">
+        </div>
+        <div class="botoes">
+            <button type="submit" class="botao  ">Validar Codigo</button>
+            <a href="login.html" class="voltar">Fechar</a>
+        </div>
+        <div class="erro">@ViewBag.erro1</div>
+    </div>
+</form>
+
+</html>

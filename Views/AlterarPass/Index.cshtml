@@ -1,0 +1,42 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/cadastro/global.css">
+    <link rel="stylesheet" href="~/css/senha/alterPswd.css">
+    <title>Alterar senha</title>
+</head>
+
+<body>
+    <form method="post" asp-action="alterarSenha" asp-asp-controller="AlterarPassController">
+        <header>
+            <h1>ALTERAR SUA SENHA</h1>
+            <p>digite confirme os campos para prosseguir</p>
+        </header>
+        <div class="conteiner"> 
+            <div class="campos">
+                <label class="lbl">Nova senha</label>
+                <input type="password" name="senha" placeholder="Sua nova senha">
+            </div>
+            <div class="campos">
+                <label class="lbl">Confirmar senha</label>
+                <input type="password" name="Confsenha" placeholder="Confirme sua senha">
+            </div>
+        </div>
+        <div class="botao">
+            <button type="submit">
+                Alterar
+            </button>
+        </div>
+        <a href="http://" class="voltar">Voltar para login</a>
+        <div class="erro">@ViewBag.Erro1</div>
+    </form>
+</body>
+
+</html>
