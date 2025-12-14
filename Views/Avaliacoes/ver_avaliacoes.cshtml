@@ -1,3 +1,5 @@
+
+@model List<ProjetoCinemanticaMVC.Models.ComentarioViewModel>
 @{
     Layout = null;
 }
@@ -20,7 +22,7 @@
 
         if (serverLoggedIn === "true") {
             localStorage.setItem('isLoggedIn', 'true');
-            if(serverUser) localStorage.setItem('currentUser', serverUser);
+            if (serverUser) localStorage.setItem('currentUser', serverUser);
         } else {
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('currentUser');
@@ -29,7 +31,7 @@
     <header class="main-header">
         <button class="hamburger active-button"></button>
         <a href="@Url.Action("Index", "Home")" class="barra-topo">
-            <img src="~/assets/Cadastro-images/images/logo.png" alt="Logotipo Cinemantica" class="logo">
+            <img src="~/assets/Cadastro-images/logo.png" alt="Logotipo Cinemantica" class="logo">
         </a>
         <nav class="main-nav">
             <div class="acoes-header">
@@ -63,8 +65,10 @@
                     <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="@Url.Action("Index", "Seguindo")"><i class="fas fa-users"></i> Seguindo</a></li>
                     <li><a href="@Url.Action("Index", "Perfil")"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
-                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i> Avaliações</a></li>
+                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a>
+                    </li>
+                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i>
+                            Avaliações</a></li>
                 </ul>
             </nav>
         </aside>
@@ -72,22 +76,51 @@
         <main class="main-content">
             <div class="reviews-page-container">
                 <div class="movie-header-small">
-                    <img src="" alt="Poster" class="header-poster" id="viewReviewsPoster">
+                    <img src="@ViewBag.Poster" alt="Poster" class="header-poster" id="viewReviewsPoster" />
                     <div class="header-info">
-                        <h2 id="viewReviewsTitle">Título do Filme</h2>
+                        <h2 id="viewReviewsTitle">@ViewBag.Title</h2>
                         <span class="header-subtitle">Avaliações da Comunidade</span>
                     </div>
                 </div>
-
                 <div class="reviews-list">
-                    <p style="color: #ccc; text-align: center;">Carregando avaliações...</p>
+                    @if (Model == null || !Model.Any())
+                    {
+                        <p style="color: #ccc; text-align: center;">Nenhuma avaliação encontrada para este filme.</p>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <div class="review-card">
+                                <div class="review-header">
+                                    <div class="reviewer-info">
+                                        <img src="@(@item.foto_perfil != null ? $"data:image/*;base64,{@item.foto_perfil }" : "/assets/img/banner-perfil.jpg")" alt="Avatar" class="reviewer-avatar" />
+                                        
+                                        <div class="reviewer-meta">
+                                            <span class="reviewer-name">@item.usuario.nome</span>
+                                            <a href="/Perfil/Index?user=@item.usuario.id_usuario" class="reviewer-action">Ver perfil</a>
+                                        </div>
+                                    </div>
+                                    <div class="review-date">@item.data_post.ToString("dd/MM/yyyy HH:mm")</div>
+                                </div>
+
+                                <div class="review-body-simple">
+                                    <div class="review-rating">
+                                        @* Se tiver nota no ViewModel, renderize estrelas aqui *@
+                                    </div>
+                                    <p class="review-text">@item.descricao</p>
+                                </div>
+                            </div>
+                        }
+                    }
                 </div>
             </div>
+
         </main>
     </div>
 
     <script src="~/js/home/script.js"></script>
-    <script>
+     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const title = urlParams.get('title');
@@ -95,49 +128,13 @@
 
             if (title) document.getElementById('viewReviewsTitle').textContent = title;
             if (poster) document.getElementById('viewReviewsPoster').src = poster;
-
-            // Carregar avaliações
-            const reviewsList = document.querySelector('.reviews-list');
-            const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
-
-            // Filtrar por filme
-            const movieReviews = reviews.filter(r => r.movieTitle === title);
-
-            if (movieReviews.length > 0) {
-                reviewsList.innerHTML = '';
-                movieReviews.forEach(review => {
-                    const reviewCard = document.createElement('div');
-                    reviewCard.classList.add('review-card');
-                    reviewCard.innerHTML = `
-                        <div class="review-header">
-                            <div class="reviewer-info">
-                                <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
-                                <div class="reviewer-meta">
-                                    <span class="reviewer-name">${review.user}</span>
-                                    <a href="/Perfil/Index?user=${review.userId || review.user}" class="reviewer-action">Ver perfil</a>
-                                </div>
-                            </div>
-                            <div class="review-date">${review.date}</div>
-                        </div>
-                        <div class="review-body-simple">
-                            <div class="review-rating">
-                                ${getStarsHtml(review.rating)}
-                            </div>
-                            <p class="review-text">${review.text}</p>
-                        </div>
-                    `;
-                    reviewsList.appendChild(reviewCard);
-                });
-            } else {
-                reviewsList.innerHTML = '<p style="color: #ccc; text-align: center;">Nenhuma avaliação encontrada para este filme.</p>';
-            }
         });
 
         function getStarsHtml(rating) {
             let html = '';
             for (let i = 1; i <= 5; i++) {
                 if (i <= rating) {
-                    html += '<i class="fas fa-star" style="color: red;"></i>';
+                    html += '<i class="fas fa-star"></i>';
                 } else {
                     html += '<i class="far fa-star"></i>';
                 }
@@ -146,4 +143,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -14,15 +14,9 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<Comentario> Comentarios { get; set; }
 
-    public virtual DbSet<Filme> Filmes { get; set; }
-
     public virtual DbSet<Seguindo> Seguindos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
-
-    public virtual DbSet<diretorFilme> diretorFilmes { get; set; }
-
-    public virtual DbSet<generoFilme> generoFilmes { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -32,18 +26,7 @@ public partial class AppDbContext : DbContext
 
             entity.Property(e => e.data_post).HasDefaultValueSql("(dateadd(hour,(-3),sysutcdatetime()))");
 
-            entity.HasOne(d => d.id_filmeNavigation).WithMany(p => p.Comentarios).HasConstraintName("fk_idFilme_Comentario");
-
             entity.HasOne(d => d.id_usuarioNavigation).WithMany(p => p.Comentarios).HasConstraintName("FK__Comentari__id_us__5812160E");
-        });
-
-        modelBuilder.Entity<Filme>(entity =>
-        {
-            entity.HasKey(e => e.id_filme).HasName("PK__Filme__44A1920DC4806E9E");
-
-            entity.HasOne(d => d.id_diretorNavigation).WithMany(p => p.Filmes).HasConstraintName("fk_idDiretor_filme");
-
-            entity.HasOne(d => d.id_generoNavigation).WithMany(p => p.Filmes).HasConstraintName("fk_idGenero_filme");
         });
 
         modelBuilder.Entity<Seguindo>(entity =>
@@ -64,16 +47,6 @@ public partial class AppDbContext : DbContext
         modelBuilder.Entity<Usuario>(entity =>
         {
             entity.HasKey(e => e.id_usuario).HasName("PK__Usuario__4E3E04ADF40A947E");
-        });
-
-        modelBuilder.Entity<diretorFilme>(entity =>
-        {
-            entity.HasKey(e => e.id_diretor).HasName("PK__diretorF__A745748E7B4B161E");
-        });
-
-        modelBuilder.Entity<generoFilme>(entity =>
-        {
-            entity.HasKey(e => e.id_genero).HasName("PK__generoFi__99A8E4F991954171");
         });
 
         OnModelCreatingPartial(modelBuilder);

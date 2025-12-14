@@ -36,4 +36,16 @@ public class HomeController : Controller
         };
         return View(viewModel);
     }
+
+    public IActionResult ReceiveMovieData([FromBody] MovieIdDto data)
+    {
+        if (data == null || data.MovieId <= 0)
+            return BadRequest("ID inválido.");
+
+        // Aqui você pode salvar no banco, session, cache, logs etc.
+        HttpContext.Session.SetInt32("MovieId", data.MovieId);
+        Console.WriteLine("Filme recebido: " + data.MovieId);
+
+        return Json(new { ok = true, filmeIdRecebido = data.MovieId });
+    }
 }

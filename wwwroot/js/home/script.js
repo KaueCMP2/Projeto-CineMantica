@@ -135,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function () {
             modalPoster.src = posterSrc;
         }
 
+        enviarDadosCSharp(movie);
+
         // Configura botões de avaliação
         const modalBtns = document.querySelectorAll('.modal-btn');
         if (modalBtns.length >= 2) {
@@ -157,11 +159,22 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             viewReviewsBtn.onclick = () => {
-                window.location.href = `/Avaliacoes/Ver?${params}`;
+                window.location.href = `/Comentario/Index?${params}`;
             };
         }
 
         reviewModal.classList.add('active');
+    }
+
+    function enviarDadosCSharp(movie) {
+        fetch('/Home/ReceiveMovieData', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ movieId: movie.id })
+        }).then(res => {
+            res.json()
+            console.log('Dados enviados com sucesso para o C#');
+        })
     }
 
     if (reviewModal && closeModalBtn) {
