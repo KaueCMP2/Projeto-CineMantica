@@ -166,16 +166,23 @@ document.addEventListener('DOMContentLoaded', function () {
         reviewModal.classList.add('active');
     }
 
-    function enviarDadosCSharp(movie) {
-        fetch('/Home/ReceiveMovieData', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ movieId: movie.id })
-        }).then(res => {
-            res.json()
-            console.log('Dados enviados com sucesso para o C#');
+  function enviarDadosCSharp(movie) {
+    fetch('/Home/ReceiveMovieData', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            movieId: movie.id,
+            movieTitle: movie.title,
+            movieImg: movie.poster_path
         })
-    }
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log('Resposta do C#:', data);
+    })
+    .catch(err => console.error(err));
+}
+
 
     if (reviewModal && closeModalBtn) {
 

@@ -8,5 +8,7 @@ namespace ProjetoCinemanticaMVC.Controllers
    public class MovieIdDto
     {
         public int MovieId { get; set; }
+        public string MovieTitle { get; set; }
+        public string MovieImg { get; set; }
     }
 }

@@ -61,6 +61,8 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
             int? movieId = HttpContext.Session.GetInt32("MovieId");
+            string? movieTitle = HttpContext.Session.GetString("MovieTitle");
+            string? moviePoster = HttpContext.Session.GetString("MovieImg");
 
 
             var comentario = new Comentario
@@ -69,7 +71,9 @@ namespace ProjetoCinemanticaMVC.Controllers
                 id_usuario = usuarioId,
                 id_filme = movieId,
                 descricao = descricao,
-                data_post = DateTime.Now
+                data_post = DateTime.Now,
+                nome_filme = movieTitle,
+                img_path = moviePoster
             };
 
             _appDbContext.Comentarios.Add(comentario);

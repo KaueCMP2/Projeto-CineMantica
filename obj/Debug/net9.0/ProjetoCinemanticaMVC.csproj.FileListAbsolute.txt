@@ -337,7 +337,6 @@ C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\refint\Proje
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.pdb
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
-C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-ng9m4mxvpr.gz
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\bin\Debug\net9.0\appsettings.json
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\bin\Debug\net9.0\ProjetoCinemanticaMVC.staticwebassets.endpoints.json
@@ -678,3 +677,4 @@ C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\obj\Debug\net9.0\refint\Projet
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.pdb
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
+C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-oexcc076z0.gz

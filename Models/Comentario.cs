@@ -31,5 +31,7 @@ public partial class Comentario
     [InverseProperty("Comentarios")]
     public virtual Usuario? id_usuarioNavigation { get; set; }
     // public Usuario usuario { get; set; }
+    public string nome_filme { get; set; }
+    public string img_path { get; set; }   
 
 }

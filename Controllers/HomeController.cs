@@ -9,14 +9,14 @@ public class HomeController : Controller
 {
 
     private readonly AppDbContext _appDbContext;
-        public HomeController(AppDbContext appDbContext)
-        {
-            _appDbContext = appDbContext;
-        }
+    public HomeController(AppDbContext appDbContext)
+    {
+        _appDbContext = appDbContext;
+    }
 
     public IActionResult Index()
     {
-        if(HttpContext.Session.GetString("UsuarioNome") == null)
+        if (HttpContext.Session.GetString("UsuarioNome") == null)
         {
             return RedirectToAction("Index", "Login");
         }
@@ -30,13 +30,14 @@ public class HomeController : Controller
 
         var viewModel = new HomeViewModel
         {
-            FotoUsuario = usuario?.foto_perfil != null 
+            FotoUsuario = usuario?.foto_perfil != null
                         ? $"data:image/*;base64,{Convert.ToBase64String(usuario.foto_perfil)}"
                         : "/assets/img/img-perfil.png"
         };
         return View(viewModel);
     }
 
+    [HttpPost]
     public IActionResult ReceiveMovieData([FromBody] MovieIdDto data)
     {
         if (data == null || data.MovieId <= 0)
@@ -44,7 +45,12 @@ public class HomeController : Controller
 
         // Aqui você pode salvar no banco, session, cache, logs etc.
         HttpContext.Session.SetInt32("MovieId", data.MovieId);
+        HttpContext.Session.SetString("MovieTitle", data.MovieTitle);
+        HttpContext.Session.SetString("MovieImg", data.MovieImg);
+
         Console.WriteLine("Filme recebido: " + data.MovieId);
+        Console.WriteLine("Filme recebido: " + data.MovieTitle);
+        Console.WriteLine("Filme recebido: " + data.MovieImg);
 
         return Json(new { ok = true, filmeIdRecebido = data.MovieId });
     }

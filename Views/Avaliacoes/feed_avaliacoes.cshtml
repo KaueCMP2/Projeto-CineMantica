@@ -102,10 +102,11 @@
             <div class="review-header">
                 <div class="user-info">
                     <img src="data:image/png;base64,@review.foto_perfil" alt="User Avatar">
+                    <img src="https://image.tmdb.org/t/p/w500/@review.PosterFilme" alt="">
 
                     <div class="user-details">
                         <span class="username">@review.usuario.nick_name</span>
-                        <span class="username">@ViewBag.Title</span>
+                        <span class="username">@review.TituloFilme</span>
                         <a href="/Perfil/Index?user=@review.usuario.id_usuario"
                        class="view-profile-link">
                         Ver perfil

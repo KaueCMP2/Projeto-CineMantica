@@ -55,6 +55,8 @@ namespace ProjetoCinemanticaMVC.Controllers // Verifique se o namespace é o mes
       .Select(c => new AvaliacoesViewModel
       {
           nome_usuario = c.id_usuarioNavigation.nick_name,
+          TituloFilme = c.nome_filme,
+        PosterFilme = c.img_path,   
           descricao = c.descricao,
           data_post = c.data_post,
           usuario = c.id_usuarioNavigation,
