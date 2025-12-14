@@ -97,7 +97,7 @@
                                         <img src="@(@item.foto_perfil != null ? $"data:image/*;base64,{@item.foto_perfil }" : "/assets/img/banner-perfil.jpg")" alt="Avatar" class="reviewer-avatar" />
                                         
                                         <div class="reviewer-meta">
-                                            <span class="reviewer-name">@item.nome_usuario</span>
+                                            <span class="reviewer-name">@item.usuario.nome</span>
                                             <a href="/Perfil/Index?user=@item.usuario.id_usuario" class="reviewer-action">Ver perfil</a>
                                         </div>
                                     </div>
