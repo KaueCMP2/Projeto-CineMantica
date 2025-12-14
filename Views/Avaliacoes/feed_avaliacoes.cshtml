@@ -1,3 +1,5 @@
+@model List<ProjetoCinemanticaMVC.Models.AvaliacoesViewModel>
+
 @{
     Layout = null;
 }
@@ -20,7 +22,7 @@
 
         if (serverLoggedIn === "true") {
             localStorage.setItem('isLoggedIn', 'true');
-            if(serverUser) localStorage.setItem('currentUser', serverUser);
+            if (serverUser) localStorage.setItem('currentUser', serverUser);
         } else {
             localStorage.removeItem('isLoggedIn');
             localStorage.removeItem('currentUser');
@@ -63,8 +65,10 @@
                     <li><a href="@Url.Action("Index", "Home")"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="@Url.Action("Index", "Seguindo")"><i class="fas fa-users"></i> Seguindo</a></li>
                     <li><a href="@Url.Action("Index", "Perfil")"><i class="fas fa-user"></i> Perfil</a></li>
-                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a></li>
-                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i> Avaliações</a></li>
+                    <li><a href="@Url.Action("Index", "Destaques")"><i class="fas fa-film"></i> Filmes em Destaque</a>
+                    </li>
+                    <li><a href="@Url.Action("Feed", "Avaliacoes")" class="active"><i class="fas fa-star"></i>
+                            Avaliações</a></li>
                 </ul>
             </nav>
             <div class="following-section">
@@ -85,9 +89,41 @@
             <h2 class="section-title" style="margin-left: 20px; margin-top: 20px;">Feed Global de Avaliações</h2>
 
             <section class="feed-container">
-                <div style="text-align: center; padding: 40px; color: #aaa;">
-                    <p>Carregando avaliações...</p>
+                @if (Model == null)
+    {
+        <div style="padding:40px; color:red;">
+            Erro: View chamada sem Model. Use a Action correta.
+        </div>
+        return;
+    }
+    @foreach (var review in Model)
+    {
+        <article class="review-card">
+            <div class="review-header">
+                <div class="user-info">
+                    <img src="data:image/png;base64,@review.foto_perfil" alt="User Avatar">
+
+                    <div class="user-details">
+                        <span class="username">@review.usuario.nick_name</span>
+                        <span class="username">@ViewBag.Title</span>
+                        <a href="/Perfil/Index?user=@review.usuario.id_usuario"
+                       class="view-profile-link">
+                        Ver perfil
+                    </a>
+                    </div>
                 </div>
+
+                <button class="review-tag">Resenha</button>
+            </div>
+
+            <div class="review-body">
+                <div class="review-content">
+                    <p class="review-description">@review.descricao</p>
+                    <small>@review.data_post.ToString("dd/MM/yyyy HH:mm")</small>
+                </div>
+            </div>
+        </article>
+    }
             </section>
         </main>
     </div>
@@ -103,7 +139,7 @@
                     <div class="rating-box">
                         <span class="rating-label">Geral</span>
                         <div class="rating-value" id="modalMovieRating">
-                            </div>
+                        </div>
                     </div>
                     <div class="rating-box">
                         <span class="rating-label">Amigos</span>
@@ -124,8 +160,10 @@
         </div>
     </div>
 
+
+
     <script src="~/js/home/script.js"></script>
-    <script>
+    @* <script>
         document.addEventListener('DOMContentLoaded', () => {
             const feedContainer = document.querySelector('.feed-container');
             const allReviews = JSON.parse(localStorage.getItem('reviews')) || [];
@@ -172,8 +210,8 @@
             // Lógica para os botões do Modal funcionarem com o Controller
             const btnNova = document.getElementById('btnNovaAvaliacao');
             const btnVer = document.getElementById('btnVerAvaliacoes');
-            
-            if(btnNova) {
+
+            if (btnNova) {
                 btnNova.addEventListener('click', () => {
                     const title = document.getElementById('modalMovieTitle').innerText;
                     const poster = document.getElementById('modalMoviePoster').src;
@@ -182,7 +220,7 @@
                 });
             }
 
-            if(btnVer) {
+            if (btnVer) {
                 btnVer.addEventListener('click', () => {
                     const title = document.getElementById('modalMovieTitle').innerText;
                     const poster = document.getElementById('modalMoviePoster').src;
@@ -203,6 +241,7 @@
             }
             return html;
         }
-    </script>
+    </script> *@
 </body>
+
 </html>
