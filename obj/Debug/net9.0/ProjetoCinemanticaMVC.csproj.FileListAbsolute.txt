@@ -254,7 +254,6 @@ C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\b
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\pygyem9xd8-gcy2u86s6e.gz
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\v4sefxbhl8-fmfekiel97.gz
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\7pue0560cq-g4zy14r9tn.gz
-C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\ennee860nk-f0o8pod3tj.gz
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\toqs6soo17-p5ebgakv52.gz
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\003xdj0w92-75k6h5tu01.gz
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\fnv5fkuynl-1bs34gy2cq.gz
@@ -678,3 +677,4 @@ C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\obj\Debug\net9.0\ProjetoCinema
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\obj\Debug\net9.0\ProjetoCinemanticaMVC.genruntimeconfig.cache
 C:\Users\Pichau\Desktop\VScode\Backup-Cinemantica\obj\Debug\net9.0\ref\ProjetoCinemanticaMVC.dll
 C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\jsyn9cals9-oexcc076z0.gz
+C:\Users\Pichau\Desktop\VScode\Projeto-CineMantica\obj\Debug\net9.0\compressed\ennee860nk-52bm9dxam5.gz

@@ -34,7 +34,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             int seguidoresCount = _appDbContext.Seguindos.Count(u => u.seguidor_id == usuario.id_usuario);
             int seguindoCount = _appDbContext.Seguindos.Count(u => u.seguindo_id == usuario.id_usuario);
 
-            var viewModel = new PerfilViewModel
+            var perfil = new PerfilViewModel
             {
                 id_usuario = usuario.id_usuario,
                 nome = usuario.nome,
@@ -45,6 +45,27 @@ namespace ProjetoCinemanticaMVC.Controllers
                 BannerBase64 = usuario.Banner != null ? Convert.ToBase64String(usuario.Banner) : null,
                 seguidores_count = seguidoresCount,
                 seguindo_count = seguindoCount
+            };
+
+            var avaliacoes = _appDbContext.Comentarios
+                .Where(c => c.id_usuario == usuario.id_usuario)
+                .OrderByDescending(c => c.data_post)
+                .Select(c => new AvaliacoesViewModel
+                {
+                    nome_usuario = usuario.nick_name,
+                    TituloFilme = c.nome_filme,
+                    PosterFilme = c.img_path,
+                    descricao = c.descricao,
+                    data_post = c.data_post,
+                    usuario = usuario,
+                    tipo_comentario = c.tipo_comentario,
+                })
+                .ToList();
+
+            var viewModel = new PerfilViewModel
+            {
+                Avaliacoes = avaliacoes,
+                Perfil = perfil,
             };
 
             return View(viewModel);

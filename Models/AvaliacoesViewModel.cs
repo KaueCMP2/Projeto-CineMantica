@@ -11,5 +11,6 @@ namespace ProjetoCinemanticaMVC.Models
         public int FilmeId { get; set; }
         public string TituloFilme { get; set; }
         public string PosterFilme { get; set; }
+        public string tipo_comentario { get; set; }
     }
 }

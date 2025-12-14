@@ -1,5 +1,7 @@
 @{
     Layout = null;
+    var tituloFilme = Context.Session.GetString("MovieTitle");
+    var posterFilme = Context.Session.GetString("MovieImg");
 }
 
 <!DOCTYPE html>
@@ -73,11 +75,11 @@
 
         <main class="main-content">
             <div class="new-review-container">
-                <h2 class="section-title">Escrever Avaliação</h2>
+                <h2 class="section-title">@tituloFilme</h2>
 
                 <div class="movie-preview">
-                    <img src="" alt="Poster" id="reviewMoviePoster" style="width: 100px; border-radius: 8px;">
-                    <h3 id="reviewMovieTitle" style="margin-left: 20px;">Filme</h3>
+                    <img src="https://image.tmdb.org/t/p/w500/@posterFilme"  alt="@posterFilme" id="reviewMoviePoster" style="width: 100px; border-radius: 8px;">
+                    <h3 id="reviewMovieTitle" style="margin-left: 20px;">Escrever Avaliação</h3>
                 </div>
 
                 <form method="post" asp-controller="Comentario" asp-action="CriarComentario" id="newReviewForm"

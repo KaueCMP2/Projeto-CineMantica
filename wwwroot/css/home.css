@@ -2303,3 +2303,8 @@ body {
 .login-btn-overlay:hover {
     background-color: #a31515;
 }
+
+.separar {
+    display: flex;
+    justify-content: space-between;
+}

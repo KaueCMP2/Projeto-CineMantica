@@ -48,8 +48,8 @@
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
                             <img src="@(string.IsNullOrEmpty(Model.FotoUsuario) 
-                        ? "/assets/img/img-perfil.png" 
-                        : Model.FotoUsuario)"  alt="Foto de Perfil" class="profile-avatar-large">
+                                                         ? "/assets/img/img-perfil.png" 
+                                                         : Model.FotoUsuario)" alt="Foto de Perfil" class="profile-avatar-large">
                         </div>
                         <div class="user-dropdown" id="user-dropdown">
                             <a href="Views/Login/Index.cshtml">Fazer login</a>
@@ -90,7 +90,8 @@
                     </li>
 
                     <li>
-                        <a asp-controller="Avaliacoes" asp-action="AvaliacoesGlobais"> <i class="fas fa-star"></i> Avaliações
+                        <a asp-controller="Avaliacoes" asp-action="AvaliacoesGlobais"> <i class="fas fa-star"></i>
+                            Avaliações
                         </a>
                     </li>
                 </ul>

@@ -67,7 +67,10 @@
                     <li><a asp-controller="Destaques" asp-action="Index"><i class="fas fa-film"></i> Filmes em
                             Destaque</a>
                     </li>
-                    <li><a asp-controller="Avaliacoes" asp-action="Feed"><i class="fas fa-star"></i> Avaliações</a>
+                    <li>
+                        <a asp-controller="Avaliacoes" asp-action="AvaliacoesGlobais"> <i class="fas fa-star"></i>
+                            Avaliações
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -90,21 +93,23 @@
             <div class="profile-content-wrapper" style="visibility"> <!-- Hidden initially to prevent flash -->
                 <div class="profile-header-container">
                     <div class="profile-banner">
-                        <img src="@(Model.BannerBase64 != null ? $"data:image/*;base64,{Model.BannerBase64}" : "/assets/img/banner-perfil.jpg")" alt="Imagem de Capa do Perfil" class="profile-banner-image">
+                        <img src="@(Model.Perfil.BannerBase64 != null ? $"data:image/*;base64,{Model.Perfil.BannerBase64}" : "/assets/img/banner-perfil.jpg")"
+                            alt="Imagem de Capa do Perfil" class="profile-banner-image">
                     </div>
                     <div class="profile-info-bar">
                         <div class="profile-avatar-wrapper">
-                            <img src="@(Model.FotoBase64 != null ? $"data:image/*;base64,{Model.FotoBase64}" : "/assets/img/img-perfil.png")" alt="Foto de Perfil" class="profile-avatar-large">
+                            <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "/assets/img/img-perfil.png")"
+                                alt="Foto de Perfil" class="profile-avatar-large">
                         </div>
                         <div class="profile-details">
-                            <h2 class="profile-username">@Model.nome</h2>
+                            <h2 class="profile-username">@Model.Perfil.nome</h2>
                             <div class="profile-stats">
                                 <div class="stat-item">
-                                    <span class="stat-value">@Model.seguidores_count</span>
+                                    <span class="stat-value">@Model.Perfil.seguidores_count</span>
                                     <span class="stat-label">Seguidores</span>
                                 </div>
                                 <div class="stat-item">
-                                    <span class="stat-value">@Model.seguindo_count</span>
+                                    <span class="stat-value">@Model.Perfil.seguindo_count</span>
                                     <span class="stat-label">Seguindo</span>
                                 </div>
                                 <div class="stat-item">
@@ -112,18 +117,48 @@
                                     <span class="stat-label">Avaliações</span>
                                 </div>
                             </div>
-                           
+
                         </div>
-                         <p name="desc_perfil" class="stat-label">@Model.desc_perfil</p>
+                        <p name="desc_perfil" class="stat-label">@Model.Perfil.desc_perfil</p>
                         <button class="edit-profile-btn"><i class="fas fa-pen"></i> Editar
                             Perfil</button>
                     </div>
                 </div>
 
-                <section class="reviews-section">
+                <section style="padding: 20px;" class="reviews-section">
                     <h2 class="section-title">Avaliações</h2>
-                    <!-- Reviews will be injected here -->
-                    <p style="color: #aaa; margin-top: 20px;">Carregando...</p>
+                    @foreach (var review in Model.Avaliacoes)
+                    {
+                        <article style="padding: 16px; margin-bottom: 30px" class="review-card">
+                            @* <div class="review-header">
+                                <div class="reviewer-info"> *@
+                                    @* <img src="https://image.tmdb.org/t/p/w500/@review.PosterFilme" alt="Avatar"
+                                    class="reviewer-avatar"> *@
+                                    @* <div class="reviewer-meta">
+                                    <span class="reviewer-name">@review.</span>
+                                    <span class="reviewer-action">Ver perfil</span>
+                                </div> *@
+                                @* </div>
+                                
+                            </div> *@
+                            <div class="review-body">
+                                <img src="https://image.tmdb.org/t/p/w500/@review.PosterFilme" alt="Poster do Filme"
+                                    class="review-movie-poster">
+                                <div class="review-content">
+                                    <h3 class="review-movie-title">@review.TituloFilme</h3>
+                                    <div class="review-rating">
+                                        ${getStarsHtml(review.rating)}
+                                    </div>
+                                    <p class="review-text">@review.descricao</p>
+                                </div>
+                                <div style="display: flex; align-items: center;">
+                                    <button class="review-tag">@review.tipo_comentario</button>
+                                </div>
+                            </div>
+                        </article>
+
+
+                    }
                 </section>
             </div>
 
@@ -140,16 +175,18 @@
         <div class="edit-profile-modal">
 
             <h2 class="section-title" style="margin-bottom: 20px;">Editar Perfil</h2>
-            <form method="post" action="/Perfil/AtualizarFoto" enctype="multipart/form-data" class="edit-profile-form" id="edit-profile-form">
-                <input type="hidden" name="id_usuario" value="@Model.id_usuario" />
-                
+            <form method="post" action="/Perfil/AtualizarFoto" enctype="multipart/form-data" class="edit-profile-form"
+                id="edit-profile-form">
+                <input type="hidden" name="id_usuario" value="@Model.Perfil.id_usuario" />
+
                 <div class="form-group">
                     <label for="display-name">Nome de Exibição</label>
-                    <input name="nome" type="text" id="display-name" placeholder="Seu nome" value="@Model.nome">
+                    <input name="nome" type="text" id="display-name" placeholder="Seu nome" value="@Model.Perfil.nome">
                 </div>
                 <div class="form-group">
                     <label for="display-name">Descrição do perfil</label>
-                    <input name="desc_perfil" type="text" id="display-name" placeholder="Descrição..." value="@Model.desc_perfil">
+                    <input name="desc_perfil" type="text" id="display-name" placeholder="Descrição..."
+                        value="@Model.Perfil.desc_perfil">
                 </div>
                 <div class="form-group">
                     <input type="file" id="upload-foto" name="foto" class="input-arquivo" accept="image/*">
@@ -166,31 +203,6 @@
             </form>
         </div>
     </div>
-    @* <div class="review-header">
-                            <div class="reviewer-info">
-                                <img src="${review.userAvatar}" alt="Avatar" class="reviewer-avatar">
-                                <div class="reviewer-meta">
-                                    <span class="reviewer-name">${review.user}</span>
-                                    <span class="reviewer-action">Ver perfil</span>
-                                </div>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <button class="review-tag">Resenha</button>
-                                ${deleteBtnHtml}
-                            </div>
-                        </div>
-                        <div class="review-body">
-                            <img src="${review.moviePoster}" alt="Poster do Filme" class="review-movie-poster">
-                            <div class="review-content">
-                                <h3 class="review-movie-title">${review.movieTitle}</h3>
-                                <div class="review-rating">
-                                    ${getStarsHtml(review.rating)}
-                                </div>
-                                <p class="review-text">${review.text}</p>
-                            </div>
-                        </div> *@
-
-
     <script src="~/js/home/script.js"></script>
     <script src="~/js/perfil/perfil.js"></script>
 </body>

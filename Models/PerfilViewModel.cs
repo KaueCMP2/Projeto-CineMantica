@@ -32,6 +32,9 @@ namespace ProjetoCinemanticaMVC.Models
                 : "/assets/img/banner-perfil.jpg";
 
         public int seguidores_count { get; set; }
-        public int seguindo_count { get; set; }
+        public int seguindo_count { get; set; } 
+
+        public PerfilViewModel Perfil { get; set; }
+        public List<AvaliacoesViewModel> Avaliacoes { get; set; }
     }
 }
