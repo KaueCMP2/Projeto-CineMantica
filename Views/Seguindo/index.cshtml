@@ -4,6 +4,7 @@
 @{
     Layout = null;
 }
+}
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -44,20 +45,20 @@
                     <div class="notificacao-usuario">
                         <i class="fas fa-bell action-icon"></i>
                         <div class="notification-dot"></div>
-                    </div>  
+                    </div>
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
                             <img src="@(string.IsNullOrEmpty(Model.FotoPerfilTopo) 
-                                ? "~/assets/home-images/user.png" 
-                                : Model.FotoPerfilTopo)"  alt="Foto de Perfil" class="profile-avatar-large" >
+                                                                 ? "~/assets/home-images/user.png" 
+                                                                 : Model.FotoPerfilTopo)" alt="Foto de Perfil" class="profile-avatar-large">
                         </div>
                     </div>
-                        <div class="user-dropdown" id="user-dropdown">
-                            <a asp-controller="Login" asp-action="Index">Fazer login</a>
-                            <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>
-                        </div>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <a asp-controller="Login" asp-action="Index">Fazer login</a>
+                        <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>
                     </div>
                 </div>
+            </div>
             </div>
         </nav>
     </header>
@@ -95,41 +96,40 @@
             </div>
         </aside>
 
-        <div class="following-users-bar">
-            @if (Model.Seguindo != null && Model.Seguindo.Any())
-            {
-                foreach (var item in Model.Seguindo)
-                {
-                    var user = item.seguindo; // A propriedade de navegação do usuário seguido
-
-                    <div class="user-bubble">
-                        <a href="/Perfil/Index?user=@user.id_usuario"
-                            style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
-                            <img src="@(Model.FotoUsuario != null ? $"data:image/*;base64,{Model.FotoUsuario}" : "/assets/img/img-perfil.png")"
-                                alt="Avatar">
-
-                            <span>@Model.NomeUsuario</span>
-                            @{
-                                var filmesAssistidosCount = Model.Feed != null
-                                ? Model.Feed.Count(r => r.id_usuario == user.id_usuario)
-                                : 0;
-                            }
-                            <span style="font-size: 0.8em; color: #aaa; margin-top: 4px;">@filmesAssistidosCount
-                                assistidos</span>
-                        </a>
-                    </div>
-                }
-            }
-            else
-            {
-                <p style="color: #aaa; padding: 20px;">Siga usuários para vê-los aqui!</p>
-            }
-        </div>
-
         <main class="main-content following-page-content">
+            <h2>Titulo</h2>
 
             <section class="following-users-bar">
-                <!-- Dynamic Bubbles -->
+                @* <div class="following-users-bar"> *@
+                    @if (Model.Seguindo != null && Model.Seguindo.Any())
+                    {
+                        foreach (var item in Model.Seguindo)
+                        {
+                            var user = item.seguindo; // A propriedade de navegação do usuário seguido
+
+                            <div class="user-bubble">
+                                <a href="/Perfil/Index?user=@user.id_usuario"
+                                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
+                                    <img src="@(user.foto_perfil != null ? $"data:image/*;base64,{user.foto_perfil}" : "wwwroot/assets/home-images/user.png")"
+                                        alt="Avatar">
+
+                                    <span>@user.nick_name</span>
+                                    @{
+                                        var filmesAssistidosCount = Model.Feed != null
+                                                ? Model.Feed.Count(r => r.id_usuario == user.id_usuario)
+                                        : 0;
+                                    }
+                                    <span style="font-size: 0.8em; color: #aaa; margin-top: 4px;">@filmesAssistidosCount
+                                        assistidos</span>
+                                </a>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p style="color: #aaa; padding: 20px;">Siga usuários para vê-los aqui!</p>
+                    }
+                @* </div> *@
             </section>
 
             <section class="feed-container">
@@ -157,25 +157,26 @@
                             <div class="review-header">
                                 <div class="user-info">
 
-                                    <img src="@(Model.FotoUsuario != null ? $"data:image/*;base64,{Model.FotoUsuario}" : "/assets/img/img-perfil.png")"
+                                    <img src="@(foto != null ? $"data:image/*;base64,{foto}" : "/assets/img/img-perfil.png")"
                                         alt="Avatar">
 
                                     <div class="user-details">
-                                        <span class="username">@Model.NomeUsuario</span>
+                                        <span class="username">@nome</span>
                                         <a href="/Perfil/Index?user=@review.id_usuarioNavigation.id_usuario"
                                             class="view-profile-link">Ver perfil</a>
+
                                     </div>
                                 </div>
 
-                                <button class="review-tag">Resenha</button>
+                                <button class="review-tag">@review.tipo_comentario</button>
                             </div>
 
                             <div class="review-body">
-                                <img src="~/assets/home-images/F1.png" class="review-movie-poster" alt="" />
+                                <img src="https://image.tmdb.org/t/p/w500/@review.img_path" class="review-movie-poster" alt="" />
                                 @* {@review.poster} @review.titulo_filme  @review.titulo_filme *@
-                                <div class="review-content">
+                                        <div class="review-content">
 
-                                    <h3 class="review-movie-title">F1</h3>
+                                    <h3 class="review-movie-title">@review.nome_filme</h3>
                                     @* 
                         <div class="review-rating">
                             @for (int i = 1; i <= 5; i++)
@@ -191,7 +192,7 @@
                             }
                         </div> *@
 
-                                    <p class="review-description">
+                                            <p class="review-description">
                                         @review.descricao
                                     </p>
 

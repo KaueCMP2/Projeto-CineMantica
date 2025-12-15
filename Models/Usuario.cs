@@ -21,12 +21,11 @@ public partial class Usuario
     [Unicode(false)]
     public string email { get; set; } = null!;
 
-    [MaxLength(32)]
-    public byte[] senha { get; set; } = null!;
+    public byte[]? senha { get; set; }
 
-    [StringLength(12)]
+    [StringLength(40)]
     [Unicode(false)]
-    public string nick_name { get; set; } = null!;
+    public string? nick_name { get; set; }
 
     public DateOnly data_nascimento { get; set; }
 

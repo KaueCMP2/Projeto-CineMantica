@@ -38,6 +38,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             {
                 id_usuario = usuario.id_usuario,
                 nome = usuario.nome,
+                NomeUsuario = usuario.nick_name,
                 Email = usuario.email,
                 desc_perfil = usuario.desc_perfil,
                 FotoBase64 = usuario.foto_perfil != null ? Convert.ToBase64String(usuario.foto_perfil) : null,
@@ -86,7 +87,7 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             var usuario = _appDbContext.Usuarios.FirstOrDefault(usuario => usuario.id_usuario == id_usuario);
 
-            usuario.nome = nome;
+            usuario.nick_name = nome;
             usuario.desc_perfil = desc_perfil;
 
             if (usuario == null)

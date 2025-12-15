@@ -107,7 +107,7 @@
                                 alt="Foto de Perfil" class="profile-avatar-large"> *@
                         </div>
                         <div class="profile-details">
-                            <h2 class="profile-username">@Model.Perfil.nome</h2>
+                            <h2 class="profile-username">@Model.Perfil.NomeUsuario</h2>
                             <div class="profile-stats">
                                 <div class="stat-item">
                                     <span class="stat-value">@Model.Perfil.seguidores_count</span>
@@ -186,7 +186,7 @@
 
                 <div class="form-group">
                     <label for="display-name">Nome de Exibição</label>
-                    <input name="nome" type="text" id="display-name" placeholder="Seu nome" value="@Model.Perfil.nome">
+                    <input name="nome" type="text" id="display-name" placeholder="Seu nome" value="@Model.Perfil.NomeUsuario">
                 </div>
                 <div class="form-group">
                     <label for="display-name">Descrição do perfil</label>

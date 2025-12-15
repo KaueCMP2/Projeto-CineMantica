@@ -9,7 +9,7 @@ namespace ProjetoCinemanticaMVC.Models
     {
         public int id_usuario { get; set; }
         public string nome { get; set; }
-        // public string? NomeUsuario {get; set;}
+        public string? NomeUsuario {get; set;}
         public string Email { get; set; }
         // public int RegraId {get; set;}
         // public List<RegraPerfil> Regras {get; set;}

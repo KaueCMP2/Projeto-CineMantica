@@ -24,45 +24,46 @@ namespace ProjetoCinemanticaMVC.Controllers
                 return RedirectToAction("Index", "Login");
             }
 
-           
+
 
             int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
 
             var usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.id_usuario == usuarioId);
 
             var seguindo = _context.Seguindos
-                .Where(s => s.seguindo_id == usuarioId)
+                .Where(s => s.seguidor_id == usuarioId) // QUEM EU SIGO
+                .Include(s => s.seguindo)
                 .ToList();
 
-            // int? movieId = Comentario.id_filme;S
+            var seguindoIds = seguindo.Select(s => s.seguindo_id).ToList();
 
 
-            var seguindoIds = seguindo.Select(s => s.seguidor_id).ToList();
 
             var feed = _context.Comentarios
                 .Include(c => c.id_usuarioNavigation)
-                .Where(c => c.id_usuario.HasValue && seguindoIds.Contains(c.id_usuario.Value))
+                .Where(c => c.id_usuario.HasValue &&
+                seguindoIds.Contains(c.id_usuario.Value))
                 .OrderByDescending(c => c.data_post)
                 .ToList();
 
-            
-            var viewModel = new SeguindoViewModel
+            Console.WriteLine(feed);
+            var model = new SeguindoViewModel
             {
-                
+
                 NomeUsuario = usuario?.nome,
                 FotoUsuario = usuario?.foto_perfil != null ? Convert.ToBase64String(usuario.foto_perfil) : null,
                 Seguindo = seguindo,
                 Feed = feed,
-                FotoPerfilTopo = usuario?.foto_perfil != null 
+                FotoPerfilTopo = usuario?.foto_perfil != null
                         ? $"data:image/*;base64,{Convert.ToBase64String(usuario.foto_perfil)}"
                         : "~/assets/home-images/user.png"
 
             };
 
-            return View(viewModel);
+            return View(model);
         }
 
-         // seguir usuário
+        // seguir usuário
         [HttpPost]
         public IActionResult Seguir(int idSeguido)
         {
@@ -111,7 +112,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             return RedirectToAction("Index");
         }
 
-        
+
 
     }
 }
