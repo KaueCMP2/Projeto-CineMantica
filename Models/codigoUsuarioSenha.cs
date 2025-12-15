@@ -16,6 +16,9 @@ public partial class codigoUsuarioSenha
 
     public int? codigo { get; set; }
 
+    [Column(TypeName = "datetime")]
+    public DateTime? dataEnvio { get; set; }
+
     [ForeignKey("id_usuario")]
     [InverseProperty("codigoUsuarioSenhas")]
     public virtual Usuario? id_usuarioNavigation { get; set; }

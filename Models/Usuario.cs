@@ -21,8 +21,7 @@ public partial class Usuario
     [Unicode(false)]
     public string email { get; set; } = null!;
 
-    [MaxLength(32)]
-    public byte[] senha { get; set; } = null!;
+    public byte[]? senha { get; set; }
 
     [StringLength(12)]
     [Unicode(false)]

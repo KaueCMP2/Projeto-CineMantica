@@ -55,6 +55,8 @@ public partial class AppDbContext : DbContext
         {
             entity.HasKey(e => e.id).HasName("PK__codigoUs__3213E83F58D70D16");
 
+            entity.Property(e => e.dataEnvio).HasDefaultValueSql("(getdate())");
+
             entity.HasOne(d => d.id_usuarioNavigation).WithMany(p => p.codigoUsuarioSenhas).HasConstraintName("fk_idUsuario_codigoUsuarioSenha");
         });
 
