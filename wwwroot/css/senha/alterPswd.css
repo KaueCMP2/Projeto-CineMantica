@@ -1,4 +1,4 @@
-@import url(~/css/global.css);
+@import url(~/css/cadastro/global.css);
 
 * {
     padding: 0;
@@ -84,7 +84,7 @@ input {
 }
 
 button {
-    background-color: var(--vermelho);
+    background-color: var(--vermelho-escuro);
     color: white;
     padding: 15px;
     border: none;

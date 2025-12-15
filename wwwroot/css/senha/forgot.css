@@ -1,4 +1,4 @@
-@import url(~/css/global.css);
+@import url(~/css/cadastro/global.css);
 
 .container {
     display: flex;
@@ -57,7 +57,7 @@ input {
 }
 
 .botao {
-    background-color: var(--vermelho);
+    background-color: var(--vermelho-escuro);
     color: white;
     padding: 15px;
     border: none;
@@ -69,7 +69,7 @@ input {
 }
 
 .botao:hover {
-    background-color: #781010;
+    background-color: hsl(0, 76%, 27%);
     cursor: pointer;
 }
 
