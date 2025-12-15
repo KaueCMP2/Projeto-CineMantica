@@ -7888,11 +7888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+      "projectUniqueName": "C:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
       "projectName": "ProjetoCinemanticaMVC",
-      "projectPath": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+      "projectPath": "C:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
       "packagesPath": "C:\\Users\\43159446883\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\obj\\",
+      "outputPath": "C:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\43159446883\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -7972,13 +7972,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
-    }
-  ]
+  }
 }
