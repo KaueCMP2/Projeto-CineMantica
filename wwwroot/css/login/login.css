@@ -205,6 +205,12 @@ input {
 
 .google{
     transition: transform 0.15s ease;
+    text-decoration: none;
+    color: black;
+}
+
+.google-img{
+    height: 15px;
 }
 
 .google:hover {
