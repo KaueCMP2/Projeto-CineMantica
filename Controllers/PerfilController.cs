@@ -14,16 +14,24 @@ namespace ProjetoCinemanticaMVC.Controllers
             _appDbContext = appDbContext;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? id)
         {
             int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
 
             if (usuarioId == null)
             {
                 RedirectToAction("Index", "Login");
+            }   
+
+            int idPerfil;
+
+            if(!id.HasValue || id.Value == usuarioId.Value) {
+                idPerfil = usuarioId.Value;
+            } else {
+                idPerfil = id.Value;
             }
 
-            var usuario = _appDbContext.Usuarios.FirstOrDefault(usuario => usuarioId == usuario.id_usuario);
+            var usuario = _appDbContext.Usuarios.FirstOrDefault(usuario => usuario.id_usuario == idPerfil);
 
             if (usuario == null)
             {

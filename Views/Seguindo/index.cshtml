@@ -162,8 +162,11 @@
 
                                     <div class="user-details">
                                         <span class="username">@nome</span>
-                                        <a href="/Perfil/Index?user=@review.id_usuarioNavigation.id_usuario"
-                                            class="view-profile-link">Ver perfil</a>
+                                        <a asp-controller="Perfil"
+                                            asp-action="Index"
+                                            asp-route-id="@review.id_usuario">
+                                            Ver perfil
+                                        </a>
 
                                     </div>
                                 </div>

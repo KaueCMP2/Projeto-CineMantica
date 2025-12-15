@@ -107,10 +107,11 @@
                     <div class="user-details">
                         <span class="username">@review.usuario.nick_name</span>
                         <span class="username">@review.TituloFilme</span>
-                        <a href="/Perfil/Index?user=@review.usuario.id_usuario"
-                       class="view-profile-link">
-                        Ver perfil
-                    </a>
+                        <a asp-controller="Perfil"
+                                            asp-action="Index"
+                                            asp-route-id="@review.usuario.id_usuario">
+                                            Ver perfil
+                                        </a>
                     </div>
                 </div>
 
