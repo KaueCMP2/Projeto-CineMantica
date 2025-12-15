@@ -934,7 +934,6 @@ C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\De
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\pygyem9xd8-gcy2u86s6e.gz
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\v4sefxbhl8-fmfekiel97.gz
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\7pue0560cq-g4zy14r9tn.gz
-C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\toqs6soo17-p5ebgakv52.gz
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\fnv5fkuynl-1bs34gy2cq.gz
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\dp4mmtwuep-70lk8uq1io.gz
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\b9m6bbh87n-b9sayid5wm.gz
@@ -1018,3 +1017,4 @@ C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\De
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\003xdj0w92-r9camkwva7.gz
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\cfjtq91ij4-2z4pffkdko.gz
 C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\ennee860nk-svcvcljfiv.gz
+C:\Users\araya\OneDrive\Área de Trabalho\CineMantica\Projeto-CineMantica\obj\Debug\net9.0\compressed\toqs6soo17-ono1ouyw8f.gz

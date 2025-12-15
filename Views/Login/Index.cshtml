@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <main class="container-login">
+   <main class="container-login">
         <aside class="esquerdo">
             <div class="blur">
                 <div class="retangulo-esquerdo">
@@ -47,22 +47,24 @@
                         </div>
 
                         <div class="embaixo-input">
-                            <div class="lembrar">
-                                <input type="checkbox" name="lembrar" id="lembrar-senha">
-                                <label for="lembrar">Lembrar de mim</label>
-                            </div>
-                            <a href="forgot.html" class="esqueceu-senha">Esqueceu sua senha ?</a>
+                            <a href="~/EnvCodigo/Index" class="esqueceu-senha">Esqueceu sua senha ?</a>
                         </div>
 
                         @* <button type="submit" class="botao-login" onclick="Login()">Entrar</button> *@
                         <button type="submit" class="botao-login">Entrar</button>
 
-                        <p class="registrar">Não tem uma conta ? <a href="~/Cadastro/Index" class="">Cadastre-se</a></p>
+                        <div class="registrarBox">
+                            <p class="registrar">Não tem uma conta ? <a href="~/Cadastro/Index" class="">Cadastre-se</a></p>
 
-                
-                            <a href="#" class="google">
-                                <img src="~/assets/login-images/svg/google.svg" alt="Botão de link do google" class="google">
-                            </a>
+                            <p class="ou">ou</p>
+
+                            <div asp-controller="Google" asp-action="Login" class="entrarGoogle"> 
+                                <a class="google">
+                                <span class="textoGoogle">Entrar com o Google</span>
+                                <img src="~/assets/login-images/imagens/google.png" alt="Botão de entrar com google" class="google" width="20px">
+                                </a>
+                            </div>  
+                        </div>
                     </form>
 
 
