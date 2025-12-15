@@ -18,6 +18,8 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
+    public virtual DbSet<codigoUsuarioSenha> codigoUsuarioSenhas { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Comentario>(entity =>
@@ -47,6 +49,13 @@ public partial class AppDbContext : DbContext
         modelBuilder.Entity<Usuario>(entity =>
         {
             entity.HasKey(e => e.id_usuario).HasName("PK__Usuario__4E3E04ADF40A947E");
+        });
+
+        modelBuilder.Entity<codigoUsuarioSenha>(entity =>
+        {
+            entity.HasKey(e => e.id).HasName("PK__codigoUs__3213E83F58D70D16");
+
+            entity.HasOne(d => d.id_usuarioNavigation).WithMany(p => p.codigoUsuarioSenhas).HasConstraintName("fk_idUsuario_codigoUsuarioSenha");
         });
 
         OnModelCreatingPartial(modelBuilder);

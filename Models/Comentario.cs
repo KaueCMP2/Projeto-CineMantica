@@ -27,11 +27,15 @@ public partial class Comentario
     [Precision(0)]
     public DateTime data_post { get; set; }
 
+    [StringLength(255)]
+    [Unicode(false)]
+    public string img_path { get; set; } = null!;
+
+    [StringLength(255)]
+    [Unicode(false)]
+    public string nome_filme { get; set; } = null!;
+
     [ForeignKey("id_usuario")]
     [InverseProperty("Comentarios")]
     public virtual Usuario? id_usuarioNavigation { get; set; }
-    // public Usuario usuario { get; set; }
-    public string nome_filme { get; set; }
-    public string img_path { get; set; }   
-
 }

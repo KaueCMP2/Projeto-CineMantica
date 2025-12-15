@@ -17,7 +17,7 @@ public partial class Usuario
     [Unicode(false)]
     public string nome { get; set; } = null!;
 
-    [StringLength(100)]
+    [StringLength(30)]
     [Unicode(false)]
     public string email { get; set; } = null!;
 
@@ -45,4 +45,7 @@ public partial class Usuario
 
     [InverseProperty("seguindo")]
     public virtual ICollection<Seguindo> Seguindoseguindos { get; set; } = new List<Seguindo>();
+
+    [InverseProperty("id_usuarioNavigation")]
+    public virtual ICollection<codigoUsuarioSenha> codigoUsuarioSenhas { get; set; } = new List<codigoUsuarioSenha>();
 }
