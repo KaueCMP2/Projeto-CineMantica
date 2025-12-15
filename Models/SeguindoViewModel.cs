@@ -9,6 +9,8 @@ namespace ProjetoCinemanticaMVC.Models
         public List<Comentario> ?Feed { get; set; }
         public string ?Titulo { get; set; }
         public string ?Poster { get; set; }
+        public string FotoPerfilTopo { get; set; }
+
 
     }
 }

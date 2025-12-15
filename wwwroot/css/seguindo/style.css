@@ -78,11 +78,14 @@ body {
 .acoes-usuario {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .notificacao-usuario {
     position: relative;
     margin: 0 20px;
+    display: flex;
+    align-items: center;
 }
 
 .action-icon {
@@ -109,14 +112,20 @@ body {
     width: 40px;
     height: 40px;
     background-color: #333;
-    /* Fundo mais escuro */
     border-radius: 50%;
     cursor: pointer;
+    overflow: hidden; /*para limitar a imagem redonda*/
+}
+
+.profile-avatar-large {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
 }
 
 .profile-icon {
     color: #fff;
-    /* Ícone branco */
     font-size: 20px;
 }
 

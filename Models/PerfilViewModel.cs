@@ -33,5 +33,6 @@ namespace ProjetoCinemanticaMVC.Models
 
         public int seguidores_count { get; set; }
         public int seguindo_count { get; set; }
+         public string FotoPerfilTopo { get; set; }
     }
 }

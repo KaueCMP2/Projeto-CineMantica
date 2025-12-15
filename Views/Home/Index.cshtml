@@ -41,16 +41,18 @@
                     <input type="text" placeholder="Busque aqui...">
                 </div>
                 <div class="acoes-usuario">
+
                     <div class="notificacao-usuario">
                         <i class="fas fa-bell action-icon"></i>
                         <div class="notification-dot"></div>
-                    </div>
+                    </div>  
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
                             <img src="@(string.IsNullOrEmpty(Model.FotoUsuario) 
-                        ? "/assets/img/img-perfil.png" 
-                        : Model.FotoUsuario)"  alt="Foto de Perfil" class="profile-avatar-large">
+                                ? "~/assets/home-images/user.png" 
+                                : Model.FotoUsuario)"  alt="Foto de Perfil" class="profile-avatar-large" >
                         </div>
+                    </div>
                         <div class="user-dropdown" id="user-dropdown">
                             <a href="Views/Login/Index.cshtml">Fazer login</a>
                             <a href="Views/Cadastro/Index.cshtml">Criar conta</a>

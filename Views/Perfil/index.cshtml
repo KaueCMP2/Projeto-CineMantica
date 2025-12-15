@@ -38,14 +38,18 @@
                     <input type="text" placeholder="Busque aqui...">
                 </div>
                 <div class="acoes-usuario">
+
                     <div class="notificacao-usuario">
                         <i class="fas fa-bell action-icon"></i>
                         <div class="notification-dot"></div>
-                    </div>
+                    </div>  
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
-                            <i class="fas fa-user profile-icon"></i>
+                            <img src="@(string.IsNullOrEmpty(Model.FotoPerfilTopo) 
+                                ? "~/assets/home-images/user.png" 
+                                : Model.FotoPerfilTopo)"  alt="Foto de Perfil" class="profile-avatar-large" >
                         </div>
+                    </div>
                         <div class="user-dropdown" id="user-dropdown">
                             <a asp-controller="Login" asp-action="Index">Fazer login</a>
                             <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>
@@ -94,7 +98,7 @@
                     </div>
                     <div class="profile-info-bar">
                         <div class="profile-avatar-wrapper">
-                            <img src="@(Model.FotoBase64 != null ? $"data:image/*;base64,{Model.FotoBase64}" : "/assets/img/img-perfil.png")" alt="Foto de Perfil" class="profile-avatar-large">
+                            <img src="@(Model.FotoBase64 != null ? $"data:image/*;base64,{Model.FotoBase64}" : "~/assets/home-images/user.png")" alt="Foto de Perfil" class="profile-avatar-large-perfil">
                         </div>
                         <div class="profile-details">
                             <h2 class="profile-username">@Model.nome</h2>
@@ -123,7 +127,7 @@
                 <section class="reviews-section">
                     <h2 class="section-title">Avaliações</h2>
                     <!-- Reviews will be injected here -->
-                    <p style="color: #aaa; margin-top: 20px;">Carregando...</p>
+                    <p class="carregando" style="color: #aaa; margin-top: 20px;">Carregando...</p>
                 </section>
             </div>
 

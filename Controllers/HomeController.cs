@@ -32,7 +32,7 @@ public class HomeController : Controller
         {
             FotoUsuario = usuario?.foto_perfil != null 
                         ? $"data:image/*;base64,{Convert.ToBase64String(usuario.foto_perfil)}"
-                        : "/assets/img/img-perfil.png"
+                        : "~/assets/home-images/user.png"
         };
         return View(viewModel);
     }

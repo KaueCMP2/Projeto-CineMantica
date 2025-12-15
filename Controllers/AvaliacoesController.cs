@@ -1,4 +1,7 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using ProjetoCinemanticaMVC.Data;
+using ProjetoCinemanticaMVC.Models;
 
 namespace ProjetoCinemanticaMVC.Controllers // Verifique se o namespace é o mesmo do seu projeto
 {
@@ -29,5 +32,6 @@ namespace ProjetoCinemanticaMVC.Controllers // Verifique se o namespace é o mes
         {
             return View("ver_avaliacoes");
         }
+
     }
 }
