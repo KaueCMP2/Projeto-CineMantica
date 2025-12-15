@@ -44,7 +44,10 @@ namespace ProjetoCinemanticaMVC.Controllers
                 data_nascimento = usuario.data_nascimento,
                 BannerBase64 = usuario.Banner != null ? Convert.ToBase64String(usuario.Banner) : null,
                 seguidores_count = seguidoresCount,
-                seguindo_count = seguindoCount
+                seguindo_count = seguindoCount,
+                FotoPerfilTopo = usuario?.foto_perfil != null 
+                        ? $"data:image/*;base64,{Convert.ToBase64String(usuario.foto_perfil)}"
+                        : "~/assets/home-images/user.png"
             };
 
             var avaliacoes = _appDbContext.Comentarios

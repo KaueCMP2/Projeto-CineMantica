@@ -130,36 +130,7 @@ input {
 
 .embaixo-input {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-}
-
-input[type="checkbox"] {
-    accent-color: black;
-}
-
-.lembrar {
-    margin-top: 2%;
-    display: flex;
-}
-
-.lembrar input {
-    width: 20px;
-    height: 20px;
-
-}
-
-.lembrar input:hover {
-    cursor: pointer;
-}
-
-.lembrar label {
-    width: 150px;
-    margin-top: 0;
-    font-weight: 200;
-    font-size: 1.1rem;
-    padding: 1.5%;
 }
 
 .esqueceu-senha {
@@ -189,6 +160,15 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+.registrarBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75em;
+    width: 100%;
+}
+
 .registrar {
     font-size: 1.1rem;
     font-weight: 400;
@@ -206,8 +186,24 @@ input[type="checkbox"] {
     text-decoration: underline;
 }
 
-.google {
-    margin-top: 4%;
+.entrarGoogle{
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    align-items: center;
+    padding: 2%;
+    gap: 15px;
+    width: auto;
+    border-radius: 10px;
+    border: 2px solid var(--vermelho);
+}
+
+.entrarGoogle :hover{
+    cursor: pointer;
+}
+
+
+.google{
     transition: transform 0.15s ease;
 }
 
@@ -218,25 +214,10 @@ input[type="checkbox"] {
 /* RESPONSIVIDADE */
 
  @media (max-width:1070px) {
-     .lembrar label {
-        font-size: 0.88rem;
-    }
-     
-    .esqueceu-senha {
-        font-size: 0.84rem;
-        padding: 1.2%;
-    }
-
     .registrar{
         font-size: 0.9rem;
     }
 } 
-
-@media (max-width:1070px) {
-    .esqueceu-senha {
-        font-size: 0.71rem;
-    }
-}
 
 @media (max-width:925px) {
     .registrar{
@@ -249,11 +230,6 @@ input[type="checkbox"] {
     .embaixo-input{
         flex-direction: column;
     }
-
-    .esqueceu-senha {
-        font-size: 0.8rem;
-    }
-    
 }
 
 /* MOBILE */
@@ -294,15 +270,6 @@ input[type="checkbox"] {
         width: 70%;
     }
 
-    .lembrar label {
-        font-size: 1.1rem;
-    }
-    
-    .esqueceu-senha {
-        font-size: 1rem;
-        padding: 1.5%;
-    }
-
     .registrar{
         font-size: 1.1rem;
     }
@@ -317,25 +284,12 @@ input[type="checkbox"] {
         font-size: 1.6rem;
     }
 
-    .esqueceu-senha {
-        font-size: 0.8rem;
-    }
 
     header {
         width: 95%;
     }
 
     .registrar{
-        font-size: 0.9rem;
-    }
-}
-
-@media(max-width: 515px) {
-    .embaixo-input{
-        flex-direction: column;
-    }
-
-    .esqueceu-senha{
         font-size: 0.9rem;
     }
 }
@@ -355,5 +309,9 @@ input[type="checkbox"] {
 
     .embaixo-input label {
         font-size: 14px;
+    }
+
+    .registrar{
+        font-size: 0.75rem;
     }
 }

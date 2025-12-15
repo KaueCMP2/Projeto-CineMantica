@@ -36,5 +36,6 @@ namespace ProjetoCinemanticaMVC.Models
 
         public PerfilViewModel Perfil { get; set; }
         public List<AvaliacoesViewModel> Avaliacoes { get; set; }
+        public string FotoPerfilTopo { get; set; }
     }
 }

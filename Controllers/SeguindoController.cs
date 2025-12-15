@@ -34,7 +34,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 .Where(s => s.seguindo_id == usuarioId)
                 .ToList();
 
-            // int? movieId = Comentario.id_filme;
+            // int? movieId = Comentario.id_filme;S
 
 
             var seguindoIds = seguindo.Select(s => s.seguidor_id).ToList();
@@ -52,7 +52,10 @@ namespace ProjetoCinemanticaMVC.Controllers
                 NomeUsuario = usuario?.nome,
                 FotoUsuario = usuario?.foto_perfil != null ? Convert.ToBase64String(usuario.foto_perfil) : null,
                 Seguindo = seguindo,
-                Feed = feed
+                Feed = feed,
+                FotoPerfilTopo = usuario?.foto_perfil != null 
+                        ? $"data:image/*;base64,{Convert.ToBase64String(usuario.foto_perfil)}"
+                        : "~/assets/home-images/user.png"
 
             };
 

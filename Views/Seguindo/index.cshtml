@@ -40,14 +40,18 @@
                     <input type="text" placeholder="Busque aqui...">
                 </div>
                 <div class="acoes-usuario">
+
                     <div class="notificacao-usuario">
                         <i class="fas fa-bell action-icon"></i>
                         <div class="notification-dot"></div>
-                    </div>
+                    </div>  
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
-                            <i class="fas fa-user profile-icon"></i>
+                            <img src="@(string.IsNullOrEmpty(Model.FotoPerfilTopo) 
+                                ? "~/assets/home-images/user.png" 
+                                : Model.FotoPerfilTopo)"  alt="Foto de Perfil" class="profile-avatar-large" >
                         </div>
+                    </div>
                         <div class="user-dropdown" id="user-dropdown">
                             <a asp-controller="Login" asp-action="Index">Fazer login</a>
                             <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>

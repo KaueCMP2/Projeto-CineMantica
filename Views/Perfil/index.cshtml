@@ -38,14 +38,18 @@
                     <input type="text" placeholder="Busque aqui...">
                 </div>
                 <div class="acoes-usuario">
+
                     <div class="notificacao-usuario">
                         <i class="fas fa-bell action-icon"></i>
                         <div class="notification-dot"></div>
-                    </div>
+                    </div>  
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
-                            <i class="fas fa-user profile-icon"></i>
+                            <img src="@(string.IsNullOrEmpty(Model.Perfil.FotoFinal) 
+                                ? "~/assets/home-images/user.png" 
+                                : Model.Perfil.FotoFinal)"  alt="Foto de Perfil" class="profile-avatar-large" >
                         </div>
+                    </div>
                         <div class="user-dropdown" id="user-dropdown">
                             <a asp-controller="Login" asp-action="Index">Fazer login</a>
                             <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>
@@ -98,8 +102,9 @@
                     </div>
                     <div class="profile-info-bar">
                         <div class="profile-avatar-wrapper">
-                            <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "/assets/img/img-perfil.png")"
-                                alt="Foto de Perfil" class="profile-avatar-large">
+                            <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "~/assets/home-images/user.png")" alt="Foto de Perfil" class="profile-avatar-large-perfil">
+                            @* <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "/assets/img/img-perfil.png")"
+                                alt="Foto de Perfil" class="profile-avatar-large"> *@
                         </div>
                         <div class="profile-details">
                             <h2 class="profile-username">@Model.Perfil.nome</h2>

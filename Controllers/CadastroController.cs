@@ -22,20 +22,20 @@ namespace ProjetoCinemanticaMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Criar(string nome, string nick_name, string data_nascimento, string email, string senha, string confirmar)
+        public async Task<IActionResult> Criar(string nome, string nickname, string dataNascimento, string email, string senha, string confirmarSenha)
         {
             if( string.IsNullOrWhiteSpace(nome) ||
-                string.IsNullOrWhiteSpace(nick_name) ||
-                string.IsNullOrWhiteSpace(data_nascimento) ||
+                string.IsNullOrWhiteSpace(nickname) ||
+                string.IsNullOrWhiteSpace(dataNascimento) ||
                 string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(senha) ||
-                string.IsNullOrWhiteSpace(confirmar))
+                string.IsNullOrWhiteSpace(confirmarSenha))
             {
                 ViewBag.Erro = "Preencha todos os campos";
                 return View("Index");
             }
 
-            if(senha != confirmar)
+            if(senha != confirmarSenha)
             {
                 ViewBag.Erro = "As senhas não conferem.";
                 return View("Index");
@@ -47,7 +47,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 return View("Index");
             }
 
-            if(_context.Usuarios.Any(usuario => usuario.nick_name == nick_name))
+            if(_context.Usuarios.Any(usuario => usuario.nick_name == nickname))
             {
                 ViewBag.Erro = "Nome de usuário já cadastrado";
                 return View("Index");
@@ -55,7 +55,7 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             byte[] hash = HashService.GerarHashBytes(senha);
 
-            if (!DateOnly.TryParse(data_nascimento, out var dataNasc))
+            if (!DateOnly.TryParse(dataNascimento, out var dataNasc))
             {
                 ViewBag.Erro = "Data de nascimento inválida";
                 return View("Index");
@@ -66,17 +66,14 @@ namespace ProjetoCinemanticaMVC.Controllers
                 nome = nome,
                 email = email,
                 senha = hash,
-                nick_name = nick_name,
+                nick_name = nickname,
                 data_nascimento = dataNasc
                 
             };
-
-            Console.WriteLine(usuario.nome, usuario.email, usuario.nick_name, usuario.data_nascimento);
             
             await _context.Usuarios.AddAsync(usuario);
             await _context.SaveChangesAsync();
 
-            Console.WriteLine("Usuário cadastrado com sucesso!");
             // redireciona para o login
             return RedirectToAction("Index", "Home");
 
