@@ -17,11 +17,14 @@ public partial class Usuario
     [Unicode(false)]
     public string nome { get; set; } = null!;
 
-    [StringLength(100)]
+    [StringLength(30)]
     [Unicode(false)]
     public string email { get; set; } = null!;
 
+<<<<<<< HEAD
     [MaxLength(32)]
+=======
+>>>>>>> c83b3fd72c0ffd2b58dd0663064a6767b900206b
     public byte[]? senha { get; set; }
 
     [StringLength(12)]
@@ -45,4 +48,7 @@ public partial class Usuario
 
     [InverseProperty("seguindo")]
     public virtual ICollection<Seguindo> Seguindoseguindos { get; set; } = new List<Seguindo>();
+
+    [InverseProperty("id_usuarioNavigation")]
+    public virtual ICollection<codigoUsuarioSenha> codigoUsuarioSenhas { get; set; } = new List<codigoUsuarioSenha>();
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8fw1b1SIVOA=",
+  "dgSpecHash": "kbV4gOhtWOU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+  "projectFilePath": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\43159446883\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\43159446883\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
@@ -165,5 +165,15 @@
     "C:\\Users\\43159446883\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\43159446883\\.nuget\\packages\\system.windows.extensions\\7.0.0\\system.windows.extensions.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "message": "Problema ao ler o arquivo de cache c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\obj\\project.nuget.cache: '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
+      "projectPath": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+      "warningLevel": 1,
+      "filePath": "c:\\Users\\43159446883\\Desktop\\MVC Cinemantica\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
