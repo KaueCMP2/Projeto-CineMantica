@@ -86,7 +86,7 @@
                     class="review-form">
                     <div class="rating-input">
                         <div class="separar">
-                            <label>Sua Comentário: </label>
+                            <label>Seu Comentário: </label>
                              <select name="tipo_comentario" id="">
                             <option value="Comentário">Comentário</option>
                             <option value="Spoiler">Spoiler</option>
@@ -96,8 +96,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="reviewText">Sua Resenha:</label>
-                        <input name="descricao" id="reviewText" rows="6" placeholder="O que você achou do filme?"
+                        @* <label for="reviewText">Sua Resenha:</label> *@
+                        <input maxlength="200" name="descricao" id="reviewText" rows="6" placeholder="O que você achou do filme?"
                             required></textarea>
                     </div>
 

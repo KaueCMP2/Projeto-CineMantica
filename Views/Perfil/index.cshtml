@@ -170,20 +170,6 @@
                                     <div class="review-content">
 
                                         <h3 class="review-movie-title">@review.TituloFilme</h3>
-                                        @* 
-                        <div class="review-rating">
-                            @for (int i = 1; i <= 5; i++)
-                            {
-                                if (i <= review.nota)
-                                {
-                                    <i class="fas fa-star" style="color:red;"></i>
-                                }
-                                else
-                                {
-                                    <i class="far fa-star"></i>
-                                }
-                            }
-                        </div> *@
 
                                         <p class="review-description">
                                             @review.descricao

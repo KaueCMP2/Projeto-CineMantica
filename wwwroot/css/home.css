@@ -122,17 +122,18 @@ body {
     background-color: #333;
     border-radius: 50%;
     cursor: pointer;
-    overflow: hidden; /*para limitar a imagem redonda*/
+    overflow: hidden;
+    /*para limitar a imagem redonda*/
 }
 
 .profile-avatar-large {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
 }
 
-.profile-avatar-large-perfil{
+.profile-avatar-large-perfil {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -1241,6 +1242,19 @@ body {
     color: #1d1d1d;
 }
 
+.review-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #ccc;
+        /* text-align: justify; */
+        width: 50vw;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+
+    }
+
 /* Responsividade do Modal */
 @media (max-width: 768px) {
     .modal-content {
@@ -1282,7 +1296,14 @@ body {
         font-size: 0.95rem;
         line-height: 1.5;
         color: #ccc;
-        text-align: justify;
+        /* text-align: justify; */
+        width: 300px;
+        height: 300px;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+
     }
 
     /* Responsividade para a página Seguindo */
@@ -1514,9 +1535,10 @@ body {
     margin-top: 20px;
 }
 
-.carregando{
+.carregando {
     padding-left: 30px;
 }
+
 /* .review-card removed to use neumorphic style defined earlier */
 
 .review-header {
@@ -1570,7 +1592,7 @@ body {
     cursor: pointer;
 }
 
-.dataeTipoComentario{
+.dataeTipoComentario {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -1588,10 +1610,10 @@ body {
     border-radius: 5px;
     object-fit: cover;
 }
-
+/* 
 .review-content {
     flex: 1;
-}
+} */
 
 .review-movie-title {
     font-size: 1.2rem;
@@ -1684,7 +1706,7 @@ body {
     background-color: #a31515;
 }
 
-.btn-submit{
+.btn-submit {
     background-color: #c52020;
     color: white;
     border: none;

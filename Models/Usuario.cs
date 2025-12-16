@@ -17,7 +17,7 @@ public partial class Usuario
     [Unicode(false)]
     public string nome { get; set; } = null!;
 
-    [StringLength(30)]
+    [StringLength(255)]
     [Unicode(false)]
     public string email { get; set; } = null!;
 
