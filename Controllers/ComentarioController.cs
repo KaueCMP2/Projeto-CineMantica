@@ -34,6 +34,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 .Select(c => new ComentarioViewModel
                 {
                     nome_usuario = c.id_usuarioNavigation.nick_name,
+                    tipo_comentario = c.tipo_comentario,
                     descricao = c.descricao,
                     data_post = c.data_post,
                     usuario = c.id_usuarioNavigation,

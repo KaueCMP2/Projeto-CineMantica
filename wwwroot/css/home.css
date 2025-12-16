@@ -1046,6 +1046,7 @@ body {
         -5px -5px 10px #242424;
     display: flex;
     flex-direction: column;
+    margin-bottom: 3%;
 }
 
 .review-header {
@@ -1546,6 +1547,13 @@ body {
     border-radius: 5px;
     font-size: 0.9rem;
     cursor: pointer;
+}
+
+.dataeTipoComentario{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 16px;
 }
 
 .review-body {
