@@ -2,6 +2,7 @@
     Layout = null;
     var tituloFilme = Context.Session.GetString("MovieTitle");
     var posterFilme = Context.Session.GetString("MovieImg");
+    var fotoUsuario = Context.Session.GetString("UsuarioFoto");
 }
 
 <!DOCTYPE html>
@@ -46,7 +47,9 @@
                     </div>
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
-                            <i class="fas fa-user profile-icon"></i>
+                            <img src="@(string.IsNullOrEmpty(fotoUsuario) 
+                                                         ? "/assets/home-images/user.png" 
+                                                         : $"data:image/*;base64,{fotoUsuario}")" alt="Foto de Perfil" class="profile-avatar-large">
                         </div>
                         <div class="user-dropdown" id="user-dropdown">
                             <a href="@Url.Action("Index", "Login")">Fazer login</a>

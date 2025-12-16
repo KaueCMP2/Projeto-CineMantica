@@ -47,8 +47,8 @@
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
                             <img src="@(string.IsNullOrEmpty(fotoUsuario) 
-                                                                                                  ? "/assets/home-images/user.png" 
-                                                                                                  : $"data:image/*;base64,{fotoUsuario}")"
+                                                                                                                                   ? "/assets/home-images/user.png" 
+                                                                                                                                   : $"data:image/*;base64,{fotoUsuario}")"
                                 alt="Foto de Perfil" class="profile-avatar-large">
                         </div>
                     </div>
@@ -114,11 +114,11 @@
                             <div class="profile-stats">
                                 <div class="stat-item">
                                     <span class="stat-value">@Model.Perfil.seguidores_count</span>
-                                    <span class="stat-label">Seguidores</span>
+                                    <span class="stat-label">Seguindo</span>
                                 </div>
                                 <div class="stat-item">
                                     <span class="stat-value">@Model.Perfil.seguindo_count</span>
-                                    <span class="stat-label">Seguindo</span>
+                                    <span class="stat-label">Seguidores</span>
                                 </div>
                                 <div class="stat-item">
                                     <span class="stat-value">0</span>
@@ -127,32 +127,35 @@
                             </div>
 
                         </div>
-                        <p name="desc_perfil" class="stat-label">@Model.Perfil.desc_perfil</p>
-                        @if (Model.isMeuPerfil)
-                        {
-                            <button class="edit-profile-btn">
-                                <i class="fas fa-pen"></i> Editar Perfil
-                            </button>
-                        }
-                        else
-                        {
-                            <form asp-controller="Perfil" asp-action="ToggleFollow" method="post">
-                                <input type="hidden" name="seguindoId" value="@Model.Perfil.id_usuario" />
+                        <div style="display: flex; gap: 30px" class="espacamento">
+                            <p name="desc_perfil" class="stat-label">@Model.Perfil.desc_perfil</p>
+                            @if (Model.isMeuPerfil)
+                            {
+                                <button class="edit-profile-btn">
+                                    <i class="fas fa-pen"></i> Editar Perfil
+                                </button>
+                            }
+                            else
+                            {
+                                <form asp-controller="Perfil" asp-action="ToggleFollow" method="post">
+                                    <input type="hidden" name="seguindoId" value="@Model.Perfil.id_usuario" />
 
-                                @if (Model.JaSegue)
-                                {
-                                    <button type="submit" class="btn-unfollow follow-profile-btn">
-                                        <i class="fas fa-user-minus"></i> Deixar de seguir
-                                    </button>
-                                }
-                                else
-                                {
-                                    <button type="submit" class="btn-follow follow-profile-btn">
-                                        <i class="fas fa-user-plus"></i> Seguir
-                                    </button>
-                                }
-                            </form>
-                        }
+                                    @if (Model.JaSegue)
+                                    {
+                                        <button type="submit" class="btn-unfollow follow-profile-btn">
+                                            <i class="fas fa-user-minus"></i> Deixar de seguir
+                                        </button>
+                                    }
+                                    else
+                                    {
+                                        <button type="submit" class="btn-follow follow-profile-btn">
+                                            <i class="fas fa-user-plus"></i> Seguir
+                                        </button>
+                                    }
+                                </form>
+                            }
+                        </div>
+
                     </div>
                 </div>
 
