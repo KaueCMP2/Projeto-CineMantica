@@ -7889,11 +7889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\VScode\\Backup-Cinemantica\\ProjetoCinemanticaMVC.csproj",
+      "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
       "projectName": "ProjetoCinemanticaMVC",
-      "projectPath": "C:\\Users\\Pichau\\Desktop\\VScode\\Backup-Cinemantica\\ProjetoCinemanticaMVC.csproj",
+      "projectPath": "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
       "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pichau\\Desktop\\VScode\\Backup-Cinemantica\\obj\\",
+      "outputPath": "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

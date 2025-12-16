@@ -3,6 +3,7 @@
 
 @{
     Layout = null;
+    var fotoUsuario = Context.Session.GetString("UsuarioFoto");
 }
 }
 <!DOCTYPE html>
@@ -48,9 +49,13 @@
                     </div>
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
-                            <img src="@(string.IsNullOrEmpty(Model.FotoPerfilTopo) 
-                                                                 ? "~/assets/home-images/user.png" 
-                                                                 : Model.FotoPerfilTopo)" alt="Foto de Perfil" class="profile-avatar-large">
+                            <img src="@(string.IsNullOrEmpty(fotoUsuario) 
+                                                         ? "/assets/img/img-perfil.png" 
+                                                         : $"data:image/*;base64,{fotoUsuario}")" alt="Foto de Perfil" class="profile-avatar-large">
+                        </div>
+                        <div class="user-dropdown" id="user-dropdown">
+                            <a href="Views/Login/Index.cshtml">Fazer login</a>
+                            <a href="Views/Cadastro/Index.cshtml">Criar conta</a>
                         </div>
                     </div>
                     <div class="user-dropdown" id="user-dropdown">
@@ -97,43 +102,41 @@
         </aside>
 
         <main class="main-content following-page-content">
-            <h2>Titulo</h2>
+            <h2>Seguindo</h2>
 
             <section class="following-users-bar">
                 @* <div class="following-users-bar"> *@
-                    @if (Model.Seguindo != null && Model.Seguindo.Any())
+                @if (Model.Seguindo != null && Model.Seguindo.Any())
+                {
+                    foreach (var item in Model.Seguindo)
                     {
-                        foreach (var item in Model.Seguindo)
-                        {
-                            var user = item.seguindo;
+                        var user = item.seguindo;
 
-                            <div class="user-bubble">
-                                <a href="/Perfil/Index?user=@user.id_usuario"
-                                    style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
-                                    <a asp-controller="Perfil"
-                                            asp-action="Index"
-                                            asp-route-id="@user.id_usuario">
-                                            <img src="@(user.foto_perfil != null ? $"data:image/*;base64,{Convert.ToBase64String(user.foto_perfil)}" : "/assets/home-images/user.png")"
+                        <div class="user-bubble">
+                            <a href="/Perfil/Index?user=@user.id_usuario"
+                                style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
+                                <a asp-controller="Perfil" asp-action="Index" asp-route-id="@user.id_usuario">
+                                    <img src="@(user.foto_perfil != null ? $"data:image/*;base64,{Convert.ToBase64String(user.foto_perfil)}" : "/assets/home-images/user.png")"
                                         alt="Avatar">
-                                        </a>
-                                    
-
-                                    <span>@user.nick_name</span>
-                                    @{
-                                        var filmesAssistidosCount = Model.Feed != null
-                                                ? Model.Feed.Count(r => r.id_usuario == user.id_usuario)
-                                        : 0;
-                                    }
-                                    <span style="font-size: 0.8em; color: #aaa; margin-top: 4px;">@filmesAssistidosCount
-                                        assistidos</span>
                                 </a>
-                            </div>
-                        }
+
+
+                                <span>@user.nick_name</span>
+                                @{
+                                    var filmesAssistidosCount = Model.Feed != null
+                                    ? Model.Feed.Count(r => r.id_usuario == user.id_usuario)
+                                    : 0;
+                                }
+                                <span style="font-size: 0.8em; color: #aaa; margin-top: 4px;">@filmesAssistidosCount
+                                    assistidos</span>
+                            </a>
+                        </div>
                     }
-                    else
-                    {
-                        <p style="color: #aaa; padding: 20px;">Siga usuários para vê-los aqui!</p>
-                    }
+                }
+                else
+                {
+                    <p style="color: #aaa; padding: 20px;">Siga usuários para vê-los aqui!</p>
+                }
                 @* </div> *@
             </section>
 
@@ -166,23 +169,27 @@
                                         alt="Avatar">
 
                                     <div class="user-details">
-                                        <span class="username">@nome    </span>
-                                        <a asp-controller="Perfil"
+                                        <span class="username">@nome </span>
+                                        <a style="text-decoration: none; color: red;" asp-controller="Perfil"
                                             asp-action="Index"
                                             asp-route-id="@review.id_usuario">
                                             Ver perfil
                                         </a>
-
                                     </div>
                                 </div>
+                                <div style="display: flex; flex-direction: column; gap: 16px;" class="direita">
+                                    <button class="review-tag">@review.tipo_comentario</button>
+                                    <span class="">@review.data_post</span>
+                                </div>
 
-                                <button class="review-tag">@review.tipo_comentario</button>
+
                             </div>
 
                             <div class="review-body">
-                                <img src="https://image.tmdb.org/t/p/w500/@review.img_path" class="review-movie-poster" alt="" />
+                                <img src="https://image.tmdb.org/t/p/w500/@review.img_path" class="review-movie-poster"
+                                    alt="" />
                                 @* {@review.poster} @review.titulo_filme  @review.titulo_filme *@
-                                        <div class="review-content">
+                                <div class="review-content">
 
                                     <h3 class="review-movie-title">@review.nome_filme</h3>
                                     @* 
@@ -200,7 +207,7 @@
                             }
                         </div> *@
 
-                                            <p class="review-description">
+                                    <p class="review-description">
                                         @review.descricao
                                     </p>
 

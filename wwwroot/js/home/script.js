@@ -186,14 +186,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (reviewModal && closeModalBtn) {
 
-        if (reviewButtons) {
-            reviewButtons.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault(); // Previne comportamento padrão se for link
-                    reviewModal.classList.add('active');
-                });
-            });
-        }
+        // if (reviewButtons) {
+        //     reviewButtons.forEach(btn => {
+        //         btn.addEventListener('click', (e) => {
+        //             e.preventDefault(); // Previne comportamento padrão se for link
+        //             reviewModal.classList.add('active');
+        //         });
+        //     });
+        // }
 
         closeModalBtn.addEventListener('click', () => {
             reviewModal.classList.remove('active');
