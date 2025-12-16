@@ -50,7 +50,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             // Percorre a lista de usuarios do banco e verifica se existe algum com aquele email
             var usuario = _context.Usuarios.FirstOrDefault(usuario => usuario.email == email);
 
-            if(usuario == null)
+            if (usuario == null)
             {
                 ViewBag.Erro = "E-mail ou senha incorretos.";
                 return View("Index");
@@ -66,13 +66,21 @@ namespace ProjetoCinemanticaMVC.Controllers
 
             HttpContext.Session.SetString("UsuarioNome", usuario.email);
             HttpContext.Session.SetInt32("UsuarioId", usuario.id_usuario);
+            HttpContext.Session.SetString(
+    "UsuarioFoto",
+    usuario.foto_perfil != null
+        ? Convert.ToBase64String(usuario.foto_perfil)
+        : ""
+);
+            Console.WriteLine("Foto " + HttpContext.Session.GetString("UsuarioFoto"));
+
 
             return RedirectToAction("Index", "Home");
-        }   
+        }
 
 
 
-             // LOGIN VIA GOOGLE
+        // LOGIN VIA GOOGLE
         public IActionResult LoginGoogle()
         {
             var propriedades = new AuthenticationProperties
@@ -96,10 +104,10 @@ namespace ProjetoCinemanticaMVC.Controllers
             var claims = resultado.Principal.Identities.First().Claims.ToList();
 
             string email = claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-             string fotoClaim = claims.FirstOrDefault(c =>
-                c.Type == "picture" ||
-                c.Type == "urn:google:picture" ||
-                c.Type == ClaimTypes.Uri)?.Value;
+            string fotoClaim = claims.FirstOrDefault(c =>
+               c.Type == "picture" ||
+               c.Type == "urn:google:picture" ||
+               c.Type == ClaimTypes.Uri)?.Value;
 
             // converte a claim para byte[] (suporta base64 puro ou data:[...];base64,...)
             byte[] foto_perfil_bytes = null;
@@ -136,7 +144,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                     email = email,
                     nome = nome,
                     foto_perfil = foto_perfil_bytes
-                     // sem nada pq o google vai usar os cookies(nao e os de comer)
+                    // sem nada pq o google vai usar os cookies(nao e os de comer)
                 };
 
                 _context.Usuarios.Add(usuario);
@@ -157,7 +165,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             HttpContext.Session.SetInt32("UsuarioId", usuario.id_usuario);
 
             return RedirectToAction("Index", "Home");
-        }	
+        }
 
         public IActionResult Sair()
         {

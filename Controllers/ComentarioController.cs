@@ -24,7 +24,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             ViewBag.Poster = poster;
 
             int? movieId = HttpContext.Session.GetInt32("MovieId");
-
+            Console.WriteLine("Title = " + poster);
             Console.WriteLine("MovieId = " + movieId);
 
             var comentarios = _appDbContext.Comentarios
@@ -37,8 +37,9 @@ namespace ProjetoCinemanticaMVC.Controllers
                     descricao = c.descricao,
                     data_post = c.data_post,
                     usuario = c.id_usuarioNavigation,
-                    foto_perfil = Convert.ToBase64String(c.id_usuarioNavigation.foto_perfil)
-                    
+                    foto_perfil = c.id_usuarioNavigation.foto_perfil != null
+                        ? Convert.ToBase64String(c.id_usuarioNavigation.foto_perfil)
+                        : null,
                 })
                 .ToList();
 
@@ -62,7 +63,7 @@ namespace ProjetoCinemanticaMVC.Controllers
             int? usuarioId = HttpContext.Session.GetInt32("UsuarioId");
             int? movieId = HttpContext.Session.GetInt32("MovieId");
             string? movieTitle = HttpContext.Session.GetString("MovieTitle");
-            string? moviePoster = HttpContext.Session.GetString("MovieImg");
+            string? movieImg = HttpContext.Session.GetString("MovieImg");
 
 
             var comentario = new Comentario
@@ -73,7 +74,7 @@ namespace ProjetoCinemanticaMVC.Controllers
                 descricao = descricao,
                 data_post = DateTime.Now,
                 nome_filme = movieTitle,
-                img_path = moviePoster
+                img_path = movieImg
             };
 
             _appDbContext.Comentarios.Add(comentario);
