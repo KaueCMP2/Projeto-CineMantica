@@ -20,7 +20,7 @@ public partial class Comentario
 
     public int? id_filme { get; set; }
 
-    [StringLength(500)]
+    [StringLength(200)]
     [Unicode(false)]
     public string descricao { get; set; } = null!;
 
