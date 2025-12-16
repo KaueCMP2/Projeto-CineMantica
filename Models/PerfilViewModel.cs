@@ -9,7 +9,7 @@ namespace ProjetoCinemanticaMVC.Models
     {
         public int id_usuario { get; set; }
         public string nome { get; set; }
-        public string? NomeUsuario {get; set;}
+        public string? NomeUsuario { get; set; }
         public string Email { get; set; }
         // public int RegraId {get; set;}
         // public List<RegraPerfil> Regras {get; set;}
@@ -32,10 +32,14 @@ namespace ProjetoCinemanticaMVC.Models
                 : "/assets/img/banner-perfil.jpg";
 
         public int seguidores_count { get; set; }
-        public int seguindo_count { get; set; } 
+        public int seguindo_count { get; set; }
 
         public PerfilViewModel Perfil { get; set; }
         public List<AvaliacoesViewModel> Avaliacoes { get; set; }
         public string FotoPerfilTopo { get; set; }
+
+        public bool isMeuPerfil { get; set; }
+        public bool JaSegue { get; set; }
+        public int usuarioId { get; set; }
     }
 }

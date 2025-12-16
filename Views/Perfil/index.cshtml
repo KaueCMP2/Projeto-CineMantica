@@ -42,20 +42,20 @@
                     <div class="notificacao-usuario">
                         <i class="fas fa-bell action-icon"></i>
                         <div class="notification-dot"></div>
-                    </div>  
+                    </div>
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
                             <img src="@(string.IsNullOrEmpty(Model.Perfil.FotoFinal) 
-                                ? "~/assets/home-images/user.png" 
-                                : Model.Perfil.FotoFinal)"  alt="Foto de Perfil" class="profile-avatar-large" >
+                                                                 ? "~/assets/home-images/user.png" 
+                                                                 : Model.Perfil.FotoFinal)" alt="Foto de Perfil" class="profile-avatar-large">
                         </div>
                     </div>
-                        <div class="user-dropdown" id="user-dropdown">
-                            <a asp-controller="Login" asp-action="Index">Fazer login</a>
-                            <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>
-                        </div>
+                    <div class="user-dropdown" id="user-dropdown">
+                        <a asp-controller="Login" asp-action="Index">Fazer login</a>
+                        <a asp-controller="Cadastro" asp-action="Index">Criar conta</a>
                     </div>
                 </div>
+            </div>
             </div>
         </nav>
     </header>
@@ -102,7 +102,8 @@
                     </div>
                     <div class="profile-info-bar">
                         <div class="profile-avatar-wrapper">
-                            <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "~/assets/home-images/user.png")" alt="Foto de Perfil" class="profile-avatar-large-perfil">
+                            <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "~/assets/home-images/user.png")"
+                                alt="Foto de Perfil" class="profile-avatar-large-perfil">
                             @* <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "/assets/img/img-perfil.png")"
                                 alt="Foto de Perfil" class="profile-avatar-large"> *@
                         </div>
@@ -125,8 +126,31 @@
 
                         </div>
                         <p name="desc_perfil" class="stat-label">@Model.Perfil.desc_perfil</p>
-                        <button class="edit-profile-btn"><i class="fas fa-pen"></i> Editar
-                            Perfil</button>
+                        @if (Model.isMeuPerfil)
+                        {
+                            <button class="edit-profile-btn">
+                                <i class="fas fa-pen"></i> Editar Perfil
+                            </button>
+                        }
+                        else
+                        {
+                            <form asp-controller="Perfil" asp-action="ToggleFollow" method="post">
+                                <input type="hidden" name="seguindoId" value="@Model.Perfil.id_usuario" />
+
+                                @if (Model.JaSegue)
+                                {
+                                    <button type="submit" class="btn-unfollow">
+                                        <i class="fas fa-user-minus"></i> Deixar de seguir
+                                    </button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn-follow">
+                                        <i class="fas fa-user-plus"></i> Seguir
+                                    </button>
+                                }
+                            </form>
+                        }
                     </div>
                 </div>
 
@@ -137,13 +161,13 @@
                         <article style="padding: 16px; margin-bottom: 30px" class="review-card">
                             @* <div class="review-header">
                                 <div class="reviewer-info"> *@
-                                    @* <img src="https://image.tmdb.org/t/p/w500/@review.PosterFilme" alt="Avatar"
+                            @* <img src="https://image.tmdb.org/t/p/w500/@review.PosterFilme" alt="Avatar"
                                     class="reviewer-avatar"> *@
-                                    @* <div class="reviewer-meta">
+                            @* <div class="reviewer-meta">
                                     <span class="reviewer-name">@review.</span>
                                     <span class="reviewer-action">Ver perfil</span>
                                 </div> *@
-                                @* </div>
+                            @* </div>
                                 
                             </div> *@
                             <div class="review-body">
@@ -186,7 +210,8 @@
 
                 <div class="form-group">
                     <label for="display-name">Nome de Exibição</label>
-                    <input name="nome" type="text" id="display-name" placeholder="Seu nome" value="@Model.Perfil.NomeUsuario">
+                    <input name="nome" type="text" id="display-name" placeholder="Seu nome"
+                        value="@Model.Perfil.NomeUsuario">
                 </div>
                 <div class="form-group">
                     <label for="display-name">Descrição do perfil</label>

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rapha\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {}
+    "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rapha\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {
+    "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rapha\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+        "projectUniqueName": "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
         "projectName": "ProjetoCinemanticaMVC",
-        "projectPath": "C:\\Users\\rapha\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
-        "packagesPath": "C:\\Users\\rapha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rapha\\OneDrive\\Área de Trabalho\\Nova pasta (2)\\Projeto-CineMantica\\obj\\",
+        "projectPath": "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\ProjetoCinemanticaMVC.csproj",
+        "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Pichau\\Desktop\\VScode\\Projeto-CineMantica\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\rapha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Pichau\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.307/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
