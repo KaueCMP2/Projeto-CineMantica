@@ -74,7 +74,7 @@
                             Avaliações</a></li>
                 </ul>
             </nav>
-            <div class="following-section">
+            @* <div class="following-section">
                 <div class="following-header">
                     <h3>Seguindo</h3>
                     <span>Assistidos</span>
@@ -85,7 +85,7 @@
                 <button class="see-more-btn">
                     <i class="fas fa-chevron-down"></i> Ver mais
                 </button>
-            </div>
+            </div> *@
         </aside>
 
         <main class="main-content following-page-content">
@@ -111,7 +111,7 @@
 
                                     <div class="user-details">
                                         <span class="username">@review.usuario.nome</span>
-                                        <a style="text-decoration: none; color: red;" asp-controller="Perfil"
+                                        <a class="reviewer-action" asp-controller="Perfil"
                                             asp-action="Index"
                                             asp-route-id="@review.id_usuario">
                                             Ver perfil

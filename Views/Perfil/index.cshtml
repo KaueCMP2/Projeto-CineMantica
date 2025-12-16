@@ -1,6 +1,7 @@
 @model ProjetoCinemanticaMVC.Models.PerfilViewModel
 @{
     Layout = null;
+    var fotoUsuario = Context.Session.GetString("UsuarioFoto");
 }
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -45,9 +46,9 @@
                     </div>
                     <div class="user-profile-container">
                         <div class="icone-usuario" id="user-icon">
-                            <img src="@(string.IsNullOrEmpty(Model.Perfil.FotoFinal) 
-                                                                 ? "~/assets/home-images/user.png" 
-                                                                 : Model.Perfil.FotoFinal)" alt="Foto de Perfil" class="profile-avatar-large">
+                            <img src="@(string.IsNullOrEmpty(fotoUsuario) 
+                                                                 ? "/assets/home-images/user.png" 
+                                                                 : $"data:image/*;base64,{fotoUsuario}")" alt="Foto de Perfil" class="profile-avatar-large">
                         </div>
                     </div>
                     <div class="user-dropdown" id="user-dropdown">
@@ -78,7 +79,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="following-section">
+            @* <div class="following-section">
                 <div class="following-header">
                     <h3>Seguindo</h3>
                     <span>Assistidos</span>
@@ -90,19 +91,19 @@
                 <button class="see-more-btn">
                     <i class="fas fa-chevron-down"></i> Ver mais
                 </button>
-            </div>
+            </div> *@
         </aside>
 
         <main class="main-content">
             <div class="profile-content-wrapper" style="visibility"> <!-- Hidden initially to prevent flash -->
                 <div class="profile-header-container">
                     <div class="profile-banner">
-                        <img src="@(Model.Perfil.BannerBase64 != null ? $"data:image/*;base64,{Model.Perfil.BannerBase64}" : "/assets/img/banner-perfil.jpg")"
+                        <img src="@(Model.Perfil.BannerBase64 != null ? $"data:image/*;base64,{Model.Perfil.BannerBase64}" : "/assets/home-images/banner.jpg")"
                             alt="Imagem de Capa do Perfil" class="profile-banner-image">
                     </div>
                     <div class="profile-info-bar">
                         <div class="profile-avatar-wrapper">
-                            <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "~/assets/home-images/user.png")"
+                            <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "/assets/home-images/user.png")"
                                 alt="Foto de Perfil" class="profile-avatar-large-perfil">
                             @* <img src="@(Model.Perfil.FotoBase64 != null ? $"data:image/*;base64,{Model.Perfil.FotoBase64}" : "/assets/img/img-perfil.png")"
                                 alt="Foto de Perfil" class="profile-avatar-large"> *@
@@ -139,13 +140,13 @@
 
                                 @if (Model.JaSegue)
                                 {
-                                    <button type="submit" class="btn-unfollow">
+                                    <button type="submit" class="btn-unfollow follow-profile-btn">
                                         <i class="fas fa-user-minus"></i> Deixar de seguir
                                     </button>
                                 }
                                 else
                                 {
-                                    <button type="submit" class="btn-follow">
+                                    <button type="submit" class="btn-follow follow-profile-btn">
                                         <i class="fas fa-user-plus"></i> Seguir
                                     </button>
                                 }

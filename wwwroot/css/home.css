@@ -137,6 +137,7 @@ body {
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .profile-icon {
@@ -1396,6 +1397,7 @@ body {
     background-position: center;
     width: 100%;
     position: relative;
+    object-fit: cover;
 }
 
 .profile-banner::after {
@@ -1484,6 +1486,25 @@ body {
 }
 
 .edit-profile-btn:hover {
+    background-color: #d32f2f;
+}
+
+.follow-profile-btn {
+    background-color: #b71c1c;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.follow-profile-btn:hover {
     background-color: #d32f2f;
 }
 
