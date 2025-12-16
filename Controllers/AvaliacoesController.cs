@@ -47,6 +47,7 @@ namespace ProjetoCinemanticaMVC.Controllers // Verifique se o namespace é o mes
             .Select(c => new AvaliacoesViewModel
             {
                     nome_usuario = c.id_usuarioNavigation.nick_name,
+                    id_usuario = c.id_usuario ?? 0,
                     TituloFilme = c.nome_filme,
                     PosterFilme = c.img_path,   
                     descricao = c.descricao,
@@ -54,7 +55,8 @@ namespace ProjetoCinemanticaMVC.Controllers // Verifique se o namespace é o mes
                     usuario = c.id_usuarioNavigation,
                     foto_perfil = c.id_usuarioNavigation.foto_perfil != null
                     ? Convert.ToBase64String(c.id_usuarioNavigation.foto_perfil)
-                    : null
+                    : null,
+                    tipo_comentario = c.tipo_comentario
             })
             .ToList();
 

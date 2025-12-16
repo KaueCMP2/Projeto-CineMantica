@@ -23,7 +23,7 @@ public partial class Usuario
 
     public byte[]? senha { get; set; }
 
-    [StringLength(40)]
+    [StringLength(15)]
     [Unicode(false)]
     public string? nick_name { get; set; }
 

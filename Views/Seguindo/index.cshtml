@@ -105,13 +105,18 @@
                     {
                         foreach (var item in Model.Seguindo)
                         {
-                            var user = item.seguindo; // A propriedade de navegação do usuário seguido
+                            var user = item.seguindo;
 
                             <div class="user-bubble">
                                 <a href="/Perfil/Index?user=@user.id_usuario"
                                     style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;">
-                                    <img src="@(user.foto_perfil != null ? $"data:image/*;base64,{user.foto_perfil}" : "wwwroot/assets/home-images/user.png")"
+                                    <a asp-controller="Perfil"
+                                            asp-action="Index"
+                                            asp-route-id="@user.id_usuario">
+                                            <img src="@(user.foto_perfil != null ? $"data:image/*;base64,{Convert.ToBase64String(user.foto_perfil)}" : "/assets/home-images/user.png")"
                                         alt="Avatar">
+                                        </a>
+                                    
 
                                     <span>@user.nick_name</span>
                                     @{
@@ -150,18 +155,18 @@
                     foreach (var review in Model.Feed)
                     {
                         var foto = review.id_usuarioNavigation.foto_perfil;
-                        var nome = review.id_usuarioNavigation.nome;
+                        var nome = review.id_usuarioNavigation.nick_name;
 
                         <article class="review-card">
 
                             <div class="review-header">
                                 <div class="user-info">
 
-                                    <img src="@(foto != null ? $"data:image/*;base64,{foto}" : "/assets/img/img-perfil.png")"
+                                    <img src="@(foto != null ? $"data:image/*;base64,{Convert.ToBase64String(foto)}" : "/assets/home-images/user.png")"
                                         alt="Avatar">
 
                                     <div class="user-details">
-                                        <span class="username">@nome</span>
+                                        <span class="username">@nome    </span>
                                         <a asp-controller="Perfil"
                                             asp-action="Index"
                                             asp-route-id="@review.id_usuario">
